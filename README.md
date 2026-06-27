@@ -21,14 +21,18 @@ per scope.
 
 ## No synthetic data — everything clicks through to its source
 
-The dashboard ships with **zero dummy or synthetic financial data**. The only pre-loaded content is
-public, verifiable structural information:
+The dashboard ships with **zero dummy or synthetic financial data**. Pre-loaded content is either
+public structural information or real, sourced figures:
 
-- the entity register (names, portfolios, governance flags) from the Flipchart, and
-- the indicator definitions (formulas, the exact financial-statement line items, illustrative thresholds).
+- the entity register (names, portfolios, governance flags) from the Flipchart;
+- the indicator definitions (formulas, the exact financial-statement line items, illustrative thresholds); and
+- **real audited financial figures for the 19 Departments of State**, downloaded from the
+  [Transparency Portal](https://www.transparency.gov.au/) and pre-loaded with a backlink to the exact
+  annual-report financial statements each figure came from (see [Data pipeline](#data-pipeline-fetch--analyse)).
 
-Every quantitative value is either entered by the user from a cited public source, or left blank with
-a link to where that figure is published. Each entity links to:
+Every quantitative value is either pre-loaded from a cited public source, entered by the user from a
+cited public source, or left blank with a link to where that figure is published. Seeded figures are
+merged **non-destructively** — they never overwrite an analyst's own entries. Each entity links to:
 
 - its annual report & audited financial statements on [transparency.gov.au](https://www.transparency.gov.au/publications),
 - the Transparency Portal's own published [financial-sustainability ratios](https://www.transparency.gov.au/),
@@ -57,6 +61,38 @@ User-entered figures and analyst notes are stored **locally in the browser only*
 No single indicator is determinative; flags prompt investigation, never conclude; thresholds are
 illustrative defaults, not endorsed benchmarks; and corporate trading bodies are compared with peers,
 not departments.
+
+## Data pipeline (fetch → analyse)
+
+Real data is populated by two chained, reusable skills under `.claude/skills/`:
+
+1. **`fsd-fetch-entity`** — searches and downloads an entity's annual-report financial-statement
+   extracts from the Transparency Portal data API into `sources/<entity>/`, with a provenance
+   manifest of periods and backlinks. No transformation.
+2. **`fsd-analyse-entity`** — loads that data, picks the latest period with the full statement set,
+   maps each line item to the dashboard's ratio inputs, computes multi-year trends, records
+   per-figure provenance, and injects the seed into `index.html`.
+
+Run the whole chain for all Departments of State:
+
+```bash
+bash scripts/run_departments.sh
+```
+
+…or one entity at a time:
+
+```bash
+python3 .claude/skills/fsd-fetch-entity/fetch.py   "Department of the Treasury"
+python3 .claude/skills/fsd-analyse-entity/analyse.py "Department of the Treasury"
+```
+
+Downloaded data and provenance live under [`sources/`](sources/README.md). The Departments of State
+are the first validation pass; the same pipeline extends to the remaining Commonwealth entities.
+
+Five ratios per department are computed directly from the audited statements (Total liabilities/Total
+assets, Financial assets/Total liabilities, Current ratio, Capital turnover, Liquidity). Two ratios
+that require note-level lease figures absent from the extracts (Days Operating Cash on Hand, Capital
+Sustainability) are left blank for manual entry rather than estimated.
 
 ## Sources
 

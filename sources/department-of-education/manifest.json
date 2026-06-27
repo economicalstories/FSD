@@ -1,0 +1,52 @@
+{
+  "registerName": "Department of Education",
+  "sourceEntityNames": [
+    "Department of Education",
+    "Department of Education [i]"
+  ],
+  "renamed": true,
+  "entityCodeName": "department_of_education__i_",
+  "portfolio": "Education [i]",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Department of Education",
+      "annualReportTitle": "Department of Education Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/department-of-education/department-of-education-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Department of Education [i]",
+      "annualReportTitle": "Department of Education Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/department-of-education-i/department-of-education-annual-report-2022-23",
+      "financialStatementsAnchor": "financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Department of Education [i]",
+      "annualReportTitle": "Department of Education 2023-24 Annual Report",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/department-of-education-i/department-of-education-2023-24-annual-report",
+      "financialStatementsAnchor": "financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Department of Education [i]",
+      "annualReportTitle": "Department of Education Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/department-of-education-i/department-of-education-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

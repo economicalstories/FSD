@@ -1,0 +1,242 @@
+{
+  "source": "transparency.gov.au data API",
+  "entities": [
+    {
+      "entity": "Department of Agriculture, Fisheries and Forestry",
+      "slug": "department-of-agriculture-fisheries-and-forestry",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Attorney-General's Department",
+      "slug": "attorney-general-s-department",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Climate Change, Energy, the Environment and Water",
+      "slug": "department-of-climate-change-energy-the-environment-and-water",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Defence",
+      "slug": "department-of-defence",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Education",
+      "slug": "department-of-education",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Employment and Workplace Relations",
+      "slug": "department-of-employment-and-workplace-relations",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Finance",
+      "slug": "department-of-finance",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Foreign Affairs and Trade",
+      "slug": "department-of-foreign-affairs-and-trade",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Health and Aged Care",
+      "slug": "department-of-health-and-aged-care",
+      "records": 7,
+      "periods": [
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Department of Home Affairs",
+      "slug": "department-of-home-affairs",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Industry, Science and Resources",
+      "slug": "department-of-industry-science-and-resources",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Infrastructure, Transport, Regional Development, Communications and the Arts",
+      "slug": "department-of-infrastructure-transport-regional-development-communications-and-the-arts",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the Prime Minister and Cabinet",
+      "slug": "department-of-the-prime-minister-and-cabinet",
+      "records": 15,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Social Services",
+      "slug": "department-of-social-services",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the Treasury",
+      "slug": "department-of-the-treasury",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Veterans' Affairs",
+      "slug": "department-of-veterans-affairs",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Parliamentary Services",
+      "slug": "department-of-parliamentary-services",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the House of Representatives",
+      "slug": "department-of-the-house-of-representatives",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the Senate",
+      "slug": "department-of-the-senate",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    }
+  ]
+}

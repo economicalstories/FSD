@@ -1,0 +1,2529 @@
+{
+  "Attorney-General's Department": {
+    "registerName": "Attorney-General's Department",
+    "period": "2024-25",
+    "sourceEntityName": "Attorney-General's Department",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/attorney-generals-department/attorney-general-s-department-annual-report-2024-25",
+    "annualReportTitle": "Attorney-General's Department Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "318878",
+        "assets": "501107"
+      },
+      "fatl": {
+        "finassets": "263752",
+        "liab": "318878"
+      },
+      "cur": {
+        "ca": "272298",
+        "cl": "104854"
+      },
+      "cto": {
+        "netpur": "26821",
+        "nfassets": "237355"
+      },
+      "liq": {
+        "cash": "13921",
+        "opcash": "762933",
+        "fincash": "20411",
+        "netpur": "26821"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -2697.0,
+        2702.0,
+        0.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        68.62,
+        65.81,
+        67.92
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        7961.0,
+        10302.0,
+        13921.0
+      ]
+    }
+  },
+  "Department of Agriculture, Fisheries and Forestry": {
+    "registerName": "Department of Agriculture, Fisheries and Forestry",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Agriculture, Fisheries and Forestry",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-fisheries-and-forestry/department-of-agriculture-fisheries-and-forestry/department-of-agriculture-fisheries-and-forestry-annual-report-2024-25",
+    "annualReportTitle": "Department of Agriculture, Fisheries and Forestry Annual report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "800071",
+        "assets": "1212695"
+      },
+      "fatl": {
+        "finassets": "522970",
+        "liab": "800071"
+      },
+      "cur": {
+        "ca": "4302048",
+        "cl": "136504"
+      },
+      "cto": {
+        "netpur": "118579",
+        "nfassets": "689725"
+      },
+      "liq": {
+        "cash": "72754",
+        "opcash": "1460487",
+        "fincash": "25189",
+        "netpur": "118579"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -51810.0,
+        22751.0,
+        -27895.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        53.8,
+        54.58,
+        59.35
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        15336.0,
+        48067.0,
+        72754.0
+      ]
+    }
+  },
+  "Department of Climate Change, Energy, the Environment and Water": {
+    "registerName": "Department of Climate Change, Energy, the Environment and Water",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Climate Change, Energy, the Environment and Water",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/department-of-climate-change-energy-the-environment-and-water/department-of-climate-change-energy-the-environment-and-water-annual-report-2024-25",
+    "annualReportTitle": "Department of Climate Change, Energy, the Environment and Water Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "974676",
+        "assets": "1735387"
+      },
+      "fatl": {
+        "finassets": "457376",
+        "liab": "974676"
+      },
+      "cur": {
+        "ca": "503365",
+        "cl": "228037"
+      },
+      "cto": {
+        "netpur": "78786",
+        "nfassets": "1278011"
+      },
+      "liq": {
+        "cash": "35948",
+        "opcash": "1348012",
+        "fincash": "36614",
+        "netpur": "78786"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -131383.0,
+        -44168.0,
+        -4975.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        42.9,
+        50.13,
+        47.7
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        15009.0,
+        28034.0,
+        35948.0
+      ]
+    }
+  },
+  "Department of Defence": {
+    "registerName": "Department of Defence",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Defence",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/defence/department-of-defence/department-of-defence-annual-report-2024-25",
+    "annualReportTitle": "Department of Defence Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "15800563",
+        "assets": "158436070"
+      },
+      "fatl": {
+        "finassets": "3889639",
+        "liab": "15800563"
+      },
+      "cur": {
+        "ca": "6557664",
+        "cl": "9487438"
+      },
+      "cto": {
+        "netpur": "15375872",
+        "nfassets": "154512819"
+      },
+      "liq": {
+        "cash": "1106324",
+        "opcash": "-45510888",
+        "fincash": "-419299",
+        "netpur": "15375872"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        37.47,
+        37.72,
+        36.93
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        428734.0,
+        940421.0,
+        1106324.0
+      ]
+    }
+  },
+  "Department of Education": {
+    "registerName": "Department of Education",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Education [i]",
+    "renamed": true,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/department-of-education-i/department-of-education-annual-report-2024-25",
+    "annualReportTitle": "Department of Education Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "131127",
+        "assets": "311823"
+      },
+      "fatl": {
+        "finassets": "213660",
+        "liab": "131127"
+      },
+      "cur": {
+        "ca": "215238",
+        "cl": "79793"
+      },
+      "cto": {
+        "netpur": "55714",
+        "nfassets": "98163"
+      },
+      "liq": {
+        "cash": "498",
+        "opcash": "407035",
+        "fincash": "1256",
+        "netpur": "55714"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -22476.0,
+        -8383.0,
+        -13567.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        61.2,
+        64.67,
+        65.83
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        930.0,
+        2662.0,
+        498.0
+      ]
+    }
+  },
+  "Department of Employment and Workplace Relations": {
+    "registerName": "Department of Employment and Workplace Relations",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Employment and Workplace Relations",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/employment-and-workplace-relations/department-of-employment-and-workplace-relations/DEWR-Annual-Report-2024-25",
+    "annualReportTitle": "Department of Employment and Workplace Relations Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "495343",
+        "assets": "969525"
+      },
+      "fatl": {
+        "finassets": "340034",
+        "liab": "495343"
+      },
+      "cur": {
+        "ca": "371988",
+        "cl": "214256"
+      },
+      "cto": {
+        "netpur": "174967",
+        "nfassets": "629491"
+      },
+      "liq": {
+        "cash": "6235",
+        "opcash": "1094023",
+        "fincash": "63449",
+        "netpur": "174967"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        51.31,
+        59.62,
+        60.96
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        6387.0,
+        11748.0,
+        6235.0
+      ]
+    }
+  },
+  "Department of Finance": {
+    "registerName": "Department of Finance",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Finance",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/finance/department-of-finance/department-of-finance-annual-report-2024-25#Part-5:-Financial-performance/financial-statements",
+    "annualReportTitle": "Department of Finance Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "2905107",
+        "assets": "6321461"
+      },
+      "fatl": {
+        "finassets": "2810143",
+        "liab": "2905107"
+      },
+      "cur": {
+        "ca": "2819435",
+        "cl": "511424"
+      },
+      "cto": {
+        "netpur": "194813",
+        "nfassets": "3511318"
+      },
+      "liq": {
+        "cash": "2694603",
+        "opcash": "678053",
+        "fincash": "38037",
+        "netpur": "194813"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -237235.0,
+        -477643.0,
+        -527959.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        27.95,
+        29.2,
+        26.61
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        1338908.0,
+        1804927.0,
+        2694603.0
+      ]
+    }
+  },
+  "Department of Foreign Affairs and Trade": {
+    "registerName": "Department of Foreign Affairs and Trade",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Foreign Affairs and Trade",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/department-of-foreign-affairs-and-trade/department-of-foreign-affairs-and-trade-annual-report-2024-25",
+    "annualReportTitle": "Department of Foreign Affairs and Trade Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "1811083",
+        "assets": "6930256"
+      },
+      "fatl": {
+        "finassets": "1402769",
+        "liab": "1811083"
+      },
+      "cur": {
+        "ca": "1497327",
+        "cl": "569433"
+      },
+      "cto": {
+        "netpur": "199147",
+        "nfassets": "5527164"
+      },
+      "liq": {
+        "cash": "619627",
+        "opcash": "2458552",
+        "fincash": "204187",
+        "netpur": "199147"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -182832.0,
+        -127303.0,
+        -147504.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        48.73,
+        50.18,
+        49.85
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        594166.0,
+        597537.0,
+        619627.0
+      ]
+    }
+  },
+  "Department of Health and Aged Care": {
+    "registerName": "Department of Health and Aged Care",
+    "period": "2023-24",
+    "sourceEntityName": "Department of Health and Aged Care",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/health-and-aged-care/department-of-health-and-aged-care/department-of-health-and-aged-care-annual-report-2023-24#part-5:-financial-statements",
+    "annualReportTitle": "Department of Health and Aged Care Annual Report 2023-24",
+    "ratios": {
+      "lta": {
+        "liab": "974594",
+        "assets": "1364052"
+      },
+      "fatl": {
+        "finassets": "458631",
+        "liab": "974594"
+      },
+      "cur": {
+        "ca": "547034",
+        "cl": "285497"
+      },
+      "cto": {
+        "netpur": "111454",
+        "nfassets": "905421"
+      },
+      "liq": {
+        "cash": "139929",
+        "opcash": "1751197",
+        "fincash": "50753",
+        "netpur": "111454"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2023-24"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2023-24"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2023-24"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2023-24"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2023-24"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2023-24"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2023-24"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2023-24"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2023-24"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2023-24"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2023-24"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2023-24"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        143377.0,
+        119596.0,
+        null
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        56.38,
+        56.18,
+        null
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        118484.0,
+        139929.0,
+        null
+      ]
+    }
+  },
+  "Department of Home Affairs": {
+    "registerName": "Department of Home Affairs",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Home Affairs",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/home-affairs/department-of-home-affairs/department-of-home-affairs-annual-report-2024-25",
+    "annualReportTitle": "Department of Home Affairs Annual Report 2024–25",
+    "ratios": {
+      "lta": {
+        "liab": "3257814",
+        "assets": "4137044"
+      },
+      "fatl": {
+        "finassets": "680275",
+        "liab": "3257814"
+      },
+      "cur": {
+        "ca": "805970",
+        "cl": "809497"
+      },
+      "cto": {
+        "netpur": "253110",
+        "nfassets": "3456769"
+      },
+      "liq": {
+        "cash": "8126",
+        "opcash": "4153661",
+        "fincash": "212838",
+        "netpur": "253110"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -480579.0,
+        -288389.0,
+        -300099.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        52.17,
+        51.31,
+        51.62
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        6364.0,
+        9212.0,
+        8126.0
+      ]
+    }
+  },
+  "Department of Industry, Science and Resources": {
+    "registerName": "Department of Industry, Science and Resources",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Industry, Science and Resources",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/industry-science-and-resources/department-of-industry-science-and-resources/department-of-industry-science-and-resources-annual-report-2024-25",
+    "annualReportTitle": "Department of Industry, Science and Resources Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "387484",
+        "assets": "814439"
+      },
+      "fatl": {
+        "finassets": "385200",
+        "liab": "387484"
+      },
+      "cur": {
+        "ca": "404525",
+        "cl": "144984"
+      },
+      "cto": {
+        "netpur": "57245",
+        "nfassets": "429239"
+      },
+      "liq": {
+        "cash": "9556",
+        "opcash": "919758",
+        "fincash": "27358",
+        "netpur": "57245"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        54.59,
+        60.05,
+        60.71
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        10965.0,
+        11696.0,
+        9556.0
+      ]
+    }
+  },
+  "Department of Infrastructure, Transport, Regional Development, Communications and the Arts": {
+    "registerName": "Department of Infrastructure, Transport, Regional Development, Communications and the Arts",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
+    "renamed": true,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-communications-sport-and-the-arts/department-of-infrastructure-transport-regional-development-communications-sport-and-the-arts/department-of-infrastructure-transport-regional-development-communications-sport-and-the-arts-annual-report-2024-25",
+    "annualReportTitle": "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "193567",
+        "assets": "410952"
+      },
+      "fatl": {
+        "finassets": "238618",
+        "liab": "193567"
+      },
+      "cur": {
+        "ca": "249452",
+        "cl": "97810"
+      },
+      "cto": {
+        "netpur": "8041",
+        "nfassets": "172334"
+      },
+      "liq": {
+        "cash": "16661",
+        "opcash": "544777",
+        "fincash": "27050",
+        "netpur": "8041"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -25961.0,
+        -48054.0,
+        10067.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        60.7,
+        63.61,
+        59.98
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        18360.0,
+        13074.0,
+        16661.0
+      ]
+    }
+  },
+  "Department of Parliamentary Services": {
+    "registerName": "Department of Parliamentary Services",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Parliamentary Services",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/parliamentary-departments-not-a-portfolio/department-of-parliamentary-services/department-of-parliamentary-services-annual-report-2024-25",
+    "annualReportTitle": "Department of Parliamentary Services Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "103488",
+        "assets": "212494"
+      },
+      "fatl": {
+        "finassets": "30753",
+        "liab": "103488"
+      },
+      "cur": {
+        "ca": "37709",
+        "cl": "28088"
+      },
+      "cto": {
+        "netpur": "32310",
+        "nfassets": "181741"
+      },
+      "liq": {
+        "cash": "779",
+        "opcash": "233603",
+        "fincash": "3226",
+        "netpur": "32310"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -22774.0,
+        -15546.0,
+        -23047.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        62.59,
+        60.36,
+        65.54
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        1293.0,
+        967.0,
+        779.0
+      ]
+    }
+  },
+  "Department of Social Services": {
+    "registerName": "Department of Social Services",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Social Services",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/services-australia/department-of-social-services/department-of-social-services-annual-report-2024-25",
+    "annualReportTitle": "Department of Social Services Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "667091",
+        "assets": "631479"
+      },
+      "fatl": {
+        "finassets": "143364",
+        "liab": "667091"
+      },
+      "cur": {
+        "ca": "145389",
+        "cl": "111533"
+      },
+      "cto": {
+        "netpur": "3974",
+        "nfassets": "488115"
+      },
+      "liq": {
+        "cash": "8299",
+        "opcash": "697764",
+        "fincash": "22587",
+        "netpur": "3974"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -26291.0,
+        8.0,
+        -23805.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        64.36,
+        63.08,
+        66.43
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        5979.0,
+        5630.0,
+        8299.0
+      ]
+    }
+  },
+  "Department of the House of Representatives": {
+    "registerName": "Department of the House of Representatives",
+    "period": "2024-25",
+    "sourceEntityName": "Department of the House of Representatives",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/parliamentary-departments-not-a-portfolio/department-of-the-house-of-representatives/department-of-the-house-of-representatives-annual-report-2024-25#Part-4:-Financial-statements/primary-financial-statements",
+    "annualReportTitle": "Department of the House of Representatives Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "7738",
+        "assets": "36340"
+      },
+      "fatl": {
+        "finassets": "33064",
+        "liab": "7738"
+      },
+      "cur": {
+        "ca": "33288",
+        "cl": "2902"
+      },
+      "cto": {
+        "netpur": "311",
+        "nfassets": "3276"
+      },
+      "liq": {
+        "cash": "6736",
+        "opcash": "27202",
+        "fincash": "13",
+        "netpur": "311"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        1281.0,
+        2009.0,
+        2723.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        84.65,
+        81.84,
+        80.99
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        2716.0,
+        5600.0,
+        6736.0
+      ]
+    }
+  },
+  "Department of the Prime Minister and Cabinet": {
+    "registerName": "Department of the Prime Minister and Cabinet",
+    "period": "2024-25",
+    "sourceEntityName": "Department of the Prime Minister and Cabinet",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/department-of-the-prime-minister-and-cabinet/department-of-the-prime-minister-and-cabinet-annual-report-2024-25",
+    "annualReportTitle": "Department of the Prime Minister and Cabinet Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "157091",
+        "assets": "227338"
+      },
+      "fatl": {
+        "finassets": "89976",
+        "liab": "157091"
+      },
+      "cur": {
+        "ca": "98950",
+        "cl": "46339"
+      },
+      "cto": {
+        "netpur": "12008",
+        "nfassets": "137362"
+      },
+      "liq": {
+        "cash": "1594",
+        "opcash": "335708",
+        "fincash": "8791",
+        "netpur": "12008"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        897.0,
+        3444.0,
+        -12866.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        54.84,
+        57.61,
+        69.23
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        1934.0,
+        1672.0,
+        1594.0
+      ]
+    }
+  },
+  "Department of the Senate": {
+    "registerName": "Department of the Senate",
+    "period": "2024-25",
+    "sourceEntityName": "Department of the Senate",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/parliamentary-departments-not-a-portfolio/department-of-the-senate/department-of-the-senate-annual-report-2024-25",
+    "annualReportTitle": "Department of the Senate Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "8738",
+        "assets": "17326"
+      },
+      "fatl": {
+        "finassets": "14909",
+        "liab": "8738"
+      },
+      "cur": {
+        "ca": "15340",
+        "cl": "2526"
+      },
+      "cto": {
+        "netpur": "211",
+        "nfassets": "2417"
+      },
+      "liq": {
+        "cash": "213",
+        "opcash": "28773",
+        "fincash": "23",
+        "netpur": "211"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -2132.0,
+        -1356.0,
+        807.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        97.42,
+        93.68,
+        88.73
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        226.0,
+        213.0,
+        213.0
+      ]
+    }
+  },
+  "Department of the Treasury": {
+    "registerName": "Department of the Treasury",
+    "period": "2024-25",
+    "sourceEntityName": "Department of the Treasury",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/department-treasury/department-of-the-treasury-annual-report-2024-25",
+    "annualReportTitle": "Department of the Treasury Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "240810",
+        "assets": "284749"
+      },
+      "fatl": {
+        "finassets": "140653",
+        "liab": "240810"
+      },
+      "cur": {
+        "ca": "146459",
+        "cl": "59803"
+      },
+      "cto": {
+        "netpur": "3258",
+        "nfassets": "144096"
+      },
+      "liq": {
+        "cash": "749",
+        "opcash": "435100",
+        "fincash": "10842",
+        "netpur": "3258"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -12930.0,
+        -10627.0,
+        -1112.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        66.12,
+        71.33,
+        70.45
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        305.0,
+        1839.0,
+        749.0
+      ]
+    }
+  },
+  "Department of Veterans' Affairs": {
+    "registerName": "Department of Veterans' Affairs",
+    "period": "2024-25",
+    "sourceEntityName": "Department of Veterans' Affairs",
+    "renamed": false,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/veterans-affairs/department-of-veterans-affairs/department-of-veterans-affairs-annual-report-2024-25#06-Financial-statements/department-of-veterans'-affairs-financial-statements-2024–25",
+    "annualReportTitle": "Department of Veterans' Affairs Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "433333",
+        "assets": "469418"
+      },
+      "fatl": {
+        "finassets": "254672",
+        "liab": "433333"
+      },
+      "cur": {
+        "ca": "257620",
+        "cl": "233132"
+      },
+      "cto": {
+        "netpur": "38511",
+        "nfassets": "214746"
+      },
+      "liq": {
+        "cash": "29834",
+        "opcash": "641190",
+        "fincash": "24668",
+        "netpur": "38511"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "assets - total assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "assets - total financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "liabilities - total liabilities",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "assets - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "liabilities - no more than 12 months",
+          "statement": "Departmental assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "assets - total non-financial assets",
+          "statement": "Statement of Financial Position (departmental)",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "cash at the end of reporting period",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "total cash used for operating act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "total cash used financing act.",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "net cash from investing act. (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement (departmental)",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        21716.0,
+        -36986.0,
+        -33001.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        52.16,
+        58.23,
+        62.53
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        28226.0,
+        34116.0,
+        29834.0
+      ]
+    }
+  }
+}
