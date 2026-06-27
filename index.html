@@ -207,6 +207,15 @@ main{display:flex;flex-direction:column;gap:18px;min-width:0}
 #peerTable .rk{font-weight:700;font-family:var(--mono);color:var(--ink-soft);text-align:center}
 #peerTable td.c-a{background:var(--warn-wash)}
 #peerTable td.c-c{background:var(--good-wash)}
+/* all-entities overview (landing) */
+#overviewTable tr[data-id]{cursor:pointer}
+#overviewTable tr[data-id]:hover{background:var(--accent-wash)}
+#overviewTable .ovcat{color:var(--muted);font-size:11.5px}
+.ovrow-hist{color:var(--muted)}
+.ovstand{display:flex;align-items:center;gap:7px}
+.ovrank{font-size:11px;font-family:var(--mono);color:var(--muted);white-space:nowrap}
+.backlink{display:inline-block;font-size:12.5px;color:var(--accent);cursor:pointer;margin-bottom:10px;font-weight:600}
+.backlink:hover{text-decoration:underline}
 .cbar{height:11px;background:var(--panel-2);border:1px solid var(--hair);border-radius:5px;overflow:hidden;min-width:72px;cursor:help}
 .cbar span{display:block;height:100%}
 .bar-a{background:var(--warn)} .bar-b{background:var(--accent)} .bar-c{background:var(--good)}
@@ -379,8 +388,19 @@ hr.soft{border:0;border-top:1px solid var(--hair);margin:6px 0}
 
   <!-- MAIN -->
   <main>
+    <!-- All-entities overview (landing) -->
+    <section class="card" id="overviewCard" hidden>
+      <div class="hd"><h2>All entities</h2><span class="note" id="overviewNote"></span></div>
+      <div class="bd">
+        <p class="section-intro">Every entity matching the current filters, with its key ratios and its composite
+          standing within its like-for-like category (1 = furthest toward the less-favourable side). <b>Click any row
+          to drill in</b>; narrow the list with the filters on the left.</p>
+        <div class="tbl-scroll" style="margin-top:12px"><table id="overviewTable"></table></div>
+      </div>
+    </section>
+
     <!-- Entity summary -->
-    <section class="card esum" id="esum">
+    <section class="card esum" id="esum" hidden>
       <div class="bd"><p class="empty">Select an entity from the left to begin.</p></div>
     </section>
 
@@ -816,6 +836,7 @@ function renderList(){
   const nce=list.filter(e=>e.type==="NCE").length, cce=list.length-nce;
   const histN=list.filter(isHistorical).length;
   elCount.textContent=`${list.length} shown · ${nce} non-corporate · ${cce} corporate`+(state.showHistorical&&histN?` · ${histN} historical`:"");
+  if(!state.entityId) renderOverview();   // keep the landing list in sync with filters
 }
 
 /* ============================================================ RENDER: ENTITY ============================================================ */
@@ -824,11 +845,53 @@ function selectEntity(id){ state.entityId=id; renderList(); renderEntity();
 
 function chip(text,tip,cls){ return `<span class="chip ${cls||''}" ${tip?`data-tip="${tip.replace(/"/g,'&quot;')}"`:''}>${text}</span>`; }
 
+function deselect(){ state.entityId=null; renderList(); renderEntity(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* Composite standing within each entity's own like-for-like category (computed once). */
+function categoryStandings(){
+  const byFn={};
+  ENTITIES.forEach(e=>{ if(!isHistorical(e)) (byFn[e.fn]=byFn[e.fn]||[]).push(e); });
+  const out={};
+  Object.values(byFn).forEach(group=>{
+    const scored=group.map(e=>({e,c:compositeStanding(e.id,group)})).filter(x=>x.c);
+    scored.sort((a,b)=>b.c.index-a.c.index);
+    scored.forEach((x,i)=>{ out[x.e.id]={rank:i+1,n:scored.length,index:x.c.index}; });
+  });
+  return out;
+}
+function renderOverview(){
+  const list=filteredEntities();
+  const sorted=[...list].sort((a,b)=> a.fn.localeCompare(b.fn)||a.name.localeCompare(b.name));
+  const stand=categoryStandings();
+  const f=n=>n==null?'<span class="minit">—</span>':(Math.round(n*100)/100).toLocaleString();
+  const rid=id=>RATIOS.find(r=>r.id===id);
+  const rows=sorted.map(e=>{
+    const hist=isHistorical(e), s=stand[e.id];
+    let standCell='<span class="minit">—</span>';
+    if(s){ const tier=s.index>=0.66?'bar-a':s.index>=0.4?'bar-b':'bar-c';
+      standCell=`<div class="ovstand"><div class="cbar" data-tip="Composite standing within the ${e.fn} category (higher = further toward the less-favourable side vs peers)."><span class="${tier}" style="width:${Math.round(s.index*100)}%"></span></div><span class="ovrank">${ordinal(s.rank)}/${s.n}</span></div>`; }
+    return `<tr data-id="${e.id}" class="${hist?'ovrow-hist':''}">
+      <td>${e.name}${hist?'<span class="ec-defunct-tag">Defunct</span>':''}</td>
+      <td>${e.type}</td><td class="ovcat">${e.fn}</td>
+      <td class="num">${f(ratioValueFor(e.id,rid('cur')))}</td>
+      <td class="num">${f(ratioValueFor(e.id,rid('lta')))}</td>
+      <td class="num">${f(ratioValueFor(e.id,rid('liq')))}</td>
+      <td>${standCell}</td></tr>`;
+  }).join("");
+  const t=document.getElementById('overviewTable');
+  t.innerHTML=`<thead><tr><th>Entity</th><th>Type</th><th>Category</th><th class="num">Current</th><th class="num">Liab/Assets</th><th class="num">Liquidity</th><th>Standing in category</th></tr></thead><tbody>${rows}</tbody>`;
+  t.querySelectorAll('tr[data-id]').forEach(tr=>tr.onclick=()=>selectEntity(tr.dataset.id));
+  document.getElementById('overviewNote').textContent=`${list.length} ${list.length===1?'entity':'entities'} · click a row to drill in`;
+  bindTips();
+}
+
 function renderEntity(){
   const e=ENTITIES.find(x=>x.id===state.entityId);
   const cards=["riskCard","ratioCard","trendCard","otherCard","peerCard","notesCard"];
+  const esum=document.getElementById('esum'), ov=document.getElementById('overviewCard');
   if(!e){ cards.forEach(c=>document.getElementById(c).hidden=true);
-    document.getElementById('esum').querySelector('.bd').innerHTML='<p class="empty">Select an entity from the left to begin.</p>'; return; }
+    esum.hidden=true; ov.hidden=false; renderOverview(); return; }
+  esum.hidden=false; ov.hidden=true;
   cards.forEach(c=>document.getElementById(c).hidden=false);
 
   // summary
@@ -846,6 +909,7 @@ function renderEntity(){
   const defunctBanner = st.status==="historical"
     ? `<div class="defunctbar"><span class="defunct-tag">Defunct</span> ${st.reason} Shown because “historical” entities are enabled; excluded from the default view and from peer benchmarks.</div>` : "";
   document.getElementById('esum').querySelector('.bd').innerHTML=`
+    <a class="backlink" onclick="deselect()">← All entities</a>
     <div class="nm">${e.name}</div>
     <div class="port">${e.portfolio} portfolio · ${e.fn}</div>
     <div class="chips">
@@ -1200,7 +1264,7 @@ document.getElementById('peerBasis').addEventListener('change',e=>{ state.peerBa
   if(ent){ renderRatios(ent); renderRisk(ent); renderPeers(ent); bindTips(); } });
 
 /* ============================================================ INIT ============================================================ */
-setPeriodHint(); renderList();
+setPeriodHint(); renderList(); renderEntity();
 </script>
 </body>
 </html>

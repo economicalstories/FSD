@@ -45,6 +45,8 @@ User-entered figures and analyst notes are stored **locally in the browser only*
 ## Features
 
 - **Period selection** — day / month / year (annual is the primary audited cycle).
+- **All-entities landing** — opens on a filterable overview table of every entity (key ratios + composite
+  standing within its category); click any row to drill in, "← All entities" to return.
 - **Entity selection** — search and filter all 175 entities by **entity type** (corporate /
   non-corporate), **like-for-like category** (department, regulator, RDC, cultural body, …), and portfolio.
 - **Currently-active by default** — defunct / superseded entities (abolished or merged by
