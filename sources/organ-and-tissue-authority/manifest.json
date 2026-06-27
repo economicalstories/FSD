@@ -1,0 +1,46 @@
+{
+  "registerName": "Organ and Tissue Authority",
+  "sourceEntityNames": [
+    "Organ and Tissue Authority"
+  ],
+  "renamed": false,
+  "entityCodeName": "organ_and_tissue_authority__australian_organ_and_t",
+  "portfolio": "Health",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 4,
+  "contentTypes": [
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Organ and Tissue Authority",
+      "annualReportTitle": "Organ and Tissue Authority Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/organ-and-tissue-authority-australian-organ-and-tissue-donation-and-transplantation-authority/organ-and-tissue-authority-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Organ and Tissue Authority",
+      "annualReportTitle": "Organ and Tissue Authority Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/organ-and-tissue-authority-australian-organ-and-tissue-donation-and-transplantation-authority/organ-and-tissue-authority-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Organ and Tissue Authority",
+      "annualReportTitle": "Organ and Tissue Authority Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/organ-and-tissue-authority-australian-organ-and-tissue-donation-and-transplantation-authority/organ-and-tissue-authority-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Organ and Tissue Authority",
+      "annualReportTitle": "Organ and Tissue Authority Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/organ-and-tissue-authority-australian-organ-and-tissue-donation-and-transplantation-authority/organ-and-tissue-authority-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

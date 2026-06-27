@@ -1,0 +1,44 @@
+{
+  "registerName": "National Health Funding Body (NHFB)",
+  "sourceEntityNames": [
+    "National Health Funding Body (NHFB)"
+  ],
+  "renamed": false,
+  "entityCodeName": "national_health_funding_body__nhfb_",
+  "portfolio": "Health, Disability and Ageing",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "National Health Funding Body (NHFB)",
+      "annualReportTitle": "National Health Funding Body Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-health-funding-body-nhfb/national-health-funding-body-annual-report-2022-23",
+      "financialStatementsAnchor": "part-4:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "National Health Funding Body (NHFB)",
+      "annualReportTitle": "National Health Funding Body Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/national-health-funding-body-nhfb/national-health-funding-body-annual-report-2023-24",
+      "financialStatementsAnchor": "part-4:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "National Health Funding Body (NHFB)",
+      "annualReportTitle": "National Health Funding Body (NHFB) Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/national-health-funding-body-nhfb/national-health-funding-body-nhfb-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

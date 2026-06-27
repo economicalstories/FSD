@@ -1,0 +1,72 @@
+{
+  "registerName": "Australian Fisheries Management Authority",
+  "sourceEntityNames": [
+    "Australian Fisheries Management Authority"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_fisheries_management_authority",
+  "portfolio": "Agriculture",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 16,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-fisheries-and-forestry/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-fisheries-and-forestry/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-fisheries-and-forestry/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-fisheries-and-forestry/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2022-23",
+      "financialStatementsAnchor": "Report-on-financial-performance/financial-statements-for-the-year-ended-30-june-2023-"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2023-24",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Fisheries Management Authority",
+      "annualReportTitle": "Australian Fisheries Management Authority Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture/australian-fisheries-management-authority/australian-fisheries-management-authority-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "registerName": "Australian Military Forces Relief Trust Fund",
+  "sourceEntityNames": [
+    "Australian Military Forces Relief Trust Fund"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_military_forces_relief_trust_fund",
+  "portfolio": "Defence",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2022-23\n",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2022-23",
+      "financialStatementsAnchor": "annual-performance-statement-2022-23-"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2023-24",
+      "financialStatementsAnchor": "annual-performance-statement-2023-24"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Military Forces Relief Trust Fund",
+      "annualReportTitle": "Australian Military Forces Relief Trust Fund Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/australian-military-forces-relief-trust-fund/australian-military-forces-relief-trust-fund-annual-report-2024-25",
+      "financialStatementsAnchor": "annual-performance-statement-2024-25"
+    }
+  ]
+}

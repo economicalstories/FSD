@@ -1,0 +1,37 @@
+{
+  "registerName": "Domestic, Family and Sexual Violence Commission",
+  "sourceEntityNames": [
+    "Domestic, Family and Sexual Violence Commission"
+  ],
+  "renamed": false,
+  "entityCodeName": "domestic__family_and_sexual_violence_commission",
+  "portfolio": "Social Services",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 7,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Domestic, Family and Sexual Violence Commission",
+      "annualReportTitle": "Domestic, Family and Sexual Violence Commission Annual Report 2022-2023",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/social-services/domestic-family-and-sexual-violence-commission/domestic-family-and-sexual-violence-commission-annual-report-2022-2023",
+      "financialStatementsAnchor": "part-4-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Domestic, Family and Sexual Violence Commission",
+      "annualReportTitle": "Domestic, Family and Sexual Violence Commission Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/social-services/domestic-family-and-sexual-violence-commission/domestic-family-and-sexual-violence-commission-annual-report-2023-24",
+      "financialStatementsAnchor": "Part-4-Financial-statements/statement-by-the-commissioner-and-chief-finance-officer"
+    }
+  ]
+}

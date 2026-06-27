@@ -1,0 +1,42 @@
+{
+  "registerName": "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)",
+  "sourceEntityNames": [
+    "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)"
+  ],
+  "renamed": false,
+  "entityCodeName": "export_finance_and_insurance_corporation__efic__ex",
+  "portfolio": "Foreign Affairs and Trade",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)",
+      "annualReportTitle": "Export Finance Australia Annual Report 2022–2023  ",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/export-finance-and-insurance-corporation-efic-export-finance-australia/export-finance-australia-annual-report-2022-2023",
+      "financialStatementsAnchor": "performance"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)",
+      "annualReportTitle": "Export Finance Australia Annual Report 2023-2024 ",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/export-finance-and-insurance-corporation-efic-export-finance-australia/export-finance-australia-annual-report-2023-2024",
+      "financialStatementsAnchor": "performance"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)",
+      "annualReportTitle": "Export Finance Australia 2024-2025 Annual Report",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/export-finance-and-insurance-corporation-efic-export-finance-australia/export-finance-australia-2024-2025-annual-report",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "registerName": "Office of the Auditing and Assurance Standards Board (AUASB)",
+  "sourceEntityNames": [
+    "Office of the Auditing and Assurance Standards Board (AUASB)"
+  ],
+  "renamed": false,
+  "entityCodeName": "office_of_the_auditing_and_assurance_standards_boa_17974c4",
+  "portfolio": "Treasury",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 7,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Office of the Auditing and Assurance Standards Board (AUASB)",
+      "annualReportTitle": "Office of the Australian Accounting Standards Board Annual Report 2022-23\nOffice of the Auditing and Assurance Standards Board Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/office-of-the-auditing-and-assurance-standards-board-auasb/office-of-the-australian-accounting-standards-board-annual-report-2022-23-office-of-the-auditing-and-assurance-standards-board-annual-report-2022-23",
+      "financialStatementsAnchor": "financial-reports"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Office of the Auditing and Assurance Standards Board (AUASB)",
+      "annualReportTitle": "Office of the Auditing and Assurance Standards Board Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/office-of-the-auditing-and-assurance-standards-board-auasb/office-of-the-auditing-and-assurance-standards-board-annual-report-2023-24",
+      "financialStatementsAnchor": "financial-reports-"
+    }
+  ]
+}

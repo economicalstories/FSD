@@ -1,0 +1,65 @@
+{
+  "registerName": "National Mental Health Commission",
+  "sourceEntityNames": [
+    "National Mental Health Commission"
+  ],
+  "renamed": false,
+  "entityCodeName": "national_mental_health_commission",
+  "portfolio": "Health",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 11,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "National Mental Health Commission",
+      "annualReportTitle": "National Mental Health Commission Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-mental-health-commission/national-mental-health-commission-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "National Mental Health Commission",
+      "annualReportTitle": "National Mental Health Commission Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-mental-health-commission/national-mental-health-commission-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "National Mental Health Commission",
+      "annualReportTitle": "National Mental Health Commission Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-mental-health-commission/national-mental-health-commission-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "National Mental Health Commission",
+      "annualReportTitle": "National Mental Health Commission Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-mental-health-commission/national-mental-health-commission-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "National Mental Health Commission",
+      "annualReportTitle": "National Mental Health Commission Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-mental-health-commission/national-mental-health-commission-annual-report-2022-23",
+      "financialStatementsAnchor": "financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "National Mental Health Commission",
+      "annualReportTitle": "National Mental Health Commission Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/national-mental-health-commission/national-mental-health-commission-annual-report-2023-24",
+      "financialStatementsAnchor": "financial-statements"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "registerName": "Great Barrier Reef Marine Park Authority",
+  "sourceEntityNames": [
+    "Great Barrier Reef Marine Park Authority"
+  ],
+  "renamed": false,
+  "entityCodeName": "great_barrier_reef_marine_park_authority",
+  "portfolio": "Agriculture, Water and the Environment",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 15,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Great Barrier Reef Marine Park Authority",
+      "annualReportTitle": "Great Barrier Reef Marine Park Authority Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/great-barrier-reef-marine-park-authority/great-barrier-reef-marine-park-authority-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Great Barrier Reef Marine Park Authority",
+      "annualReportTitle": "Great Barrier Reef Marine Park Authority Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/great-barrier-reef-marine-park-authority/great-barrier-reef-marine-park-authority-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Great Barrier Reef Marine Park Authority",
+      "annualReportTitle": "Great Barrier Reef Marine Park Authority Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/great-barrier-reef-marine-park-authority/great-barrier-reef-marine-park-authority-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Great Barrier Reef Marine Park Authority",
+      "annualReportTitle": "Great Barrier Reef Marine Park Authority Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/great-barrier-reef-marine-park-authority/great-barrier-reef-marine-park-authority-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Great Barrier Reef Marine Park Authority",
+      "annualReportTitle": "Great Barrier Reef Marine Park Authority Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-water-and-the-environment/great-barrier-reef-marine-park-authority/great-barrier-reef-marine-park-authority-annual-report-2023-24",
+      "financialStatementsAnchor": "5.-financial-report"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Great Barrier Reef Marine Park Authority",
+      "annualReportTitle": "Great Barrier Reef Marine Park Authority Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-water-and-the-environment/great-barrier-reef-marine-park-authority/great-barrier-reef-marine-park-authority-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

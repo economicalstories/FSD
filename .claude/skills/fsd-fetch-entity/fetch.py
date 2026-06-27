@@ -14,6 +14,7 @@ to click through to the original annual report on the Transparency Portal.
 Usage:
     python3 fetch.py "Department of the Treasury" ["Another Entity" ...]
     python3 fetch.py --departments      # all 19 Departments of State (incl. parliamentary)
+    python3 fetch.py --all              # every entity in the register (NCEs + CCEs)
 
 Output (per entity):
     sources/<slug>/transparency_raw.json   raw API records (verbatim)
@@ -24,16 +25,22 @@ import json, os, re, sys, time, urllib.request, urllib.error
 API = "https://data.transparency.gov.au/api/datasets/simplified"
 PORTAL = "https://www.transparency.gov.au/publications"
 
-# Departmental financial-statement extract datasets published per non-corporate
-# Commonwealth entity (departments are NCEs). Codenames are the Transparency
-# Portal's own dataset content-type identifiers.
+# Financial-statement extract datasets the Transparency Portal publishes per entity.
+# Both the non-corporate (NCE) and corporate (CCE) variants are requested; the API
+# returns whichever exist for a given entity, so the same call works for any entity.
 CONTENT_TYPES = [
-    "extract_dept__statement_of_comp_income___nce_23_24",      # Statement of Comprehensive Income (departmental)
+    # --- non-corporate Commonwealth entities (NCE) ---
+    "extract_dept__statement_of_comp_income___nce_23_24",      # Statement of Comprehensive Income
     "extract_of_statement_of_financial_position_____cop",       # Statement of Financial Position (multi-year)
-    "extract_of_cash_flow_statement___nce_23_24_",             # Cash Flow Statement (departmental)
+    "extract_of_cash_flow_statement___nce_23_24_",             # Cash Flow Statement
     "dept__current_distinction___assets_and_liab__nce_23_24",  # Current / non-current assets & liabilities
-    "extract_of_admin__statement_of_comp__income_nce_23_24",   # Statement of Comprehensive Income (administered)
+    "extract_of_admin__statement_of_comp__income_nce_23_24",   # Comprehensive Income (administered)
     "extract_admin__of_assets_and_liabilities_nce_23_24",      # Administered assets & liabilities
+    # --- corporate Commonwealth entities (CCE) ---
+    "extract_dept__statement_of_comp_income___cce_23_24",      # Statement of Comprehensive Income
+    "extract_of_statement_of_financial_position___cce",        # Statement of Financial Position (multi-year)
+    "extract_of_dept_cash_flow_statement_cce_23_24",           # Cash Flow Statement
+    "dept__current_distinction___assets_and_liab__cce_23_24",  # Current / non-current assets & liabilities
 ]
 
 # Some departments publish recent years under a renamed entity (machinery-of-government
@@ -77,6 +84,14 @@ DEPARTMENTS = [
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 SOURCES = os.path.join(ROOT, "sources")
+INDEX = os.path.join(ROOT, "index.html")
+
+
+def register_names():
+    """All entity names from the register the dashboard ships with."""
+    html = open(INDEX, encoding="utf-8").read()
+    m = re.search(r'<script id="entity-data" type="application/json">(.*?)</script>', html, re.S)
+    return [e["name"] for e in json.loads(m.group(1))]
 
 
 def slug(name):
@@ -155,7 +170,12 @@ def main(argv):
     if not argv:
         print(__doc__)
         return 1
-    targets = DEPARTMENTS if argv[0] == "--departments" else argv
+    if argv[0] == "--departments":
+        targets = DEPARTMENTS
+    elif argv[0] == "--all":
+        targets = register_names()
+    else:
+        targets = argv
     os.makedirs(SOURCES, exist_ok=True)
     index = []
     for name in targets:

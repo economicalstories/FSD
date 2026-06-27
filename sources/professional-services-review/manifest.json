@@ -1,0 +1,44 @@
+{
+  "registerName": "Professional Services Review",
+  "sourceEntityNames": [
+    "Professional Services Review"
+  ],
+  "renamed": false,
+  "entityCodeName": "professional_services_review",
+  "portfolio": "Health, Disability and Ageing",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Professional Services Review",
+      "annualReportTitle": "Professional Services Review Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/professional-services-review/professional-services-review-annual-report-2022-23",
+      "financialStatementsAnchor": "financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Professional Services Review",
+      "annualReportTitle": "Professional Services Review Annual Report 2023–24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/professional-services-review/professional-services-review-annual-report-2023-24",
+      "financialStatementsAnchor": "chapter-5:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Professional Services Review",
+      "annualReportTitle": "Professional Services Review Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/professional-services-review/professional-services-review-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

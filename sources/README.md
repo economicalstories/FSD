@@ -5,7 +5,8 @@ folder is produced by the `fsd-fetch-entity` and `fsd-analyse-entity` skills and
 is safe to regenerate at any time:
 
 ```bash
-bash scripts/run_departments.sh
+bash scripts/run_all.sh           # every entity in the register (NCEs + CCEs)
+bash scripts/run_departments.sh   # just the 19 Departments of State
 ```
 
 ## Where it comes from
@@ -25,18 +26,27 @@ CC BY 4.0. Figures are in `$'000` unless stated otherwise.
 sources/
   index.json                  what was fetched (entity → records, periods)
   seed.json                   consolidated seed injected into index.html
+  benchmarks.json             per-group ratio distributions + each entity's rank
   <entity-slug>/
     transparency_raw.json     verbatim API records for the entity
     manifest.json             provenance: periods, content types, backlinks
 ```
 
-## Scope (this pass)
+## Scope
 
-The **19 Departments of State** (including the three Parliamentary departments),
-used to validate the approach before extending to the other ~156 Commonwealth
-entities. Each entity is seeded from the most recent reporting period that has the
-full statement set — generally **2024-25** (2023-24 where 2024-25 is not yet
-published).
+The **whole register** — non-corporate and corporate Commonwealth entities (~169 of
+175 have a complete statement set and are seeded; the rest lack one of the required
+statements for the latest period). Each entity is seeded from the most recent period
+with the full statement set — generally **2024-25** (2023-24 where 2024-25 is not yet
+published). The 19 Departments of State were the first validation pass.
+
+## Relative benchmarking
+
+`benchmarks.json` records, for each comparison group (entity type, and functional
+category) and each ratio, the distribution (min/quartiles/median/max/mean) and every
+entity's **concern rank** (1 = furthest toward the less-favourable tail) and
+percentile. The dashboard computes the same thing live, so indicators are read
+relative to peers rather than against absolute thresholds.
 
 ## Provenance & caveats
 

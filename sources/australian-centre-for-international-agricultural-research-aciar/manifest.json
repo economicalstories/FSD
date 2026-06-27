@@ -1,0 +1,44 @@
+{
+  "registerName": "Australian Centre for International Agricultural Research (ACIAR)",
+  "sourceEntityNames": [
+    "Australian Centre for International Agricultural Research (ACIAR)"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_centre_for_international_agricultural_r_6b3010d",
+  "portfolio": "Foreign Affairs and Trade",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Centre for International Agricultural Research (ACIAR)",
+      "annualReportTitle": "ACIAR Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/australian-centre-for-international-agricultural-research-aciar/aciar-annual-report-2022-23",
+      "financialStatementsAnchor": "part-4-financial-statements-2022-23"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Centre for International Agricultural Research (ACIAR)",
+      "annualReportTitle": "Australian Centre for International Agricultural Research Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/australian-centre-for-international-agricultural-research-aciar/australian-centre-for-international-agricultural-research-annual-report-2023-24",
+      "financialStatementsAnchor": "part-4-financial-statements-2023-24"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Centre for International Agricultural Research (ACIAR)",
+      "annualReportTitle": "Australian Centre for International Agricultural Research Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/australian-centre-for-international-agricultural-research-aciar/australian-centre-for-international-agricultural-research-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

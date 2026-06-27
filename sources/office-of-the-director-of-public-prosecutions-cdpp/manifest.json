@@ -1,0 +1,44 @@
+{
+  "registerName": "Office of the Director of Public Prosecutions (CDPP)",
+  "sourceEntityNames": [
+    "Office of the Director of Public Prosecutions (CDPP)"
+  ],
+  "renamed": false,
+  "entityCodeName": "office_of_the_director_of_public_prosecutions__cdp",
+  "portfolio": "Attorney-General's",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Office of the Director of Public Prosecutions (CDPP)",
+      "annualReportTitle": "Office of the Commonwealth Director of Public Prosecutions Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-director-of-public-prosecutions-cdpp/office-of-the-commonwealth-director-of-public-prosecutions-annual-report-2022-23",
+      "financialStatementsAnchor": "part-3:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Office of the Director of Public Prosecutions (CDPP)",
+      "annualReportTitle": "Office of the Director of Public Prosecutions (Cth) Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-director-of-public-prosecutions-cdpp/office-of-the-director-of-public-prosecutions-cth-annual-report-2023-24",
+      "financialStatementsAnchor": "Part-3:-Financial-Statements/statement-by-the-director-and-chief-financial-officer"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Office of the Director of Public Prosecutions (CDPP)",
+      "annualReportTitle": "Office of the Director of Public Prosecutions (Cth) Annual Report 2024–25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-director-of-public-prosecutions-cdpp/office-of-the-director-of-public-prosecutions-cth-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

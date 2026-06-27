@@ -1,0 +1,58 @@
+{
+  "registerName": "Office of the Special Investigator",
+  "sourceEntityNames": [
+    "Office of the Special Investigator"
+  ],
+  "renamed": false,
+  "entityCodeName": "office_of_the_special_investigator",
+  "portfolio": "Attorney-General's",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 14,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Office of the Special Investigator",
+      "annualReportTitle": "Office of the Special Investigator Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-special-investigator/office-of-the-special-investigator-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Office of the Special Investigator",
+      "annualReportTitle": "Office of the Special Investigator Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-special-investigator/office-of-the-special-investigator-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Office of the Special Investigator",
+      "annualReportTitle": "Office of the Special Investigator Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-special-investigator/office-of-the-special-investigator-annual-report-2022-23",
+      "financialStatementsAnchor": "part-5-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Office of the Special Investigator",
+      "annualReportTitle": "Office of the Special Investigator Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-special-investigator/office-of-the-special-investigator-annual-report-2023-24",
+      "financialStatementsAnchor": "part-5-financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Office of the Special Investigator",
+      "annualReportTitle": "Office of the Special Investigator Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/office-of-the-special-investigator/office-of-the-special-investigator-annual-report-2024-25",
+      "financialStatementsAnchor": "part-5-financial-statements-"
+    }
+  ]
+}

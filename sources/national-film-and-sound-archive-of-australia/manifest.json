@@ -1,0 +1,70 @@
+{
+  "registerName": "National Film and Sound Archive of Australia",
+  "sourceEntityNames": [
+    "National Film and Sound Archive of Australia"
+  ],
+  "renamed": false,
+  "entityCodeName": "national_film_and_sound_archive_of_australia",
+  "portfolio": "Communications and the Arts",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive of Australia Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-of-australia-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive of Australia Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-of-australia-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive of Australia Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-of-australia-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive of Australia Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-of-australia-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-2022-23",
+      "financialStatementsAnchor": "section-two:-our-performance"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-annual-report-2023-24",
+      "financialStatementsAnchor": "section-two:-our-performance"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "National Film and Sound Archive of Australia",
+      "annualReportTitle": "National Film and Sound Archive of Australia Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/national-film-and-sound-archive-of-australia/national-film-and-sound-archive-of-australia-annual-report-2024-25",
+      "financialStatementsAnchor": "section-two:-our-performance"
+    }
+  ]
+}

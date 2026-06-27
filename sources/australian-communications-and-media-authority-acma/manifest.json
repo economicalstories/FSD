@@ -1,0 +1,44 @@
+{
+  "registerName": "Australian Communications and Media Authority (ACMA)",
+  "sourceEntityNames": [
+    "Australian Communications and Media Authority (ACMA)"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_communications_and_media_authority__acm",
+  "portfolio": "Communications and the Arts",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Communications and Media Authority (ACMA)",
+      "annualReportTitle": "Australian Communications and Media Authority and eSafety Commissioner annual report 2022–23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-communications-and-media-authority-acma/australian-communications-and-media-authority-and-esafety-commissioner-annual-report-2022-23",
+      "financialStatementsAnchor": "Part-1---Appendices/appendix-1.14:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Communications and Media Authority (ACMA)",
+      "annualReportTitle": "Australian Communications and Media Authority and eSafety Commissioner annual report 2023–24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-communications-and-media-authority-acma/australian-communications-and-media-authority-and-esafety-commissioner-annual-report-2023-24",
+      "financialStatementsAnchor": "Part-1---Appendices/appendix-1.14:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Communications and Media Authority (ACMA)",
+      "annualReportTitle": "Australian Communications and Media Authority (ACMA) Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-communications-and-media-authority-acma/australian-communications-and-media-authority-acma-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

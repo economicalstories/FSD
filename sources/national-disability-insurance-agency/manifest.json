@@ -1,0 +1,49 @@
+{
+  "registerName": "National Disability Insurance Agency",
+  "sourceEntityNames": [
+    "National Disability Insurance Agency"
+  ],
+  "renamed": false,
+  "entityCodeName": "national_disability_insurance_agency",
+  "portfolio": "Health, Disability and Ageing",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 10,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "National Disability Insurance Agency",
+      "annualReportTitle": "National Disability Insurance Agency Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/social-services/national-disability-insurance-agency/national-disability-insurance-agency-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "National Disability Insurance Agency",
+      "annualReportTitle": "National Disability Insurance Agency Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/social-services/national-disability-insurance-agency/national-disability-insurance-agency-annual-report-2022-23",
+      "financialStatementsAnchor": "2.-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "National Disability Insurance Agency",
+      "annualReportTitle": "National Disability Insurance Agency Annual Report 2023-24\n",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/national-disability-insurance-agency/national-disability-insurance-agency-annual-report-2023-24",
+      "financialStatementsAnchor": "2.-ndia-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "National Disability Insurance Agency",
+      "annualReportTitle": "National Disability Insurance Agency Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/national-disability-insurance-agency/national-disability-insurance-agency-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

@@ -26,9 +26,10 @@ public structural information or real, sourced figures:
 
 - the entity register (names, portfolios, governance flags) from the Flipchart;
 - the indicator definitions (formulas, the exact financial-statement line items, illustrative thresholds); and
-- **real audited financial figures for the 19 Departments of State**, downloaded from the
-  [Transparency Portal](https://www.transparency.gov.au/) and pre-loaded with a backlink to the exact
-  annual-report financial statements each figure came from (see [Data pipeline](#data-pipeline-fetch--analyse)).
+- **real audited financial figures for ~169 Commonwealth entities** (non-corporate and corporate),
+  downloaded from the [Transparency Portal](https://www.transparency.gov.au/) and pre-loaded with a
+  backlink to the exact annual-report financial statements each figure came from
+  (see [Data pipeline](#data-pipeline-fetch--analyse)).
 
 Every quantitative value is either pre-loaded from a cited public source, entered by the user from a
 cited public source, or left blank with a link to where that figure is published. Seeded figures are
@@ -44,21 +45,28 @@ User-entered figures and analyst notes are stored **locally in the browser only*
 ## Features
 
 - **Period selection** — day / month / year (annual is the primary audited cycle).
-- **Entity selection** — search and filter all 175 entities by portfolio and type.
-- **Ratio indicators** — Days Operating Cash on Hand, Capital Sustainability, Liquidity, Total
-  Liabilities/Total Assets, Financial Assets/Total Liabilities, Capital Turnover, Current Ratio. Each
-  states its formula, maps inputs to financial-statement line items, computes on entry, and flags
-  against *illustrative* thresholds.
-- **Trend indicators** — cash reserves, employee expenses as % of revenue, operating result, and
-  staffing levels, with multi-year sparklines.
-- **Forecast accuracy (MAPE)**, budget / terminating-funding / audit prompts, and **peer comparison**
-  by portfolio, entity type, GFS classification, materiality or function.
+- **Entity selection** — search and filter all 175 entities by **entity type** (corporate /
+  non-corporate), **like-for-like category** (department, regulator, RDC, cultural body, …), and portfolio.
+- **Relative (peer-benchmarked) indicators** — instead of pass/fail thresholds, each ratio is read
+  against the **distribution of its peers** in the selected comparison group. Every indicator card shows
+  the entity's value, its rank (*n of N from the less-favourable end*) and a distribution strip (this
+  entity vs the peer median and middle-50%). This avoids blanket-labelling whole classes of entity (e.g.
+  departments, which all hold little cash, are no longer all flagged on liquidity).
+- **Peer ranking** — a league table of the comparison group ordered by a composite of relative standing,
+  surfacing *who is first* for attention **without objectively labelling anyone**.
+- **Ratio indicators** — Liquidity, Total Liabilities/Total Assets, Financial Assets/Total Liabilities,
+  Capital Turnover, Current Ratio (computed from audited statements), plus Days Operating Cash on Hand
+  and Capital Sustainability (need note-level lease figures — left for manual entry).
+- **Trend indicators** — cash reserves, employee expenses as % of revenue, operating result, with
+  multi-year sparklines.
+- **Forecast accuracy (MAPE)**, budget / terminating-funding / audit prompts.
 - **Qualitative insights** — analyst commentary to distinguish signal from noise.
 - **Data quality & provenance** panel with explicit limitations (timeliness, comparability, data gaps).
 
 ## Design principles encoded
 
-No single indicator is determinative; flags prompt investigation, never conclude; thresholds are
+Indicators are relative to peers, never absolute pass/fail; no single indicator is determinative;
+a high rank prompts investigation, never concludes; comparisons are like-for-like; thresholds are
 illustrative defaults, not endorsed benchmarks; and corporate trading bodies are compared with peers,
 not departments.
 
@@ -69,14 +77,16 @@ Real data is populated by two chained, reusable skills under `.claude/skills/`:
 1. **`fsd-fetch-entity`** — searches and downloads an entity's annual-report financial-statement
    extracts from the Transparency Portal data API into `sources/<entity>/`, with a provenance
    manifest of periods and backlinks. No transformation.
-2. **`fsd-analyse-entity`** — loads that data, picks the latest period with the full statement set,
-   maps each line item to the dashboard's ratio inputs, computes multi-year trends, records
-   per-figure provenance, and injects the seed into `index.html`.
+2. **`fsd-analyse-entity`** — loads that data (non-corporate and corporate), picks the latest period
+   with the full statement set, maps each line item to the dashboard's ratio inputs, computes
+   multi-year trends, **benchmarks each ratio across every comparison group**, records per-figure
+   provenance, and injects the seed into `index.html` (and writes `sources/benchmarks.json`).
 
-Run the whole chain for all Departments of State:
+Run the whole chain across the full register (NCEs + CCEs):
 
 ```bash
-bash scripts/run_departments.sh
+bash scripts/run_all.sh           # every entity
+bash scripts/run_departments.sh   # just the 19 Departments of State
 ```
 
 …or one entity at a time:
@@ -87,12 +97,13 @@ python3 .claude/skills/fsd-analyse-entity/analyse.py "Department of the Treasury
 ```
 
 Downloaded data and provenance live under [`sources/`](sources/README.md). The Departments of State
-are the first validation pass; the same pipeline extends to the remaining Commonwealth entities.
+were the first validation pass; the pipeline now covers the whole register.
 
-Five ratios per department are computed directly from the audited statements (Total liabilities/Total
+Five ratios per entity are computed directly from the audited statements (Total liabilities/Total
 assets, Financial assets/Total liabilities, Current ratio, Capital turnover, Liquidity). Two ratios
 that require note-level lease figures absent from the extracts (Days Operating Cash on Hand, Capital
-Sustainability) are left blank for manual entry rather than estimated.
+Sustainability) are left blank for manual entry rather than estimated. Each indicator is then read
+**relative to the entity's peer group**, not against a fixed threshold.
 
 ## Sources
 

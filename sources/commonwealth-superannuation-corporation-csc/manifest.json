@@ -1,0 +1,42 @@
+{
+  "registerName": "Commonwealth Superannuation Corporation (CSC)",
+  "sourceEntityNames": [
+    "Commonwealth Superannuation Corporation (CSC)"
+  ],
+  "renamed": false,
+  "entityCodeName": "commonwealth_superannuation_corporation__csc_",
+  "portfolio": "Finance",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Commonwealth Superannuation Corporation (CSC)",
+      "annualReportTitle": "Commonwealth Superannuation Corporation Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/finance/commonwealth-superannuation-corporation-csc/commonwealth-superannuation-corporation-annual-report-2022-23",
+      "financialStatementsAnchor": "2.-Our-Performance/csc’s-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Commonwealth Superannuation Corporation (CSC)",
+      "annualReportTitle": "Commonwealth Superannuation Corporation Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/finance/commonwealth-superannuation-corporation-csc/commonwealth-superannuation-corporation-annual-report-2023-24",
+      "financialStatementsAnchor": "2.-Our-Performance/csc’s-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Commonwealth Superannuation Corporation (CSC)",
+      "annualReportTitle": "Commonwealth Superannuation Corporation Annual Report 2024–25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/finance/commonwealth-superannuation-corporation-csc/commonwealth-superannuation-corporation-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

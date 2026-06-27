@@ -1,0 +1,65 @@
+{
+  "registerName": "Australian Research Council",
+  "sourceEntityNames": [
+    "Australian Research Council"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_research_council",
+  "portfolio": "Education",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 15,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Australian Research Council",
+      "annualReportTitle": "Australian Research Council Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/australian-research-council/australian-research-council-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Australian Research Council",
+      "annualReportTitle": "Australian Research Council Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/australian-research-council/australian-research-council-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Australian Research Council",
+      "annualReportTitle": "Australian Research Council Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/australian-research-council/australian-research-council-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Research Council",
+      "annualReportTitle": "Australian Research Council Annual Report 2022–23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education/australian-research-council/australian-research-council-annual-report-2022-23",
+      "financialStatementsAnchor": "part-5:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Research Council",
+      "annualReportTitle": "Australian Research Council Annual Report 2023–24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education/australian-research-council/australian-research-council-annual-report-2023-24",
+      "financialStatementsAnchor": "part-4:-financial-performance-and-reporting"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Research Council",
+      "annualReportTitle": "Australian Research Council Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/education/australian-research-council/australian-research-council-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "registerName": "Australian National Maritime Museum",
+  "sourceEntityNames": [
+    "Australian National Maritime Museum"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_national_maritime_museum",
+  "portfolio": "Communications and the Arts",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Australian National Maritime Museum",
+      "annualReportTitle": "Australian National Maritime Museum Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/australian-national-maritime-museum/australian-national-maritime-museum-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Australian National Maritime Museum",
+      "annualReportTitle": "Australian National Maritime Museum Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/australian-national-maritime-museum/australian-national-maritime-museum-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Australian National Maritime Museum",
+      "annualReportTitle": "Australian National Maritime Museum Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/australian-national-maritime-museum/australian-national-maritime-museum-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Australian National Maritime Museum",
+      "annualReportTitle": "Australian National Maritime Museum Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/australian-national-maritime-museum/australian-national-maritime-museum-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian National Maritime Museum",
+      "annualReportTitle": "Australian National Maritime Museum Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-national-maritime-museum/australian-national-maritime-museum-annual-report-2022-23",
+      "financialStatementsAnchor": "performance-statement-2022-23"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian National Maritime Museum",
+      "annualReportTitle": "Australian National Maritime Museum Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-national-maritime-museum/australian-national-maritime-museum-annual-report-2023-24",
+      "financialStatementsAnchor": "annual-performance-statement"
+    }
+  ]
+}

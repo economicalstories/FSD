@@ -1,0 +1,63 @@
+{
+  "registerName": "Infrastructure Australia",
+  "sourceEntityNames": [
+    "Infrastructure Australia"
+  ],
+  "renamed": false,
+  "entityCodeName": "infrastructure_australia",
+  "portfolio": "Infrastructure, Transport, Cities and Regional Development",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Infrastructure Australia",
+      "annualReportTitle": "Infrastructure Australia Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/infrastructure-australia/infrastructure-australia-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Infrastructure Australia",
+      "annualReportTitle": "Infrastructure Australia Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/infrastructure-australia/infrastructure-australia-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Infrastructure Australia",
+      "annualReportTitle": "Infrastructure Australia Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-and-communications/infrastructure-australia/infrastructure-australia-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Infrastructure Australia",
+      "annualReportTitle": "Annual Report\nInfrastructure Australia Report to Parliament 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-cities-and-regional-development/infrastructure-australia/annual-report-infrastructure-australia-report-to-parliament-2022-23",
+      "financialStatementsAnchor": "Overview/annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Infrastructure Australia",
+      "annualReportTitle": "2023-24 \nAnnual Report",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-cities-and-regional-development/infrastructure-australia/2023-24-annual-report",
+      "financialStatementsAnchor": "overview"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Infrastructure Australia",
+      "annualReportTitle": "Infrastructure Australia Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-cities-and-regional-development/infrastructure-australia/infrastructure-australia-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

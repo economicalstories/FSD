@@ -35,16 +35,16 @@ It returns `{ "entityData": [ <record>, ... ] }`. Each record has `datafields`
 `$'000`), plus `contentType`, `entity`, `reportingPeriod`, and the backlinks
 `annualReportUrl` / `annualReportTitle` / `datasetUrl`.
 
-The departmental financial-statement datasets fetched are:
+The financial-statement datasets fetched (both non-corporate **and** corporate
+variants are requested; the API returns whichever exist for the entity):
 
 | Codename | Statement |
 |---|---|
-| `extract_dept__statement_of_comp_income___nce_23_24` | Statement of Comprehensive Income (departmental) |
-| `extract_of_statement_of_financial_position_____cop` | Statement of Financial Position (multi-year) |
-| `extract_of_cash_flow_statement___nce_23_24_` | Cash Flow Statement (departmental) |
-| `dept__current_distinction___assets_and_liab__nce_23_24` | Current/non-current assets & liabilities |
-| `extract_of_admin__statement_of_comp__income_nce_23_24` | Statement of Comprehensive Income (administered) |
-| `extract_admin__of_assets_and_liabilities_nce_23_24` | Administered assets & liabilities |
+| `extract_dept__statement_of_comp_income___nce_23_24` / `…___cce_23_24` | Statement of Comprehensive Income |
+| `extract_of_statement_of_financial_position_____cop` / `…___cce` | Statement of Financial Position (multi-year) |
+| `extract_of_cash_flow_statement___nce_23_24_` / `extract_of_dept_cash_flow_statement_cce_23_24` | Cash Flow Statement |
+| `dept__current_distinction___assets_and_liab__nce_23_24` / `…__cce_23_24` | Current/non-current assets & liabilities |
+| `extract_of_admin__statement_of_comp__income_nce_23_24`, `extract_admin__of_assets_and_liabilities_nce_23_24` | Administered statements (NCE) |
 
 ## Run it
 
@@ -54,6 +54,9 @@ python3 .claude/skills/fsd-fetch-entity/fetch.py "Department of the Treasury"
 
 # All 19 Departments of State (incl. parliamentary departments)
 python3 .claude/skills/fsd-fetch-entity/fetch.py --departments
+
+# Every entity in the register — NCEs and CCEs (~175)
+python3 .claude/skills/fsd-fetch-entity/fetch.py --all
 ```
 
 ## Output

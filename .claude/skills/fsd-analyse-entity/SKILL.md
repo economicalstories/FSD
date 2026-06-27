@@ -2,17 +2,28 @@
 name: fsd-analyse-entity
 description: >-
   Load downloaded Transparency Portal data from sources/, map it to the Financial
-  Stability Dashboard's indicators, compute the ratios and trends, and inject the
-  seed into index.html with per-figure backlinks. Use after fsd-fetch-entity has
-  downloaded an entity's data. Step 2 of the fetch→analyse pipeline.
+  Stability Dashboard's indicators, compute the ratios, trends and peer benchmarks,
+  and inject the seed into index.html with per-figure backlinks. Use after
+  fsd-fetch-entity has downloaded an entity's data. Step 2 of the fetch→analyse pipeline.
 ---
 
-# fsd-analyse-entity — load & analyse an entity's data into the dashboard
+# fsd-analyse-entity — load, analyse & benchmark an entity's data
 
 Reads the raw financial-statement extracts that `fsd-fetch-entity` saved under
-`sources/`, maps each line item to the dashboard's ratio inputs, computes
-multi-year trends, and injects a **seed** block into `index.html` so the dashboard
-ships pre-loaded with real, sourced figures. Step 2 of the pipeline.
+`sources/`, maps each line item to the dashboard's ratio inputs (for non-corporate
+**and** corporate entities), computes multi-year trends, works out the
+**distribution of each ratio within each comparison group**, and injects a **seed**
+block into `index.html` so the dashboard ships pre-loaded with real, sourced figures
+that are ranked relative to peers rather than against fixed thresholds. Step 2 of
+the pipeline.
+
+## NCE vs CCE
+
+Corporate entities publish the same statements under different content-type
+codenames, with minor field-name differences (a trailing space in the cash key,
+`used operating act.` vs `used for operating act.`) and **negative** signs on
+cash outflows. The mapping accepts both name variants and takes flow figures as
+**magnitudes**, so one code path handles every entity.
 
 ## What it does
 
@@ -38,8 +49,21 @@ ships pre-loaded with real, sourced figures. Step 2 of the pipeline.
    columns of each statement.
 4. **Record provenance** for every seeded figure (line item, statement, period,
    backlink) so each value clicks through to its audited source.
-5. **Inject** the consolidated seed into `index.html` between
+5. **Benchmark.** For each comparison group (entity type, and functional category)
+   and each ratio, compute the distribution (min/quartiles/median/max/mean) and
+   each entity's relative standing — a **concern rank** (1 = furthest toward the
+   less-favourable tail) and percentile. Written to `sources/benchmarks.json`.
+6. **Inject** the consolidated seed into `index.html` between
    `<!--SEED-START-->` / `<!--SEED-END-->` and write `sources/seed.json`.
+
+## Relative, not absolute
+
+The dashboard reads every indicator **relative to peers** in the selected group
+(default: the entity's own like-for-like category), so a whole class of entity is
+never blanket-labelled. The dashboard computes this live from the working store
+(so it reflects edits and group changes); `benchmarks.json` is the same computation
+captured for transparency/validation. Direction per ratio: lower-is-healthier
+(`lta`), higher-is-healthier (`fatl`, `cur`, `liq`), or band/outlier (`cto`).
 
 ## Run it
 
