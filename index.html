@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonwealth Entity Financial Stability — Early Warning Dashboard (Prototype)</title>
+<meta name="description" content="Prototype early-warning framework for monitoring financial sustainability of Australian Commonwealth non-corporate and corporate entities. Demo only — every figure links to its public source.">
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   Palette: institutional blue-grey ground, deep teal accent,
+   semantic good/warn/critical kept distinct from the accent.
+   ============================================================ */
+:root{
+  --ground:#eef1f5;
+  --panel:#ffffff;
+  --panel-2:#f7f9fb;
+  --ink:#1b2330;
+  --ink-soft:#3a4456;
+  --muted:#5d6675;
+  --faint:#8b93a1;
+  --hair:#e2e6ec;
+  --hair-strong:#cdd4de;
+  --accent:#0e5a6b;        /* deep institutional teal */
+  --accent-ink:#0a4250;
+  --accent-wash:#e3eef0;
+  --good:#2f7a52;
+  --good-wash:#e7f2ec;
+  --warn:#9a6512;
+  --warn-wash:#f7eed9;
+  --crit:#a8362b;
+  --crit-wash:#f6e3e1;
+  --nodata:#7a828f;
+  --nodata-wash:#eef0f3;
+  --shadow:0 1px 2px rgba(20,30,48,.06),0 2px 8px rgba(20,30,48,.05);
+  --radius:7px;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--sans);font-size:15px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;font-weight:600;text-wrap:balance;line-height:1.2}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit;font-size:inherit;cursor:pointer}
+.tnum{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+.eyebrow{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:600}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+/* ---------- Prototype banner ---------- */
+.protobar{
+  background:repeating-linear-gradient(135deg,#7a1f17 0 14px,#8c241b 14px 28px);
+  color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;
+  padding:7px 18px;text-align:center;position:sticky;top:0;z-index:50;
+  display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;
+}
+.protobar strong{text-transform:uppercase;letter-spacing:.08em}
+.protobar span{font-weight:400;opacity:.92}
+
+/* ---------- Masthead ---------- */
+header.mast{
+  background:linear-gradient(180deg,#0c3a47 0%,#0e5a6b 100%);
+  color:#eaf3f4;padding:22px 26px 20px;
+}
+.mast-wrap{max-width:1320px;margin:0 auto}
+.mast h1{font-family:var(--serif);font-size:25px;color:#fff;letter-spacing:.1px}
+.mast .sub{margin-top:5px;color:#bcd6da;font-size:14px;max-width:74ch}
+.mast .crest{font-family:var(--serif);font-size:12px;color:#9fc3c8;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.mast-meta{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.mast-meta a, .mast-meta span.src{
+  font-size:12px;background:rgba(255,255,255,.10);color:#dceef0;
+  padding:4px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.16);
+}
+.mast-meta a:hover{background:rgba(255,255,255,.2);text-decoration:none}
+
+/* ---------- Layout ---------- */
+.shell{max-width:1320px;margin:0 auto;padding:18px 18px 60px;display:grid;
+  grid-template-columns:288px 1fr;gap:18px;align-items:start}
+@media(max-width:940px){.shell{grid-template-columns:1fr}}
+
+/* ---------- Control rail ---------- */
+.rail{position:sticky;top:46px;background:var(--panel);border:1px solid var(--hair);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:18px}
+@media(max-width:940px){.rail{position:static}}
+.ctl label.lbl{display:block;margin-bottom:6px}
+.ctl select,.ctl input[type=text]{
+  width:100%;padding:8px 9px;border:1px solid var(--hair-strong);border-radius:6px;
+  background:var(--panel-2);font-size:13.5px;color:var(--ink);font-family:inherit;
+}
+.seg{display:flex;border:1px solid var(--hair-strong);border-radius:6px;overflow:hidden}
+.seg button{flex:1;border:0;background:var(--panel-2);padding:7px 4px;font-size:12.5px;color:var(--muted);font-weight:500}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff}
+.seg button+button{border-left:1px solid var(--hair-strong)}
+.rail .hint{font-size:11.5px;color:var(--faint);margin-top:5px;line-height:1.4}
+.entity-list{max-height:280px;overflow:auto;border:1px solid var(--hair);border-radius:6px;margin-top:8px}
+.entity-list button{display:block;width:100%;text-align:left;border:0;background:transparent;
+  padding:7px 10px;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--hair)}
+.entity-list button:last-child{border-bottom:0}
+.entity-list button:hover{background:var(--panel-2)}
+.entity-list button[aria-current=true]{background:var(--accent-wash);color:var(--accent-ink);font-weight:600}
+.entity-list .ec-type{font-size:10px;color:var(--faint);float:right;font-weight:600;letter-spacing:.04em}
+.rail-count{font-size:11.5px;color:var(--faint)}
+
+/* ---------- Main ---------- */
+main{display:flex;flex-direction:column;gap:18px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow)}
+.card>.hd{padding:14px 18px;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.card>.hd h2{font-size:15.5px}
+.card>.hd .note{font-size:12px;color:var(--faint)}
+.card>.bd{padding:18px}
+
+/* Entity summary */
+.esum .nm{font-family:var(--serif);font-size:23px;line-height:1.15}
+.esum .port{color:var(--muted);font-size:13.5px;margin-top:3px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.chip{font-size:11.5px;padding:3px 9px;border-radius:5px;border:1px solid var(--hair-strong);
+  background:var(--panel-2);color:var(--ink-soft);white-space:nowrap}
+.chip.type{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.chip.type.cce{background:#5b3a8c;border-color:#5b3a8c}
+.chip[data-tip]{cursor:help;border-bottom-style:dotted}
+.srclinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.srcbtn{font-size:12px;padding:6px 11px;border-radius:6px;border:1px solid var(--hair-strong);
+  background:var(--panel-2);color:var(--accent-ink);font-weight:500;display:inline-flex;gap:6px;align-items:center}
+.srcbtn:hover{background:var(--accent-wash);text-decoration:none}
+.srcbtn::after{content:"↗";font-size:10px;opacity:.6}
+
+/* Risk overview */
+.riskstrip{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.riskbadge{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border-radius:8px;min-width:150px}
+.riskbadge .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;opacity:.8}
+.riskbadge .v{font-size:26px;font-weight:700;font-family:var(--mono)}
+.rb-nodata{background:var(--nodata-wash);color:var(--ink-soft)}
+.rb-good{background:var(--good-wash);color:var(--good)}
+.rb-warn{background:var(--warn-wash);color:var(--warn)}
+.rb-crit{background:var(--crit-wash);color:var(--crit)}
+
+/* Indicator grid */
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.ind{border:1px solid var(--hair);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;border-left:4px solid var(--nodata)}
+.ind.s-good{border-left-color:var(--good)}
+.ind.s-warn{border-left-color:var(--warn)}
+.ind.s-crit{border-left-color:var(--crit)}
+.ind .ihd{padding:11px 13px;background:var(--panel-2);border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.ind .ihd h3{font-size:13.5px;line-height:1.25}
+.ind .ihd .unit{font-size:11px;color:var(--faint);margin-top:2px}
+.statepill{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:20px;white-space:nowrap;text-transform:uppercase}
+.sp-nodata{background:var(--nodata-wash);color:var(--nodata)}
+.sp-good{background:var(--good-wash);color:var(--good)}
+.sp-warn{background:var(--warn-wash);color:var(--warn)}
+.sp-crit{background:var(--crit-wash);color:var(--crit)}
+.ind .ibd{padding:12px 13px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ind .val{font-size:30px;font-weight:700;font-family:var(--mono);line-height:1;color:var(--ink)}
+.ind .val .nd{font-size:14px;color:var(--faint);font-weight:500}
+.formula{font-size:11.5px;color:var(--muted);background:var(--panel-2);border:1px dashed var(--hair-strong);
+  border-radius:5px;padding:7px 9px;line-height:1.45}
+.formula b{color:var(--ink-soft);font-weight:600}
+.inputs{display:flex;flex-direction:column;gap:6px}
+.inrow{display:grid;grid-template-columns:1fr 96px;gap:8px;align-items:center}
+.inrow label{font-size:11.5px;color:var(--ink-soft)}
+.inrow label .li{display:block;font-size:10px;color:var(--faint)}
+.inrow input{padding:5px 7px;border:1px solid var(--hair-strong);border-radius:5px;font-family:var(--mono);
+  font-size:12.5px;text-align:right;background:var(--panel)}
+.ind .ftr{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:4px}
+.ind .interp{font-size:11.5px;color:var(--muted);line-height:1.4}
+.thresh{font-size:10.5px;color:var(--faint);border-top:1px dotted var(--hair-strong);padding-top:7px}
+.linkmini{font-size:11.5px}
+
+/* Trend cards */
+.trends{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.trend{border:1px solid var(--hair);border-radius:8px;padding:13px}
+.trend h3{font-size:13.5px}
+.trend .desc{font-size:11.5px;color:var(--muted);margin:4px 0 10px}
+.spark{width:100%;height:64px;display:block;background:var(--panel-2);border:1px solid var(--hair);border-radius:5px}
+.serieswrap{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.yrcell{display:flex;flex-direction:column;gap:2px;width:62px}
+.yrcell label{font-size:10px;color:var(--faint);text-align:center}
+.yrcell input{width:100%;padding:4px;border:1px solid var(--hair-strong);border-radius:4px;font-family:var(--mono);font-size:11.5px;text-align:right}
+.trend .readout{font-size:12px;margin-top:8px;color:var(--ink-soft)}
+.delta-up{color:var(--good);font-weight:600}
+.delta-dn{color:var(--crit);font-weight:600}
+
+/* Generic table */
+.tbl-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--hair);white-space:nowrap}
+th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);font-weight:600;position:sticky;top:0;background:var(--panel)}
+td.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr.peer-self{background:var(--accent-wash)}
+tr.peer-self td:first-child{font-weight:700}
+.minit{font-size:10px;padding:2px 6px;border-radius:4px;background:var(--panel-2);border:1px solid var(--hair);color:var(--muted)}
+
+/* Notes */
+.notes textarea{width:100%;min-height:90px;padding:10px;border:1px solid var(--hair-strong);border-radius:6px;
+  font-family:inherit;font-size:13.5px;resize:vertical;background:var(--panel-2)}
+.noteline{display:flex;gap:10px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.noteline input{flex:1;min-width:140px;padding:7px;border:1px solid var(--hair-strong);border-radius:6px;font-family:inherit}
+.btn{background:var(--accent);color:#fff;border:0;padding:8px 14px;border-radius:6px;font-weight:600;font-size:13px}
+.btn:hover{background:var(--accent-ink)}
+.btn.ghost{background:var(--panel-2);color:var(--accent-ink);border:1px solid var(--hair-strong)}
+.savednotes{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.savednote{border:1px solid var(--hair);border-radius:6px;padding:10px 12px;background:var(--panel-2);font-size:13px}
+.savednote .meta{font-size:11px;color:var(--faint);margin-top:5px}
+.savednote button{border:0;background:transparent;color:var(--crit);font-size:11px;float:right}
+
+/* Data quality / provenance */
+.dq{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.dq .box{border:1px solid var(--hair);border-radius:7px;padding:13px;background:var(--panel-2)}
+.dq h4{font-size:12.5px;margin-bottom:7px;color:var(--accent-ink)}
+.dq ul{margin:0;padding-left:17px;font-size:12px;color:var(--muted);line-height:1.55}
+.dqflag{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:5px}
+.dqflag.amber{background:var(--warn-wash);color:var(--warn)}
+.dqflag.grey{background:var(--nodata-wash);color:var(--nodata)}
+
+.section-intro{font-size:13px;color:var(--muted);margin:-4px 0 0;max-width:80ch;line-height:1.5}
+.empty{color:var(--faint);font-size:13px;font-style:italic}
+footer{max-width:1320px;margin:0 auto;padding:26px 20px 50px;color:var(--muted);font-size:12px;line-height:1.6}
+footer a{color:var(--accent-ink)}
+.tooltip{position:fixed;z-index:99;background:var(--ink);color:#fff;font-size:11.5px;padding:6px 9px;border-radius:5px;
+  max-width:260px;line-height:1.4;pointer-events:none;opacity:0;transition:opacity .12s;box-shadow:var(--shadow)}
+hr.soft{border:0;border-top:1px solid var(--hair);margin:6px 0}
+.kbd{font-family:var(--mono);font-size:11px;background:var(--panel-2);border:1px solid var(--hair-strong);border-radius:4px;padding:1px 5px}
+</style>
+</head>
+<body>
+
+<div class="protobar">
+  <strong>⚠ Prototype demonstration only</strong>
+  <span>This is a non-production demo. It is <b>not</b> to be relied upon for any purpose. No automated assessment, ranking or conclusion here is authoritative.</span>
+</div>
+
+<header class="mast">
+  <div class="mast-wrap">
+    <div class="crest">Commonwealth of Australia · PGPA Act portfolio monitoring</div>
+    <h1>Financial Stability — Early Warning Dashboard</h1>
+    <p class="sub">A prototype framework for proactively monitoring the financial sustainability of Australian Government
+      <b>non-corporate</b> and <b>corporate</b> Commonwealth entities — surfacing leading indicators of financial pressure
+      for earlier, targeted engagement rather than reactive crisis management.</p>
+    <div class="mast-meta">
+      <span class="src">Entity register: Dept. of Finance Flipchart, 1 March 2024</span>
+      <a href="https://www.finance.gov.au/about-us/glossary/pgpa/flipchart-pgpa-act-commonwealth-entities-and-companies" target="_blank" rel="noopener">Flipchart source ↗</a>
+      <a href="https://www.transparency.gov.au/publications" target="_blank" rel="noopener">Annual reports & financial statements ↗</a>
+      <a href="https://www.transparency.gov.au/" target="_blank" rel="noopener">Transparency Portal — financial ratios ↗</a>
+      <a href="https://www.anao.gov.au/pubs/financial-statement-audit" target="_blank" rel="noopener">ANAO financial-statement audits ↗</a>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <!-- CONTROL RAIL -->
+  <aside class="rail" aria-label="Controls">
+    <div class="ctl">
+      <span class="eyebrow">Reporting period</span>
+      <div class="seg" id="periodSeg" role="group" aria-label="Period granularity" style="margin-top:7px">
+        <button data-period="day" aria-pressed="false">Day</button>
+        <button data-period="month" aria-pressed="false">Month</button>
+        <button data-period="year" aria-pressed="true">Year</button>
+      </div>
+      <p class="hint" id="periodHint"></p>
+    </div>
+
+    <div class="ctl">
+      <label class="lbl eyebrow" for="periodValue">As-at / period</label>
+      <input type="text" id="periodValue" />
+      <p class="hint">Most Commonwealth financial data is published <b>annually</b> (audited) with limited
+        in-year data. Day/month views frame cash-flow-style monitoring where higher-frequency data exists.</p>
+    </div>
+
+    <hr class="soft">
+
+    <div class="ctl">
+      <label class="lbl eyebrow" for="fPortfolio">Portfolio</label>
+      <select id="fPortfolio"><option value="">All portfolios</option></select>
+    </div>
+
+    <div class="ctl">
+      <span class="eyebrow">Entity type</span>
+      <div class="seg" id="typeSeg" role="group" aria-label="Entity type" style="margin-top:7px">
+        <button data-type="" aria-pressed="true">All</button>
+        <button data-type="NCE" aria-pressed="false">Non-corp.</button>
+        <button data-type="CCE" aria-pressed="false">Corporate</button>
+      </div>
+    </div>
+
+    <div class="ctl">
+      <label class="lbl eyebrow" for="fSearch">Find entity</label>
+      <input type="text" id="fSearch" placeholder="Search 175 entities…" autocomplete="off">
+      <div class="entity-list" id="entityList" role="listbox" aria-label="Entities"></div>
+      <p class="rail-count" id="railCount"></p>
+    </div>
+
+    <hr class="soft">
+
+    <div class="ctl">
+      <label class="lbl eyebrow" for="peerBasis">Peer-comparison basis</label>
+      <select id="peerBasis">
+        <option value="portfolio">Same portfolio</option>
+        <option value="type">Same entity type (corp / non-corp)</option>
+        <option value="gfs">Same GFS classification</option>
+        <option value="material">Same materiality class</option>
+        <option value="function">Similar function (regulator / RDC / cultural / land council …)</option>
+      </select>
+      <p class="hint">Peer groups are built from <b>public structural attributes</b> in the Flipchart.
+        Financial peer values must be loaded from each peer's own published statements.</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Entity summary -->
+    <section class="card esum" id="esum">
+      <div class="bd"><p class="empty">Select an entity from the left to begin.</p></div>
+    </section>
+
+    <!-- Risk overview -->
+    <section class="card" id="riskCard" hidden>
+      <div class="hd"><h2>Risk overview</h2><span class="note">Counts reflect only indicators you have populated from source.</span></div>
+      <div class="bd"><div class="riskstrip" id="riskStrip"></div></div>
+    </section>
+
+    <!-- Ratio indicators -->
+    <section class="card" id="ratioCard" hidden>
+      <div class="hd">
+        <h2>Ratio-based indicators</h2>
+        <span class="note">Enter real figures from the linked financial statements — nothing is pre-filled.</span>
+      </div>
+      <div class="bd">
+        <p class="section-intro">Each indicator states its formula and the exact financial-statement line items it draws on.
+          Enter the published values to compute the ratio and its illustrative flag. <b>No single indicator is determinative</b> —
+          read every result against entity size, function, funding model and operating environment.</p>
+        <div class="igrid" id="igrid" style="margin-top:14px"></div>
+      </div>
+    </section>
+
+    <!-- Trend indicators -->
+    <section class="card" id="trendCard" hidden>
+      <div class="hd"><h2>Trend-based indicators</h2><span class="note">Multi-year — enter values from successive annual reports.</span></div>
+      <div class="bd"><div class="trends" id="trends"></div></div>
+    </section>
+
+    <!-- Other indicators: forecast accuracy, budget, terminating funding, audit -->
+    <section class="card" id="otherCard" hidden>
+      <div class="hd"><h2>Forecast accuracy, budget &amp; audit signals</h2></div>
+      <div class="bd" id="otherBody"></div>
+    </section>
+
+    <!-- Peer comparison -->
+    <section class="card" id="peerCard" hidden>
+      <div class="hd"><h2>Peer comparison</h2><span class="note" id="peerNote"></span></div>
+      <div class="bd">
+        <p class="section-intro">Peers are grouped by the selected public structural attribute. Each peer links to its own
+          source data. Financial columns populate only where you have entered figures for that entity in this session.</p>
+        <div class="tbl-scroll" style="margin-top:12px"><table id="peerTable"></table></div>
+      </div>
+    </section>
+
+    <!-- Qualitative notes -->
+    <section class="card notes" id="notesCard" hidden>
+      <div class="hd"><h2>Qualitative insights &amp; analyst commentary</h2><span class="note">Stored locally in your browser only.</span></div>
+      <div class="bd">
+        <p class="section-intro">Capture context that explains <b>why</b> an indicator is (or isn't) a genuine signal —
+          restructures, machinery-of-government changes, new policy measures, or timing effects that distinguish signal from noise.</p>
+        <div style="margin-top:12px">
+          <textarea id="noteText" placeholder="e.g. 'FY drop in cash reflects a one-off capital drawdown for the new registry system, not operating deterioration — see Note 4 of the 2022–23 statements.'"></textarea>
+          <div class="noteline">
+            <input type="text" id="noteAuthor" placeholder="Analyst (optional)">
+            <input type="text" id="noteSource" placeholder="Source / reference URL (optional)">
+            <button class="btn" id="noteSave">Save note</button>
+          </div>
+          <div class="savednotes" id="savedNotes"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data quality & provenance -->
+    <section class="card" id="dqCard">
+      <div class="hd"><h2>Data quality &amp; provenance</h2><span class="note">Read before interpreting anything above.</span></div>
+      <div class="bd">
+        <div class="dq">
+          <div class="box">
+            <h4>Where the numbers come from</h4>
+            <ul>
+              <li><b>Entity register</b> — Dept. of Finance <a href="https://www.finance.gov.au/about-us/glossary/pgpa/flipchart-pgpa-act-commonwealth-entities-and-companies" target="_blank" rel="noopener">PGPA Flipchart</a> (1 March 2024): 101 non-corporate + 74 corporate Commonwealth entities. The 16 Commonwealth companies are out of scope.</li>
+              <li><b>Financial figures</b> — audited financial statements in each entity's annual report on the <a href="https://www.transparency.gov.au/publications" target="_blank" rel="noopener">Transparency Portal</a>.</li>
+              <li><b>Published ratios</b> — the Portal's own <a href="https://www.transparency.gov.au/" target="_blank" rel="noopener">financial-sustainability ratios &amp; data explorer</a>.</li>
+              <li><b>Audit findings</b> — <a href="https://www.anao.gov.au/pubs/financial-statement-audit" target="_blank" rel="noopener">ANAO financial-statement audit reports</a>.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Known limitations</h4>
+            <ul>
+              <li><span class="dqflag grey">NO DATA</span>Nothing financial is pre-loaded. This tool ships with <b>zero synthetic data</b> — every figure must be entered from, and verified against, its public source.</li>
+              <li><span class="dqflag amber">TIMELINESS</span>Audited data is annual and lags ~3–5 months after 30 June. In-year data is sparse and inconsistent.</li>
+              <li><span class="dqflag amber">COMPARABILITY</span>Mergers, machinery-of-government changes and reclassifications break historical comparability.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Interpreting flags</h4>
+            <ul>
+              <li>Thresholds are <b>illustrative defaults</b> for demonstration, not endorsed benchmarks.</li>
+              <li>A flag is a prompt to investigate and read context — never a conclusion.</li>
+              <li>Corporate entities (trading bodies, RDCs, financial corporations) behave very differently from departments; compare like with like.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <p><b>Prototype demonstration only — not for reliance.</b> This dashboard is an early-warning <i>framework</i> built for demonstration.
+  It draws solely on public information and contains no dummy or synthetic financial data; every quantitative element is either
+  entered by the user from a cited public source or left blank pending that source. It does not constitute financial advice or any
+  assessment of any entity's financial position. The Australian Government, the Department of Finance and the ANAO do not endorse this tool.</p>
+  <p>In scope: 175 entities (non-corporate and corporate Commonwealth entities) from the
+  <a href="https://www.finance.gov.au/about-us/glossary/pgpa/flipchart-pgpa-act-commonwealth-entities-and-companies" target="_blank" rel="noopener">Flipchart of PGPA Act Commonwealth entities and companies</a>, 1 March 2024.
+  Commonwealth companies (Corporations Act 2001) are excluded per scope.
+  Primary sources: <a href="https://www.transparency.gov.au/" target="_blank" rel="noopener">transparency.gov.au</a> ·
+  <a href="https://www.anao.gov.au/" target="_blank" rel="noopener">anao.gov.au</a> ·
+  <a href="https://www.finance.gov.au/" target="_blank" rel="noopener">finance.gov.au</a>.</p>
+</footer>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script id="entity-data" type="application/json">[{"name":"Department of Agriculture, Fisheries and Forestry","portfolio":"Agriculture, Fisheries and Forestry","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Fisheries Management Authority","portfolio":"Agriculture, Fisheries and Forestry","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Pesticides and Veterinary Medicines Authority (APVMA)","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Cotton Research and Development Corporation","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Fisheries Research and Development Corporation","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Grains Research and Development Corporation","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Regional Investment Corporation","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Rural Industries Research and Development Corporation","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Wine Australia","portfolio":"Agriculture, Fisheries and Forestry","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Attorney-General's Department","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Administrative Appeals Tribunal","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Crime Commission (Australian Criminal Intelligence Commission)","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Federal Police","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Financial Security Authority","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Institute of Criminology","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Law Reform Commission","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Transaction Reports and Analysis Centre (AUSTRAC)","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Federal Court of Australia","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"National Anti-Corruption Commission","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Australian Information Commissioner","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Commonwealth Ombudsman","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Director of Public Prosecutions (CDPP)","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Inspector-General of Intelligence and Security","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of Parliamentary Counsel","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Special Investigator","portfolio":"Attorney-General's","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Human Rights Commission","portfolio":"Attorney-General's","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Department of Climate Change, Energy, the Environment and Water","portfolio":"Climate Change, Energy, the Environment and Water","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Bureau of Meteorology","portfolio":"Climate Change, Energy, the Environment and Water","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Clean Energy Regulator","portfolio":"Climate Change, Energy, the Environment and Water","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Climate Change Authority","portfolio":"Climate Change, Energy, the Environment and Water","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Great Barrier Reef Marine Park Authority","portfolio":"Climate Change, Energy, the Environment and Water","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Institute of Marine Science","portfolio":"Climate Change, Energy, the Environment and Water","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Renewable Energy Agency","portfolio":"Climate Change, Energy, the Environment and Water","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Clean Energy Finance Corporation","portfolio":"Climate Change, Energy, the Environment and Water","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Director of National Parks","portfolio":"Climate Change, Energy, the Environment and Water","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Murray-Darling Basin Authority","portfolio":"Climate Change, Energy, the Environment and Water","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Sydney Harbour Federation Trust","portfolio":"Climate Change, Energy, the Environment and Water","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Defence","portfolio":"Defence","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Signals Directorate","portfolio":"Defence","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Submarine Agency","portfolio":"Defence","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Army and Air Force Canteen Service (Frontline Defence Services)","portfolio":"Defence","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Military Forces Relief Trust Fund","portfolio":"Defence","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Defence Housing Australia","portfolio":"Defence","type":"CCE","flags":{"gbe":true,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Royal Australian Air Force Veterans' Residences Trust Fund","portfolio":"Defence","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Royal Australian Air Force Welfare Trust Fund","portfolio":"Defence","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Royal Australian Navy Central Canteens Board","portfolio":"Defence","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Royal Australian Navy Relief Trust Fund","portfolio":"Defence","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Education","portfolio":"Education","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Research Council","portfolio":"Education","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Tertiary Education Quality and Standards Agency","portfolio":"Education","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Curriculum, Assessment and Reporting Authority","portfolio":"Education","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian National University","portfolio":"Education","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":true,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Employment and Workplace Relations","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Asbestos and Silica Safety and Eradication Agency","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Skills Quality Authority (National Vocational Education and Training Regulator)","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Fair Work Commission","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Fair Work Ombudsman","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Safe Work Australia","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Seafarers Safety, Rehabilitation and Compensation Authority (Seacare Authority)","portfolio":"Employment and Workplace Relations","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Coal Mining Industry (Long Service Leave Funding) Corporation","portfolio":"Employment and Workplace Relations","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":true,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Comcare","portfolio":"Employment and Workplace Relations","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Department of Finance","portfolio":"Finance","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Electoral Commission","portfolio":"Finance","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Digital Transformation Agency","portfolio":"Finance","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Future Fund Management Agency","portfolio":"Finance","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Independent Parliamentary Expenses Authority","portfolio":"Finance","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Parliamentary Workplace Support Service","portfolio":"Finance","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Commonwealth Superannuation Corporation (CSC)","portfolio":"Finance","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Foreign Affairs and Trade","portfolio":"Foreign Affairs and Trade","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Centre for International Agricultural Research (ACIAR)","portfolio":"Foreign Affairs and Trade","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Secret Intelligence Service","portfolio":"Foreign Affairs and Trade","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Trade and Investment Commission (Austrade)","portfolio":"Foreign Affairs and Trade","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Export Finance and Insurance Corporation (EFIC, Export Finance Australia)","portfolio":"Foreign Affairs and Trade","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Tourism Australia","portfolio":"Foreign Affairs and Trade","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Health and Aged Care","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Aged Care Quality and Safety Commission","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian National Preventive Health Agency (ANPHA)","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Radiation Protection and Nuclear Safety Agency (ARPANSA)","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Cancer Australia","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Blood Authority","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Health and Medical Research Council (NHMRC)","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Health Funding Body (NHFB)","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Mental Health Commission","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Inspector-General of Aged Care","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Organ and Tissue Authority","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Professional Services Review","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Sport Integrity Australia","portfolio":"Health and Aged Care","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Commission on Safety and Quality in Health Care","portfolio":"Health and Aged Care","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Digital Health Agency","portfolio":"Health and Aged Care","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Institute of Health and Welfare","portfolio":"Health and Aged Care","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Sports Commission (Australian Institute of Sport)","portfolio":"Health and Aged Care","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Food Standards Australia New Zealand","portfolio":"Health and Aged Care","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Independent Health and Aged Care Pricing Authority","portfolio":"Health and Aged Care","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Department of Home Affairs","portfolio":"Home Affairs","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Security Intelligence Organisation","portfolio":"Home Affairs","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"National Emergency Management Agency","portfolio":"Home Affairs","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Department of Industry, Science and Resources","portfolio":"Industry, Science and Resources","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Geoscience Australia","portfolio":"Industry, Science and Resources","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"IP Australia","portfolio":"Industry, Science and Resources","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Nuclear Science and Technology Organisation","portfolio":"Industry, Science and Resources","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Commonwealth Scientific and Industrial Research Organisation","portfolio":"Industry, Science and Resources","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"National Offshore Petroleum Safety and Environmental Management Authority (NOPSEMA)","portfolio":"Industry, Science and Resources","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Reconstruction Fund Corporation","portfolio":"Industry, Science and Resources","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Infrastructure, Transport, Regional Development, Communications and the Arts","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Communications and Media Authority (ACMA)","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Transport Safety Bureau (ATSB)","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Archives of Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Capital Authority","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Airservices Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":true,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Broadcasting Corporation","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":true,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Film, Television and Radio School","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Maritime Safety Authority","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian National Maritime Museum","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Postal Corporation","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":true,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":true,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Civil Aviation Safety Authority","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Creative Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"High Speed Rail Authority","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Infrastructure Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"National Film and Sound Archive of Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Gallery of Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"National Library of Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Museum of Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Portrait Gallery of Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Transport Commission","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Northern Australia Infrastructure Facility","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Old Parliament House","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Screen Australia","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Special Broadcasting Service Corporation","portfolio":"Infrastructure, Transport, Regional Development, Communications and the Arts","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":true,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of the Prime Minister and Cabinet","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian National Audit Office","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Public Service Commission","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Indigenous Australians Agency","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of National Intelligence","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Official Secretary to the Governor-General","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Workplace Gender Equality Agency","portfolio":"Prime Minister and Cabinet","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Anindilyakwa Land Council","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Institute of Aboriginal and Torres Strait Islander Studies","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Central Land Council","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Indigenous Business Australia","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Indigenous Land and Sea Corporation","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Northern Land Council","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Northern Territory Aboriginal Investment Corporation","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Tiwi Land Council","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":true,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Torres Strait Regional Authority","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Wreck Bay Aboriginal Community Council","portfolio":"Prime Minister and Cabinet","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Social Services","portfolio":"Social Services","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Institute of Family Studies (AIFS)","portfolio":"Social Services","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Domestic, Family and Sexual Violence Commission","portfolio":"Social Services","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"NDIS Quality and Safeguards Commission","portfolio":"Social Services","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Services Australia","portfolio":"Social Services","type":"NCE","flags":{"gbe":false,"executiveAgency":true,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Hearing Services (Hearing Australia)","portfolio":"Social Services","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":true,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"National Disability Insurance Agency","portfolio":"Social Services","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Department of the Treasury","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Bureau of Statistics","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Competition and Consumer Commission (ACCC)","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":true,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Office of Financial Management (AOFM)","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Prudential Regulation Authority (APRA)","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":true,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Securities and Investments Commission (ASIC)","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":true,"regulationCCE":false,"bodyCorpButNCE":true,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Australian Taxation Office","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Commonwealth Grants Commission","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Inspector-General of Taxation","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"National Competition Council","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":true,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Auditing and Assurance Standards Board (AUASB)","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Office of the Australian Accounting Standards Board (AASB)","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":true,"notPSAct":false,"parlServiceAct":false}},{"name":"Productivity Commission","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Royal Australian Mint","portfolio":"Treasury","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian Reinsurance Pool Corporation","portfolio":"Treasury","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":true,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Housing Australia","portfolio":"Treasury","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Reserve Bank of Australia","portfolio":"Treasury","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":true,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":false}},{"name":"Department of Veterans' Affairs","portfolio":"Veterans' Affairs","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Australian War Memorial","portfolio":"Veterans' Affairs","type":"CCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":true,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":false,"parlServiceAct":false}},{"name":"Department of Parliamentary Services","portfolio":"Parliamentary Departments","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":true,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":true}},{"name":"Department of the House of Representatives","portfolio":"Parliamentary Departments","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":true}},{"name":"Department of the Senate","portfolio":"Parliamentary Departments","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":true}},{"name":"Parliamentary Budget Office","portfolio":"Parliamentary Departments","type":"NCE","flags":{"gbe":false,"executiveAgency":false,"interjurisdictional":false,"material":false,"regulationCCE":false,"bodyCorpButNCE":false,"pfc":false,"pnfcTrading":false,"cpr":false,"exemptPolicy":false,"engageOwnStaff":false,"notPSAct":true,"parlServiceAct":true}}]</script>
+<script>
+/* ============================================================
+   Commonwealth Entity Financial Stability — Early Warning (prototype)
+   No synthetic data. All financial inputs are user-entered from
+   cited public sources and persisted locally only.
+   ============================================================ */
+"use strict";
+const ENTITIES = JSON.parse(document.getElementById('entity-data').textContent);
+
+/* ---- Flag dictionary (decoded from the Flipchart legend) ---- */
+const FLAG_DEFS = {
+  gbe:["GBE","Prescribed as a Government Business Enterprise under the PGPA Rule."],
+  material:["Material","Among entities comprising ~99% of revenue/expenses/assets/liabilities of the General Government Sector."],
+  interjurisdictional:["Inter-jurisdictional","Interacts with State, Territory or foreign governments."],
+  pfc:["Public Financial Corp.","GFS classification: Public Financial Corporation."],
+  pnfcTrading:["Public Non-fin. Corp.","GFS classification: Public Non-financial Corporation (trading)."],
+  regulationCCE:["Established by regulation","Corporate Commonwealth entity established by regulation/PGPA Rule."],
+  bodyCorpButNCE:["Body corporate (but NCE)","Has body-corporate status but prescribed as a non-corporate Commonwealth entity."],
+  cpr:["Commonwealth Procurement Rules","Subject to the CPRs."],
+  exemptPolicy:["Policy-order exempt","Exempt or partially exempt from government policy orders (s22 PGPA Act)."],
+  executiveAgency:["Executive Agency","Executive Agency under s65(1) Public Service Act 1999."],
+  engageOwnStaff:["Own-Act staffing","Can engage officials under enabling legislation as well as the PS Act."],
+  notPSAct:["Non-PS Act staff","Does not engage staff under the Public Service Act 1999."],
+  parlServiceAct:["Parliamentary Service","Officials employed under the Parliamentary Service Act 1999."]
+};
+const TYPE_LABEL = {NCE:"Non-corporate Commonwealth entity", CCE:"Corporate Commonwealth entity"};
+
+/* ---- Functional grouping (public, derived from name/role) for peer comparison ---- */
+function functionOf(e){
+  const n=e.name.toLowerCase();
+  if(/^department of|^attorney-general's department/.test(n)) return "Department of State";
+  if(n.includes("research and development corporation")||n.includes("rural industries")) return "Research & Development Corporation";
+  if(/land council|land and sea|aboriginal|torres strait|indigenous|anindilyakwa|tiwi/.test(n)) return "Indigenous body";
+  if(/museum|gallery|library|archives|memorial|portrait|film|broadcasting|screen|creative|arts|maritime museum/.test(n)) return "Cultural / collecting / media";
+  if(/trust fund|canteen|relief|welfare|residences/.test(n)) return "Defence trust / canteen";
+  if(/commission|authority|regulator|ombudsman|inspector|safety|standards|tribunal/.test(n)) return "Regulator / oversight";
+  if(/research|institute|science|studies|meteorology|geoscience|nuclear|marine science/.test(n)) return "Research / scientific";
+  if(/finance corporation|reinsurance|superannuation|future fund|financial management|housing australia|reserve bank|export finance/.test(n)) return "Financial corporation / fund";
+  return "Other agency";
+}
+
+/* ---- Source link builders (all public, click-through) ---- */
+function srcTransparency(name){ return "https://www.transparency.gov.au/publications?q="+encodeURIComponent(name); }
+function srcRatios(){ return "https://www.transparency.gov.au/"; }
+function srcAnao(name){ return "https://www.anao.gov.au/pubs/financial-statement-audit"; }
+const SRC_FLIPCHART="https://www.finance.gov.au/about-us/glossary/pgpa/flipchart-pgpa-act-commonwealth-entities-and-companies";
+
+/* ============================================================
+   INDICATOR DEFINITIONS
+   thresholds are ILLUSTRATIVE defaults, clearly flagged as such.
+   dir:'high'=higher is healthier; 'low'=lower is healthier.
+   ============================================================ */
+const RATIOS = [
+  { id:"dcoh", name:"Days Operating Cash on Hand", unit:"days", dir:"high",
+    inputs:[
+      ["cash","Cash & cash equivalents","Statement of Financial Position"],
+      ["oprev","Operating revenue","Statement of Comprehensive Income"],
+      ["invest","Investments","Statement of Financial Position"],
+      ["opcash","Operating cash used (annual)","Cash Flow Statement"],
+      ["lease","Lease payments (annual)","Cash Flow Statement / Note"]
+    ],
+    formula:"(Cash + Operating revenue + Investments) ÷ ((Operating cash used + Lease payments) ÷ 365)",
+    calc:v=>{const denom=(v.opcash+v.lease)/365; return denom>0?(v.cash+v.oprev+v.invest)/denom:null;},
+    bands:{good:90, warn:30}, // >90 good, 30-90 warn, <30 crit
+    interp:"Number of days the entity could keep paying operating expenses from available resources." },
+
+  { id:"csr", name:"Capital Sustainability Ratio", unit:"×", dir:"band",
+    inputs:[
+      ["netpur","Net purchases of non-financial assets","Cash Flow Statement"],
+      ["lease","Lease payments","Cash Flow Statement / Note"],
+      ["dep","Depreciation & amortisation","Statement of Comprehensive Income"],
+      ["intlease","Interest on leases","Note to financial statements"]
+    ],
+    formula:"(Net purchases of non-financial assets + Lease payments) ÷ (Depreciation + Interest on leases)",
+    calc:v=>{const d=v.dep+v.intlease; return d>0?(v.netpur+v.lease)/d:null;},
+    bandsBand:{lo:0.9, hi:1.1}, // ~1 sustaining; <lo under-investing; treat extremes as watch
+    interp:"Whether the asset base is being maintained. Persistently below ~1 can signal under-investment in assets." },
+
+  { id:"liq", name:"Liquidity Ratio", unit:"×", dir:"high",
+    inputs:[
+      ["cash","Cash reserves","Statement of Financial Position"],
+      ["opcash","Operating cash used","Cash Flow Statement"],
+      ["fincash","Financing cash used","Cash Flow Statement"],
+      ["netpur","Net purchase of non-financial assets","Cash Flow Statement"]
+    ],
+    formula:"Cash reserves ÷ (Operating cash used + Financing cash used + Net purchase of non-financial assets)",
+    calc:v=>{const d=v.opcash+v.fincash+v.netpur; return d>0?v.cash/d:null;},
+    bands:{good:0.5, warn:0.2},
+    interp:"Ability to meet expenses and commitments from cash reserves." },
+
+  { id:"lta", name:"Total Liabilities to Total Assets", unit:"×", dir:"low",
+    inputs:[
+      ["liab","Total liabilities","Statement of Financial Position"],
+      ["assets","Total assets","Statement of Financial Position"]
+    ],
+    formula:"Total liabilities ÷ Total assets",
+    calc:v=>v.assets>0?v.liab/v.assets:null,
+    bandsLow:{good:0.6, warn:1.0}, // <0.6 good, 0.6-1 warn, >1 crit (negative net assets)
+    interp:"Level of debt financing. Higher indicates greater financial risk; above 1 means liabilities exceed assets." },
+
+  { id:"fatl", name:"Financial Assets to Total Liabilities", unit:"×", dir:"high",
+    inputs:[
+      ["finassets","Financial assets","Statement of Financial Position"],
+      ["liab","Total liabilities","Statement of Financial Position"]
+    ],
+    formula:"Financial assets ÷ Total liabilities",
+    calc:v=>v.liab>0?v.finassets/v.liab:null,
+    bands:{good:1.0, warn:0.5},
+    interp:"Capacity to settle liabilities from financial assets. Higher indicates greater capacity." },
+
+  { id:"cto", name:"Capital Turnover Ratio", unit:"×", dir:"band",
+    inputs:[
+      ["netpur","Net purchases of non-financial assets","Cash Flow Statement"],
+      ["nfassets","Total non-financial assets","Statement of Financial Position"]
+    ],
+    formula:"Net purchases of non-financial assets ÷ Total non-financial assets (replacement rate)",
+    calc:v=>v.nfassets>0?v.netpur/v.nfassets:null,
+    bandsBand:{lo:0.04, hi:0.30},
+    interp:"Whether assets are being replaced at a sustainable rate relative to the asset base." },
+
+  { id:"cur", name:"Current Ratio", unit:"×", dir:"high",
+    inputs:[
+      ["ca","Current assets","Statement of Financial Position"],
+      ["cl","Current liabilities","Statement of Financial Position"]
+    ],
+    formula:"Current assets ÷ Current liabilities",
+    calc:v=>v.cl>0?v.ca/v.cl:null,
+    bands:{good:1.5, warn:1.0},
+    interp:"Short-term liquidity — ability to meet liabilities due within 12 months." }
+];
+
+/* status from value given band config */
+function statusFor(r,val){
+  if(val==null||!isFinite(val)) return "nodata";
+  if(r.bands){ return val>=r.bands.good?"good":val>=r.bands.warn?"warn":"crit"; }
+  if(r.bandsLow){ return val<r.bandsLow.good?"good":val<=r.bandsLow.warn?"warn":"crit"; }
+  if(r.bandsBand){ return (val>=r.bandsBand.lo&&val<=r.bandsBand.hi)?"good":(val<r.bandsBand.lo*0.5||val>r.bandsBand.hi*1.5)?"crit":"warn"; }
+  return "nodata";
+}
+function threshText(r){
+  if(r.bands) return `Illustrative: ≥${r.bands.good} healthy · ${r.bands.warn}–${r.bands.good} watch · <${r.bands.warn} concern`;
+  if(r.bandsLow) return `Illustrative: <${r.bandsLow.good} healthy · ${r.bandsLow.good}–${r.bandsLow.warn} watch · >${r.bandsLow.warn} concern`;
+  if(r.bandsBand) return `Illustrative: ${r.bandsBand.lo}–${r.bandsBand.hi} sustaining · outside = watch/concern`;
+  return "";
+}
+const TREND_DEFS=[
+  {id:"cashtrend",name:"Cash Reserves Trend",unit:"$'000",desc:"Depletion of cash reserves vs prior years and vs similar entities.",dir:"high"},
+  {id:"empexp",name:"Employee Expenses as % of Revenue",unit:"%",desc:"Whether labour costs are growing faster than revenue/budget over time.",dir:"low"},
+  {id:"oppresult",name:"Operating Result",unit:"$'000",desc:"Operating surplus/deficit over time — recurring losses often precede sustainability issues.",dir:"high"},
+  {id:"staffing",name:"Staffing Levels (ASL/FTE)",unit:"staff",desc:"Changes in staffing as a leading indicator of pressure or restructure.",dir:"flat"}
+];
+
+/* ============================================================ STATE ============================================================ */
+let state = { period:"year", type:"", portfolio:"", entityId:null, peerBasis:"portfolio" };
+const STORE_KEY="fsd-proto-v1";
+function loadStore(){ try{return JSON.parse(localStorage.getItem(STORE_KEY))||{};}catch(e){return {};} }
+function saveStore(o){ try{localStorage.setItem(STORE_KEY,JSON.stringify(o));}catch(e){} }
+let store = loadStore(); // { [entityId]: { ratios:{id:{key:val}}, trends:{id:[..]}, mape:[], notes:[] } }
+function eStore(id){ store[id]=store[id]||{ratios:{},trends:{},mape:[],notes:[]}; return store[id]; }
+
+/* assign stable ids */
+ENTITIES.forEach((e,i)=>{ e.id="e"+i; e.fn=functionOf(e); });
+
+/* ============================================================ RENDER: RAIL ============================================================ */
+const elList=document.getElementById('entityList');
+const elPort=document.getElementById('fPortfolio');
+const elSearch=document.getElementById('fSearch');
+const elCount=document.getElementById('railCount');
+
+[...new Set(ENTITIES.map(e=>e.portfolio))].sort().forEach(p=>{
+  const o=document.createElement('option'); o.value=p; o.textContent=p; elPort.appendChild(o);
+});
+
+function filteredEntities(){
+  const q=elSearch.value.trim().toLowerCase();
+  return ENTITIES.filter(e=>
+    (!state.type||e.type===state.type)&&
+    (!state.portfolio||e.portfolio===state.portfolio)&&
+    (!q||e.name.toLowerCase().includes(q)));
+}
+function renderList(){
+  const list=filteredEntities();
+  elList.innerHTML="";
+  list.forEach(e=>{
+    const b=document.createElement('button');
+    b.setAttribute('role','option');
+    b.setAttribute('aria-current', e.id===state.entityId?"true":"false");
+    b.innerHTML=`${e.name}<span class="ec-type">${e.type}</span>`;
+    b.onclick=()=>selectEntity(e.id);
+    elList.appendChild(b);
+  });
+  const nce=list.filter(e=>e.type==="NCE").length, cce=list.length-nce;
+  elCount.textContent=`${list.length} shown · ${nce} non-corporate · ${cce} corporate`;
+}
+
+/* ============================================================ RENDER: ENTITY ============================================================ */
+function selectEntity(id){ state.entityId=id; renderList(); renderEntity();
+  document.getElementById('esum').scrollIntoView({behavior:'smooth',block:'start'}); }
+
+function chip(text,tip,cls){ return `<span class="chip ${cls||''}" ${tip?`data-tip="${tip.replace(/"/g,'&quot;')}"`:''}>${text}</span>`; }
+
+function renderEntity(){
+  const e=ENTITIES.find(x=>x.id===state.entityId);
+  const cards=["riskCard","ratioCard","trendCard","otherCard","peerCard","notesCard"];
+  if(!e){ cards.forEach(c=>document.getElementById(c).hidden=true);
+    document.getElementById('esum').querySelector('.bd').innerHTML='<p class="empty">Select an entity from the left to begin.</p>'; return; }
+  cards.forEach(c=>document.getElementById(c).hidden=false);
+
+  // summary
+  let flagchips="";
+  Object.keys(FLAG_DEFS).forEach(k=>{ if(e.flags[k]) flagchips+=chip(FLAG_DEFS[k][0],FLAG_DEFS[k][1]); });
+  const typeCls = e.type==="CCE"?"type cce":"type";
+  document.getElementById('esum').querySelector('.bd').innerHTML=`
+    <div class="nm">${e.name}</div>
+    <div class="port">${e.portfolio} portfolio · ${e.fn}</div>
+    <div class="chips">
+      ${chip(TYPE_LABEL[e.type],TYPE_LABEL[e.type],typeCls)}
+      ${flagchips || chip('No special structural flags','This entity carries no additional Flipchart symbols.')}
+    </div>
+    <div class="srclinks">
+      <a class="srcbtn" target="_blank" rel="noopener" href="${srcTransparency(e.name)}">Annual report &amp; financial statements</a>
+      <a class="srcbtn" target="_blank" rel="noopener" href="${srcRatios()}">Published financial ratios (Transparency Portal)</a>
+      <a class="srcbtn" target="_blank" rel="noopener" href="${srcAnao(e.name)}">ANAO audit findings</a>
+      <a class="srcbtn" target="_blank" rel="noopener" href="${SRC_FLIPCHART}">Flipchart entry</a>
+    </div>`;
+
+  renderRatios(e); renderTrends(e); renderOther(e); renderRisk(e); renderPeers(e); renderNotes(e);
+  bindTips();
+}
+
+/* ---- Ratios ---- */
+function renderRatios(e){
+  const es=eStore(e.id); const grid=document.getElementById('igrid'); grid.innerHTML="";
+  RATIOS.forEach(r=>{
+    const saved=es.ratios[r.id]||{};
+    const vals={}; r.inputs.forEach(([k])=>vals[k]= (saved[k]===undefined||saved[k]==="")?NaN:parseFloat(saved[k]));
+    const complete=r.inputs.every(([k])=>isFinite(vals[k]));
+    const val=complete?r.calc(vals):null;
+    const st=statusFor(r,val);
+    const div=document.createElement('div'); div.className="ind s-"+st;
+    const valTxt = st==="nodata"?`<span class="nd">— load from source</span>`:(Math.round(val*100)/100).toLocaleString();
+    div.innerHTML=`
+      <div class="ihd">
+        <div><h3>${r.name}</h3><div class="unit">${r.unit}</div></div>
+        <span class="statepill sp-${st}">${st==="nodata"?"No data":st==="good"?"Healthy":st==="warn"?"Watch":"Concern"}</span>
+      </div>
+      <div class="ibd">
+        <div class="val">${valTxt}</div>
+        <div class="formula"><b>Formula.</b> ${r.formula}</div>
+        <div class="inputs">${r.inputs.map(([k,lab,li])=>`
+          <div class="inrow"><label>${lab}<span class="li">${li}</span></label>
+          <input type="number" step="any" data-r="${r.id}" data-k="${k}" value="${saved[k]??''}" placeholder="—"></div>`).join("")}</div>
+        <div class="interp">${r.interp}</div>
+        <div class="ftr">
+          <a class="linkmini" target="_blank" rel="noopener" href="${srcTransparency(e.name)}">View source data ↗</a>
+        </div>
+        <div class="thresh">${threshText(r)}. Thresholds illustrative only.</div>
+      </div>`;
+    grid.appendChild(div);
+  });
+  grid.querySelectorAll('input[data-r]').forEach(inp=>{
+    inp.addEventListener('input',()=>{
+      const es=eStore(e.id); es.ratios[inp.dataset.r]=es.ratios[inp.dataset.r]||{};
+      es.ratios[inp.dataset.r][inp.dataset.k]=inp.value; saveStore(store);
+      recomputeRatioCard(e, RATIOS.find(z=>z.id===inp.dataset.r), inp.closest('.ind'));
+      renderRisk(e);
+      const ent=ENTITIES.find(x=>x.id===state.entityId); if(ent) renderPeers(ent);
+    });
+  });
+}
+/* In-place recompute of one ratio card — never rebuilds inputs, so typing/tabbing keeps focus. */
+function recomputeRatioCard(e, r, card){
+  if(!r||!card) return;
+  const es=eStore(e.id); const saved=es.ratios[r.id]||{}; const vals={};
+  r.inputs.forEach(([k])=>vals[k]= (saved[k]===undefined||saved[k]==="")?NaN:parseFloat(saved[k]));
+  const complete=r.inputs.every(([k])=>isFinite(vals[k]));
+  const val=complete?r.calc(vals):null; const st=statusFor(r,val);
+  card.className="ind s-"+st;
+  card.querySelector('.val').innerHTML = st==="nodata"?'<span class="nd">— load from source</span>':(Math.round(val*100)/100).toLocaleString();
+  const pill=card.querySelector('.statepill');
+  pill.className="statepill sp-"+st;
+  pill.textContent= st==="nodata"?"No data":st==="good"?"Healthy":st==="warn"?"Watch":"Concern";
+}
+
+/* ---- Trends + sparkline ---- */
+function renderTrends(e){
+  const es=eStore(e.id); const wrap=document.getElementById('trends'); wrap.innerHTML="";
+  const baseYear=2019;
+  TREND_DEFS.forEach(t=>{
+    const arr=es.trends[t.id]||[null,null,null,null,null];
+    const div=document.createElement('div'); div.className="trend";
+    div.innerHTML=`<h3>${t.name}</h3><div class="desc">${t.desc}</div>
+      <canvas class="spark" width="280" height="64" data-t="${t.id}"></canvas>
+      <div class="serieswrap">${arr.map((v,i)=>`
+        <div class="yrcell"><label>${baseYear+i}–${String(baseYear+i+1).slice(2)}</label>
+        <input type="number" step="any" data-t="${t.id}" data-i="${i}" value="${v??''}" placeholder="—"></div>`).join("")}
+      </div>
+      <div class="readout" data-readout="${t.id}"></div>`;
+    wrap.appendChild(div);
+  });
+  wrap.querySelectorAll('input[data-t]').forEach(inp=>{
+    inp.addEventListener('change',()=>{
+      const es=eStore(e.id); const a=es.trends[inp.dataset.t]||[null,null,null,null,null];
+      a[+inp.dataset.i]= inp.value===""?null:parseFloat(inp.value); es.trends[inp.dataset.t]=a; saveStore(store);
+      drawSpark(inp.dataset.t,a,e); renderRisk(e);
+    });
+  });
+  TREND_DEFS.forEach(t=>drawSpark(t.id, es.trends[t.id]||[null,null,null,null,null], e));
+}
+function drawSpark(id,arr,e){
+  const cv=document.querySelector(`canvas[data-t="${id}"]`); if(!cv) return;
+  const ctx=cv.getContext('2d'); const W=cv.width,H=cv.height,pad=8; ctx.clearRect(0,0,W,H);
+  const pts=arr.map((v,i)=>({i,v})).filter(p=>p.v!=null&&isFinite(p.v));
+  const read=document.querySelector(`[data-readout="${id}"]`);
+  if(pts.length<2){ if(read) read.innerHTML='<span class="empty">Enter ≥2 years to plot a trend (from successive annual reports).</span>'; return; }
+  const vs=pts.map(p=>p.v); let mn=Math.min(...vs),mx=Math.max(...vs); if(mn===mx){mn-=1;mx+=1;}
+  const x=i=>pad+(W-2*pad)*(i/(arr.length-1));
+  const y=v=>H-pad-(H-2*pad)*((v-mn)/(mx-mn));
+  // grid
+  ctx.strokeStyle="#e2e6ec"; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(pad,H-pad); ctx.lineTo(W-pad,H-pad); ctx.stroke();
+  // area + line
+  ctx.beginPath(); pts.forEach((p,k)=>{const X=x(p.i),Y=y(p.v); k?ctx.lineTo(X,Y):ctx.moveTo(X,Y);});
+  ctx.lineTo(x(pts[pts.length-1].i),H-pad); ctx.lineTo(x(pts[0].i),H-pad); ctx.closePath();
+  ctx.fillStyle="rgba(14,90,107,.10)"; ctx.fill();
+  ctx.beginPath(); pts.forEach((p,k)=>{const X=x(p.i),Y=y(p.v); k?ctx.lineTo(X,Y):ctx.moveTo(X,Y);});
+  ctx.strokeStyle="#0e5a6b"; ctx.lineWidth=2; ctx.stroke();
+  // endpoint
+  const last=pts[pts.length-1]; ctx.fillStyle="#0e5a6b"; ctx.beginPath(); ctx.arc(x(last.i),y(last.v),3,0,7); ctx.fill();
+  if(read){
+    const first=pts[0].v, lastv=last.v; const pct=first!==0?((lastv-first)/Math.abs(first)*100):null;
+    const t=TREND_DEFS.find(d=>d.id===id);
+    let dir="", cls="";
+    if(pct!=null){ const better=(t.dir==="high"&&pct>=0)||(t.dir==="low"&&pct<0);
+      cls=t.dir==="flat"?"":(better?"delta-up":"delta-dn");
+      dir=`${pct>=0?'+':''}${pct.toFixed(1)}% over ${pts.length} reported years`; }
+    read.innerHTML=`Latest: <b>${lastv.toLocaleString()}</b> ${t.unit} · <span class="${cls}">${dir}</span>`;
+  }
+}
+
+/* ---- Other: MAPE, budget, terminating funding, audit ---- */
+function renderOther(e){
+  const es=eStore(e.id); const b=document.getElementById('otherBody');
+  b.innerHTML=`
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div>
+        <h3 style="font-size:14px">Forecast accuracy — MAPE</h3>
+        <p class="section-intro" style="margin-top:5px">Mean Absolute Percentage Error of actuals vs Portfolio Budget Statement estimates
+          for key accounts. Persistently poor accuracy can indicate control or planning weaknesses.</p>
+        <div class="tbl-scroll" style="margin-top:10px"><table id="mapeTable">
+          <thead><tr><th>Account</th><th>Estimate</th><th>Actual</th><th>APE %</th></tr></thead>
+          <tbody id="mapeBody"></tbody>
+          <tfoot><tr><th colspan="3" style="text-align:right">MAPE</th><th id="mapeOut" class="tnum">—</th></tr></tfoot>
+        </table></div>
+        <button class="btn ghost" id="addMape" style="margin-top:8px">+ Add account</button>
+        <a class="linkmini" style="display:block;margin-top:8px" target="_blank" rel="noopener" href="${srcTransparency(e.name)}">PBS estimates &amp; actuals (source) ↗</a>
+      </div>
+      <div>
+        <h3 style="font-size:14px">Budget, terminating funding &amp; audit</h3>
+        <p class="section-intro" style="margin-top:5px">Structured prompts — record from public Budget papers, PBS and ANAO reports. No values are pre-filled.</p>
+        <div class="dq" style="margin-top:10px;grid-template-columns:1fr">
+          <div class="box"><h4>Budget snapshot &amp; drawdown</h4>
+            <p class="empty" style="margin:0 0 6px">Multi-year appropriations, drawdown rate, quarantined balances.</p>
+            <a class="srcbtn" target="_blank" rel="noopener" href="https://budget.gov.au/">Budget papers ↗</a>
+            <a class="srcbtn" target="_blank" rel="noopener" href="${srcTransparency(e.name)}">Portfolio Budget Statements ↗</a></div>
+          <div class="box"><h4>Terminating funding</h4>
+            <p class="empty" style="margin:0 0 6px">Funding due to expire &amp; whether staffing plans reflect it.</p>
+            <a class="srcbtn" target="_blank" rel="noopener" href="https://www.transparency.gov.au/publications?q=${encodeURIComponent(e.name)}">PBS / Forward estimates ↗</a></div>
+          <div class="box"><h4>Audit findings</h4>
+            <p class="empty" style="margin:0 0 6px">Nature &amp; severity of findings as control-weakness indicators.</p>
+            <a class="srcbtn" target="_blank" rel="noopener" href="${srcAnao(e.name)}">ANAO reports ↗</a></div>
+        </div>
+      </div>
+    </div>`;
+  // MAPE
+  function drawMape(){
+    const body=document.getElementById('mapeBody'); body.innerHTML="";
+    const rows=es.mape.length?es.mape:[{a:"",est:"",act:""}];
+    es.mape=rows;
+    let apes=[];
+    rows.forEach((row,idx)=>{
+      const est=parseFloat(row.est), act=parseFloat(row.act);
+      const ape=(isFinite(est)&&isFinite(act)&&est!==0)?Math.abs((act-est)/est)*100:null;
+      if(ape!=null) apes.push(ape);
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td><input data-m="a" data-idx="${idx}" value="${row.a||''}" placeholder="e.g. Employee benefits" style="width:100%;border:1px solid var(--hair-strong);border-radius:4px;padding:4px"></td>
+        <td><input data-m="est" data-idx="${idx}" type="number" step="any" value="${row.est||''}" style="width:90px;border:1px solid var(--hair-strong);border-radius:4px;padding:4px;text-align:right;font-family:var(--mono)"></td>
+        <td><input data-m="act" data-idx="${idx}" type="number" step="any" value="${row.act||''}" style="width:90px;border:1px solid var(--hair-strong);border-radius:4px;padding:4px;text-align:right;font-family:var(--mono)"></td>
+        <td class="num">${ape!=null?ape.toFixed(1):'—'}</td>`;
+      body.appendChild(tr);
+    });
+    document.getElementById('mapeOut').textContent= apes.length?(apes.reduce((a,b)=>a+b,0)/apes.length).toFixed(1)+"%":"—";
+    function recomputeMape(){
+      let acc=[];
+      body.querySelectorAll('tr').forEach(tr=>{
+        const est=parseFloat(tr.querySelector('[data-m="est"]').value), act=parseFloat(tr.querySelector('[data-m="act"]').value);
+        const ape=(isFinite(est)&&isFinite(act)&&est!==0)?Math.abs((act-est)/est)*100:null;
+        if(ape!=null) acc.push(ape);
+        tr.querySelector('td.num').textContent= ape!=null?ape.toFixed(1):'—';
+      });
+      document.getElementById('mapeOut').textContent= acc.length?(acc.reduce((a,b)=>a+b,0)/acc.length).toFixed(1)+"%":"—";
+    }
+    body.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',()=>{
+      es.mape[+inp.dataset.idx][inp.dataset.m]=inp.value; saveStore(store);
+      if(inp.dataset.m!=='a') recomputeMape();
+    }));
+  }
+  drawMape();
+  document.getElementById('addMape').onclick=()=>{ es.mape.push({a:"",est:"",act:""}); saveStore(store); drawMape(); };
+}
+
+/* ---- Risk overview ---- */
+function renderRisk(e){
+  const es=eStore(e.id); let good=0,warn=0,crit=0,nodata=0;
+  RATIOS.forEach(r=>{ const saved=es.ratios[r.id]||{}; const vals={};
+    r.inputs.forEach(([k])=>vals[k]=parseFloat(saved[k]));
+    const complete=r.inputs.every(([k])=>isFinite(vals[k]));
+    const st=statusFor(r, complete?r.calc(vals):null);
+    if(st==="good")good++;else if(st==="warn")warn++;else if(st==="crit")crit++;else nodata++; });
+  const loaded=good+warn+crit;
+  const overall = crit>0?["rb-crit","Attention","Concern indicators present"]:
+                  warn>0?["rb-warn","Monitor","Watch indicators present"]:
+                  loaded>0?["rb-good","Stable (loaded)","No flags on loaded indicators"]:
+                  ["rb-nodata","No data loaded","Populate indicators from source"];
+  const strip=document.getElementById('riskStrip');
+  strip.innerHTML=`
+    <div class="riskbadge ${overall[0]}"><span class="k">${overall[1]}</span><span class="v">${loaded}/${RATIOS.length}</span><span style="font-size:11px">${overall[2]}</span></div>
+    <div class="riskbadge rb-crit"><span class="k">Concern</span><span class="v">${crit}</span></div>
+    <div class="riskbadge rb-warn"><span class="k">Watch</span><span class="v">${warn}</span></div>
+    <div class="riskbadge rb-good"><span class="k">Healthy</span><span class="v">${good}</span></div>
+    <div class="riskbadge rb-nodata"><span class="k">Awaiting source data</span><span class="v">${nodata}</span></div>`;
+}
+
+/* ---- Peer comparison ---- */
+function peerGroup(e){
+  switch(state.peerBasis){
+    case "type": return ENTITIES.filter(x=>x.type===e.type);
+    case "gfs": { const g=gfsClass(e); return ENTITIES.filter(x=>gfsClass(x)===g); }
+    case "material": return ENTITIES.filter(x=>x.flags.material===e.flags.material);
+    case "function": return ENTITIES.filter(x=>x.fn===e.fn);
+    default: return ENTITIES.filter(x=>x.portfolio===e.portfolio);
+  }
+}
+function gfsClass(e){ return e.flags.pfc?"Public Financial Corporation":e.flags.pnfcTrading?"Public Non-financial Corporation":"General Government Sector"; }
+function renderPeers(e){
+  if(!e) return;
+  const peers=peerGroup(e);
+  const basisLabel={portfolio:"same portfolio",type:"same entity type",gfs:"same GFS classification",material:"same materiality class",function:"similar function"}[state.peerBasis];
+  document.getElementById('peerNote').textContent=`${peers.length} peers · grouped by ${basisLabel}`;
+  // current ratio + days cash if loaded
+  function loadedVal(x,rid){ const r=RATIOS.find(z=>z.id===rid); const s=(store[x.id]&&store[x.id].ratios[rid])||{};
+    const v={}; r.inputs.forEach(([k])=>v[k]=parseFloat(s[k])); return r.inputs.every(([k])=>isFinite(v[k]))?r.calc(v):null; }
+  const t=document.getElementById('peerTable');
+  t.innerHTML=`<thead><tr><th>Entity</th><th>Type</th><th>GFS</th><th>Material</th><th>Current ratio</th><th>Days cash</th><th>Liab/Assets</th><th>Source</th></tr></thead><tbody>${
+    peers.map(x=>{
+      const cur=loadedVal(x,'cur'), dc=loadedVal(x,'dcoh'), la=loadedVal(x,'lta');
+      const f=n=>n==null?'<span class="minit">load</span>':(Math.round(n*100)/100).toLocaleString();
+      return `<tr class="${x.id===e.id?'peer-self':''}">
+        <td>${x.name}</td><td>${x.type}</td><td>${gfsClass(x).replace('General Government Sector','GGS').replace('Public Financial Corporation','PFC').replace('Public Non-financial Corporation','PNFC')}</td>
+        <td>${x.flags.material?'Yes':'—'}</td>
+        <td class="num">${f(cur)}</td><td class="num">${f(dc)}</td><td class="num">${f(la)}</td>
+        <td><a target="_blank" rel="noopener" href="${srcTransparency(x.name)}">data ↗</a></td></tr>`;
+    }).join("")}</tbody>`;
+}
+
+/* ---- Notes ---- */
+function renderNotes(e){
+  const es=eStore(e.id); const wrap=document.getElementById('savedNotes');
+  document.getElementById('noteSave').onclick=()=>{
+    const txt=document.getElementById('noteText').value.trim(); if(!txt) return;
+    es.notes.unshift({txt,author:document.getElementById('noteAuthor').value.trim(),
+      source:document.getElementById('noteSource').value.trim(), ts:new Date().toISOString().slice(0,16).replace('T',' ')});
+    saveStore(store); document.getElementById('noteText').value=""; renderNotes(e);
+  };
+  wrap.innerHTML= es.notes.length? es.notes.map((n,i)=>`<div class="savednote">
+    <button data-del="${i}" title="Delete">✕ delete</button>${n.txt.replace(/</g,'&lt;')}
+    <div class="meta">${n.author?n.author+' · ':''}${n.ts}${n.source?` · <a target="_blank" rel="noopener" href="${/^https?:/.test(n.source)?n.source:'#'}">source</a>`:''}</div></div>`).join("")
+    : '<p class="empty">No analyst notes yet for this entity.</p>';
+  wrap.querySelectorAll('[data-del]').forEach(btn=>btn.onclick=()=>{ es.notes.splice(+btn.dataset.del,1); saveStore(store); renderNotes(e); });
+}
+
+/* ============================================================ TOOLTIPS ============================================================ */
+const tip=document.getElementById('tooltip');
+function bindTips(){
+  document.querySelectorAll('[data-tip]').forEach(el=>{
+    el.onmouseenter=ev=>{ tip.textContent=el.getAttribute('data-tip'); tip.style.opacity=1;
+      const r=el.getBoundingClientRect(); tip.style.left=Math.min(r.left,window.innerWidth-280)+'px'; tip.style.top=(r.bottom+8)+'px'; };
+    el.onmouseleave=()=>{ tip.style.opacity=0; };
+  });
+}
+
+/* ============================================================ CONTROLS WIRING ============================================================ */
+function setPeriodHint(){
+  const h={day:"Daily view — for high-frequency cash monitoring where available (rare for most entities).",
+    month:"Monthly view — for in-year management reporting where published.",
+    year:"Annual view — the primary cycle: audited financial statements at 30 June."}[state.period];
+  document.getElementById('periodHint').textContent=h;
+  const pv=document.getElementById('periodValue');
+  pv.value = state.period==="year"?"2022–23":state.period==="month"?"June 2023":"30 June 2023";
+}
+document.getElementById('periodSeg').addEventListener('click',ev=>{
+  const b=ev.target.closest('button'); if(!b) return;
+  state.period=b.dataset.period;
+  [...ev.currentTarget.children].forEach(c=>c.setAttribute('aria-pressed', c===b));
+  setPeriodHint();
+});
+document.getElementById('typeSeg').addEventListener('click',ev=>{
+  const b=ev.target.closest('button'); if(!b) return;
+  state.type=b.dataset.type;
+  [...ev.currentTarget.children].forEach(c=>c.setAttribute('aria-pressed', c===b));
+  renderList();
+});
+elPort.addEventListener('change',()=>{ state.portfolio=elPort.value; renderList(); });
+elSearch.addEventListener('input',renderList);
+document.getElementById('peerBasis').addEventListener('change',e=>{ state.peerBasis=e.target.value;
+  const ent=ENTITIES.find(x=>x.id===state.entityId); if(ent){renderPeers(ent);bindTips();} });
+
+/* ============================================================ INIT ============================================================ */
+setPeriodHint(); renderList();
+</script>
+</body>
+</html>
