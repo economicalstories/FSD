@@ -56,6 +56,21 @@ cash outflows. The mapping accepts both name variants and takes flow figures as
 6. **Inject** the consolidated seed into `index.html` between
    `<!--SEED-START-->` / `<!--SEED-END-->` and write `sources/seed.json`.
 
+## Active vs historical (defunct) status
+
+The skill also tags every register entity **active** or **historical** and injects a
+`status-data` block (and `sources/status.json`). The dashboard shows active entities
+by default and hides historical (defunct/superseded) ones behind a toggle; historical
+entities are also excluded from peer benchmarks.
+
+- **historical** = either a curated, evidence-based defunct entity (`CURATED_HISTORICAL`,
+  e.g. ANPHA, abolished 2014) **or** an entity whose latest annual report predates
+  FY2023-24 (clearly stopped reporting → superseded).
+- Absence of financial data is **not** treated as defunct: intelligence/security and
+  on-base bodies (`ACTIVE_EXEMPT`) are active but don't publish statements.
+- Footnote markers like `[i]` are stripped before deciding an entity was renamed, so a
+  continuing department (e.g. Education) is not mislabelled as machinery-of-government'd.
+
 ## Relative, not absolute
 
 The dashboard reads every indicator **relative to peers** in the selected group

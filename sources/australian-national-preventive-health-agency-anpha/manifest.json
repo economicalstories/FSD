@@ -1,7 +1,7 @@
 {
   "registerName": "Australian National Preventive Health Agency (ANPHA)",
   "sourceEntityNames": [],
-  "renamed": true,
+  "renamed": false,
   "entityCodeName": null,
   "portfolio": null,
   "source": "Australian Government Transparency Portal (transparency.gov.au)",

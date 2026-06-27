@@ -70,11 +70,14 @@ sources/index.json                     summary of what was fetched
 ## Notes & gotchas
 
 - **Exact names.** The API filters on the entity's exact published name. Names
-  drift with machinery-of-government changes (e.g. recent years of *Department of
-  Education* are published as `Department of Education [i]`; *Infrastructure...*
-  gained *Sport* in 2024-25). `ALIASES` in `fetch.py` maps a register name to its
-  recognised continuations; the source entity name is preserved on every record
-  and surfaced in the manifest (`renamed`, `sourceEntityNames`).
+  drift with machinery-of-government changes (e.g. *Infrastructure…* gained *Sport*
+  in 2024-25; the *Organ and Tissue Authority* now reports under an expanded title).
+  `ALIASES` in `fetch.py` maps a register name to its recognised continuations; the
+  source entity name is preserved on every record and surfaced in the manifest
+  (`renamed`, `sourceEntityNames`).
+- **Footnote markers.** The Portal appends markers like ` [i]` to some names (e.g.
+  `Department of Education [i]`). `canon_name()` strips these before computing
+  `renamed`, so a continuing entity is not falsely flagged as renamed/defunct.
 - **No transformation here.** This step only downloads and records provenance.
   Mapping to indicators and computing ratios happens in `fsd-analyse-entity`.
 - **Network.** The API is large; requests retry with exponential backoff.

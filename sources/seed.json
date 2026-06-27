@@ -9418,7 +9418,7 @@
     "registerName": "Department of Education",
     "period": "2024-25",
     "sourceEntityName": "Department of Education [i]",
-    "renamed": true,
+    "renamed": false,
     "annualReportUrl": "https://www.transparency.gov.au/publications/education-i/department-of-education-i/department-of-education-annual-report-2024-25",
     "annualReportTitle": "Department of Education Annual Report 2024-25",
     "ratios": {
@@ -18969,6 +18969,139 @@
         8485.0,
         18253.0,
         22557.0
+      ]
+    }
+  },
+  "Organ and Tissue Authority": {
+    "registerName": "Organ and Tissue Authority",
+    "period": "2024-25",
+    "sourceEntityName": "Organ and Tissue Authority (Australian Organ and Tissue Donation and Transplantation Authority)",
+    "renamed": true,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/organ-and-tissue-authority-australian-organ-and-tissue-donation-and-transplantation-authority/organ-and-tissue-authority-australian-organ-and-tissue-donation-and-transplantation-authority-annual-report-2024-25",
+    "annualReportTitle": "Organ and Tissue Authority (Australian Organ and Tissue Donation and Transplantation Authority) Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "3835",
+        "assets": "6768"
+      },
+      "fatl": {
+        "finassets": "2957",
+        "liab": "3835"
+      },
+      "cur": {
+        "ca": "3027",
+        "cl": "1182"
+      },
+      "cto": {
+        "netpur": "47",
+        "nfassets": "3811"
+      },
+      "liq": {
+        "cash": "159",
+        "opcash": "7092",
+        "fincash": "243",
+        "netpur": "47"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "Total liabilities",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "Total assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "Total financial assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "Total liabilities",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "Assets — no more than 12 months",
+          "statement": "Assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "Liabilities — no more than 12 months",
+          "statement": "Assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "Net cash used in investing (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "Total non-financial assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "Cash at end of reporting period",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "Cash used in operating activities",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "Cash used in financing activities",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "Net cash used in investing",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        -111.0,
+        -52.0,
+        -402.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        78.03,
+        74.97,
+        79.42
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        121.0,
+        106.0,
+        159.0
       ]
     }
   },

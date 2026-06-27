@@ -1,7 +1,7 @@
 {
   "registerName": "Army and Air Force Canteen Service (Frontline Defence Services)",
   "sourceEntityNames": [],
-  "renamed": true,
+  "renamed": false,
   "entityCodeName": null,
   "portfolio": null,
   "source": "Australian Government Transparency Portal (transparency.gov.au)",

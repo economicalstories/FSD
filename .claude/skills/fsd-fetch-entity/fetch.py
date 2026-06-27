@@ -56,7 +56,18 @@ ALIASES = {
         "Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts",
         "Department of Infrastructure, Transport, Regional Development, Communications and the Arts",
     ],
+    # Active — now reports under an expanded name (same entity).
+    "Organ and Tissue Authority": [
+        "Organ and Tissue Authority (Australian Organ and Tissue Donation and Transplantation Authority)",
+        "Organ and Tissue Authority",
+    ],
 }
+
+# Transparency Portal appends footnote markers like " [i]" / " [1]" to some entity
+# names. These are not renames — strip them before deciding whether an entity was
+# genuinely renamed by a machinery-of-government change.
+def canon_name(n):
+    return re.sub(r"\s*\[[^\]]*\]\s*$", "", (n or "")).strip()
 
 # The 19 Departments of State (incl. the three Parliamentary departments), exactly
 # as named in the entity register the dashboard ships with.
@@ -147,10 +158,13 @@ def fetch_entity(name):
                 "financialStatementsAnchor": r.get("datasetUrl") or "",
             }
     source_names = sorted({r.get("entity") for r in records})
+    # Genuinely renamed only if a source name (ignoring footnote markers) differs
+    # from the register name — not merely a "[i]" footnote.
+    renamed = any(canon_name(s) != canon_name(name) for s in source_names)
     manifest = {
         "registerName": name,
         "sourceEntityNames": source_names,
-        "renamed": source_names != [name],
+        "renamed": renamed,
         "entityCodeName": next((r.get("entityCodeName") for r in records if r.get("entityCodeName")), None),
         "portfolio": next((r.get("portfolio") for r in records if r.get("portfolio")), None),
         "source": "Australian Government Transparency Portal (transparency.gov.au)",

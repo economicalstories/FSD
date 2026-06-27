@@ -50,6 +50,27 @@ STMT_LABEL = {
 BASE_YEAR = 2018
 N_YEARS = 7
 
+# Entities abolished / merged away with no continuing identity — evidence-based, not
+# inferred from missing data. These are tagged "historical" and hidden from the default
+# (currently-active) view, available via the dashboard's historical toggle.
+CURATED_HISTORICAL = {
+    "Australian National Preventive Health Agency (ANPHA)":
+        "Abolished 30 June 2014; functions returned to the Department of Health "
+        "(Australian National Preventive Health Agency (Abolition) Act 2014).",
+}
+# Active entities that publish no (or exempt) financial statements on the Transparency
+# Portal — chiefly the intelligence/security community and on-base services. Absence of
+# financial data must NOT be read as defunct for these.
+ACTIVE_EXEMPT = {
+    "Australian Secret Intelligence Service",
+    "Office of National Intelligence",
+    "Australian Crime Commission (Australian Criminal Intelligence Commission)",
+    "Army and Air Force Canteen Service (Frontline Defence Services)",
+}
+# Reporting periods at or before this are treated as "no longer reporting" (superseded),
+# unless the entity is in ACTIVE_EXEMPT.
+STALE_CUTOFF = "2022-23"
+
 
 # ---- ratio definitions mirror index.html; dir: high=higher healthier, low=lower healthier, band ----
 RATIO_DIR = {"lta": "low", "fatl": "high", "cur": "high", "cto": "band", "liq": "high"}
@@ -325,18 +346,47 @@ def benchmarks(seed_map, reg):
     return report
 
 
-def inject(seed_map):
-    block = ('<script id="seed-data" type="application/json">'
-             + json.dumps(seed_map, ensure_ascii=False, separators=(",", ":"))
-             + "</script>")
-    wrapped = "<!--SEED-START-->\n" + block + "\n<!--SEED-END-->"
+def start_year(period):
+    try:
+        return int(str(period)[:4])
+    except (ValueError, TypeError):
+        return None
+
+
+def compute_status(reg_names, manifests):
+    """Per register entity: active vs historical (defunct/superseded), with a reason.
+    Defunct is evidence-based (curated) or inferred only from a clearly stale last
+    report — never from mere absence of data (intelligence/exempt bodies stay active)."""
+    out = {}
+    for name in reg_names:
+        m = manifests.get(name)
+        pers = [p["reportingPeriod"] for p in (m or {}).get("periods", [])]
+        latest = max(pers) if pers else None
+        sy = start_year(latest)
+        if name in CURATED_HISTORICAL:
+            out[name] = {"status": "historical", "reason": CURATED_HISTORICAL[name], "latestPeriod": latest}
+        elif sy is not None and sy < 2023 and name not in ACTIVE_EXEMPT:
+            out[name] = {"status": "historical",
+                         "reason": f"No annual report since {latest} — likely superseded by a machinery-of-government change.",
+                         "latestPeriod": latest}
+        else:
+            reason = ("Active — financial statements not published on the Transparency Portal (exempt)."
+                      if (name in ACTIVE_EXEMPT or not latest) else "Active — currently reporting.")
+            out[name] = {"status": "active", "reason": reason, "latestPeriod": latest}
+    return out
+
+
+def inject_block(marker_id, start, end, payload):
+    block = (f'<script id="{marker_id}" type="application/json">'
+             + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "</script>")
+    wrapped = f"{start}\n{block}\n{end}"
     with open(INDEX) as f:
         html = f.read()
-    if "<!--SEED-START-->" in html:
-        html = re.sub(r"<!--SEED-START-->.*?<!--SEED-END-->", lambda m: wrapped, html, flags=re.S)
+    if start in html:
+        html = re.sub(re.escape(start) + r".*?" + re.escape(end), lambda m: wrapped, html, flags=re.S)
     else:
-        marker = '<script id="entity-data"'
-        html = html.replace(marker, wrapped + "\n" + marker, 1)
+        anchor = '<script id="entity-data"'
+        html = html.replace(anchor, wrapped + "\n" + anchor, 1)
     with open(INDEX, "w") as f:
         f.write(html)
 
@@ -347,13 +397,14 @@ def main(argv):
         return 1
     reg = register()
     want = set(argv) if argv else None
-    seed_map = {}
+    seed_map, manifests = {}, {}
     for d in sorted(os.listdir(SOURCES)):
         mpath = os.path.join(SOURCES, d, "manifest.json")
         if not os.path.isfile(mpath):
             continue
         manifest = json.load(open(mpath))
         name = manifest["registerName"]
+        manifests[name] = manifest
         if want and name not in want:
             continue
         records = json.load(open(os.path.join(SOURCES, d, "transparency_raw.json")))
@@ -364,15 +415,24 @@ def main(argv):
         else:
             print(f"[skip] {name}: {msg}")
 
+    # Active vs historical (defunct) status for EVERY register entity.
+    status = compute_status(list(reg.keys()), manifests)
+    hist = [n for n, s in status.items() if s["status"] == "historical"]
+
     with open(os.path.join(SOURCES, "seed.json"), "w") as f:
         json.dump(seed_map, f, indent=2, ensure_ascii=False)
     report = benchmarks(seed_map, reg)
     with open(os.path.join(SOURCES, "benchmarks.json"), "w") as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
-    inject(seed_map)
-    print(f"\nInjected seed for {len(seed_map)} entities into index.html")
+    with open(os.path.join(SOURCES, "status.json"), "w") as f:
+        json.dump(status, f, indent=2, ensure_ascii=False)
+
+    inject_block("seed-data", "<!--SEED-START-->", "<!--SEED-END-->", seed_map)
+    inject_block("status-data", "<!--STATUS-START-->", "<!--STATUS-END-->", status)
+    print(f"\nInjected seed for {len(seed_map)} entities + status for {len(status)} into index.html")
+    print(f"Historical (defunct/superseded): {len(hist)} — {', '.join(hist) or 'none'}")
     print(f"Wrote benchmarks for {sum(len(v) for v in report.values())} groups across "
-          f"{len(report)} comparison bases into sources/benchmarks.json")
+          f"{len(report)} comparison bases")
     return 0
 
 

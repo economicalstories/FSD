@@ -47,6 +47,11 @@ User-entered figures and analyst notes are stored **locally in the browser only*
 - **Period selection** — day / month / year (annual is the primary audited cycle).
 - **Entity selection** — search and filter all 175 entities by **entity type** (corporate /
   non-corporate), **like-for-like category** (department, regulator, RDC, cultural body, …), and portfolio.
+- **Currently-active by default** — defunct / superseded entities (abolished or merged by
+  machinery-of-government changes, e.g. ANPHA) are tagged *Defunct*, hidden by default behind a
+  *Show historical* toggle, and excluded from peer benchmarks. Status is evidence-based (curated
+  abolitions + Administrative Arrangements Orders), not inferred from missing data — so active but
+  financially-exempt bodies (intelligence agencies) stay visible.
 - **Relative (peer-benchmarked) indicators** — instead of pass/fail thresholds, each ratio is read
   against the **distribution of its peers** in the selected comparison group. Every indicator card shows
   the entity's value, its rank (*n of N from the less-favourable end*) and a distribution strip (this
@@ -110,5 +115,14 @@ Sustainability) are left blank for manual entry rather than estimated. Each indi
 - Department of Finance — [finance.gov.au](https://www.finance.gov.au/) (Flipchart / PGPA register)
 - [transparency.gov.au](https://www.transparency.gov.au/) (annual reports, financial statements, financial ratios)
 - Australian National Audit Office — [anao.gov.au](https://www.anao.gov.au/) (financial-statement audits)
+- **GFS sector** (GGS / PNFC / PFC) — Dept. of Finance glossary
+  ([GGS](https://www.finance.gov.au/about-us/glossary/pgpa/term-general-government-sector-ggs),
+  [PNFC](https://www.finance.gov.au/about-us/glossary/pgpa/term-public-non-financial-corporations),
+  [PFC](https://www.finance.gov.au/about-us/glossary/pgpa/term-public-financial-corporations-pfc-0)) and the
+  PGPA Flipchart markers; the authoritative list of entities outside the GGS is **Budget Paper No. 1,
+  Statement 10, Appendix A** ([budget.gov.au](https://budget.gov.au/)). The dashboard derives each entity's
+  sector from the Flipchart flags and exposes it as a comparison-group basis.
+- **Entity status** (active / defunct) — Administrative Arrangements Orders and the Finance
+  [Machinery of Government Changes Guide](https://www.finance.gov.au/government/machinery-government-changes-guide).
 
 This dashboard is not endorsed by the Australian Government, the Department of Finance or the ANAO.

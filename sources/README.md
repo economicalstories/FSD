@@ -27,6 +27,7 @@ sources/
   index.json                  what was fetched (entity → records, periods)
   seed.json                   consolidated seed injected into index.html
   benchmarks.json             per-group ratio distributions + each entity's rank
+  status.json                 active vs historical (defunct) status per entity, with reason
   <entity-slug>/
     transparency_raw.json     verbatim API records for the entity
     manifest.json             provenance: periods, content types, backlinks
