@@ -79,15 +79,21 @@ not departments.
 
 ## Data pipeline (fetch → analyse)
 
-Real data is populated by two chained, reusable skills under `.claude/skills/`:
+Real data is populated and maintained by four reusable skills under `.claude/skills/`:
 
 1. **`fsd-fetch-entity`** — searches and downloads an entity's annual-report financial-statement
    extracts from the Transparency Portal data API into `sources/<entity>/`, with a provenance
-   manifest of periods and backlinks. No transformation.
+   manifest of periods and backlinks. No transformation. `--audit-names` flags machinery-of-government
+   renames before figures go stale.
 2. **`fsd-analyse-entity`** — loads that data (non-corporate and corporate), picks the latest period
    with the full statement set, maps each line item to the dashboard's ratio inputs, computes
-   multi-year trends, **benchmarks each ratio across every comparison group**, records per-figure
-   provenance, and injects the seed into `index.html` (and writes `sources/benchmarks.json`).
+   multi-year trends, **benchmarks each ratio across every comparison group**, tags active/defunct
+   status, records per-figure provenance, and injects the seed into `index.html` (and writes
+   `sources/benchmarks.json` + `sources/status.json`).
+3. **`fsd-verify`** — independently re-fetches a sample, confirms the seeded figures match source and
+   the backlinks resolve, and sanity-checks headline findings. Run before committing or sharing.
+4. **`fsd-refresh`** — re-pulls the latest data when new annual reports land and **diffs** what changed
+   (new/lost entities, newer periods, status flips, figure changes) before you commit.
 
 Run the whole chain across the full register (NCEs + CCEs):
 

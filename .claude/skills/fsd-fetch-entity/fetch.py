@@ -15,6 +15,7 @@ Usage:
     python3 fetch.py "Department of the Treasury" ["Another Entity" ...]
     python3 fetch.py --departments      # all 19 Departments of State (incl. parliamentary)
     python3 fetch.py --all              # every entity in the register (NCEs + CCEs)
+    python3 fetch.py --audit-names      # flag register names whose recent data sits under a renamed entity
 
 Output (per entity):
     sources/<slug>/transparency_raw.json   raw API records (verbatim)
@@ -105,6 +106,58 @@ def register_names():
     return [e["name"] for e in json.loads(m.group(1))]
 
 
+FP_TYPES = ["extract_of_statement_of_financial_position_____cop",
+            "extract_of_statement_of_financial_position___cce"]
+_STOP = {"the", "of", "and", "for", "department", "authority", "commission", "australian",
+         "australia", "agency", "office", "national", "commonwealth", "corporation",
+         "service", "services", "council"}
+
+
+def _norm(n):
+    return re.sub(r"[^a-z0-9 ]", " ", canon_name(n).lower()).strip()
+
+
+def _tokens(n):
+    return {w for w in _norm(n).split() if len(w) > 3 and w not in _STOP}
+
+
+def audit_names():
+    """Flag register names that have no recent data under their own name (or a known
+    alias), and suggest near-match entity names — so machinery-of-government renames
+    are caught proactively rather than after someone notices stale figures."""
+    cutoff = int(os.environ.get("FSD_ACTIVE_SINCE_FY", "2023"))
+    resp = post({"contentType": FP_TYPES, "entity": [], "entityCodename": [],
+                 "reportingPeriod": [], "portfolio": [], "filter": "*"})
+    universe = {}
+    for r in resp.get("entityData", []):
+        nm, per = r.get("entity"), r.get("reportingPeriod")
+        if nm and per:
+            universe.setdefault(nm, set()).add(per)
+    syr = lambda p: int(str(p)[:4]) if str(p)[:4].isdigit() else 0
+    recent = {nm for nm, ps in universe.items() if max((syr(p) for p in ps), default=0) >= cutoff}
+    recent_norm = {_norm(nm) for nm in recent}
+    reg = register_names()
+    print(f"Auditing {len(reg)} register names against {len(recent)} entities reporting FY>={cutoff}...\n")
+    flagged = 0
+    for name in reg:
+        checks = ALIASES.get(name, [name])
+        if any(_norm(c) in recent_norm for c in checks):
+            continue
+        flagged += 1
+        rt = _tokens(name)
+        scored = sorted(((len(rt & _tokens(c)) / len(rt | _tokens(c)), c, max(universe[c]))
+                         for c in recent if rt and _tokens(c) and len(rt & _tokens(c)) / len(rt | _tokens(c)) >= 0.5),
+                        reverse=True)
+        print(f"[CHECK] {name!r} — no FY>={cutoff} data under this name")
+        if scored:
+            for j, cand, latest in scored[:3]:
+                print(f"        ~ likely match: {cand!r} (latest {latest}, token overlap {j:.2f}) → consider ALIASES")
+        else:
+            print(f"        (no near-match; likely genuinely defunct or financially exempt — see analyse.py CURATED_HISTORICAL / ACTIVE_EXEMPT)")
+    print(f"\n{flagged} register names need review. Names already covered by ALIASES are skipped.")
+    return 0
+
+
 def slug(name):
     s = name.lower().replace("&", "and")
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
@@ -184,6 +237,8 @@ def main(argv):
     if not argv:
         print(__doc__)
         return 1
+    if argv[0] == "--audit-names":
+        return audit_names()
     if argv[0] == "--departments":
         targets = DEPARTMENTS
     elif argv[0] == "--all":

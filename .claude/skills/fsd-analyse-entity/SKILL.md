@@ -64,8 +64,9 @@ by default and hides historical (defunct/superseded) ones behind a toggle; histo
 entities are also excluded from peer benchmarks.
 
 - **historical** = either a curated, evidence-based defunct entity (`CURATED_HISTORICAL`,
-  e.g. ANPHA, abolished 2014) **or** an entity whose latest annual report predates
-  FY2023-24 (clearly stopped reporting → superseded).
+  e.g. ANPHA, abolished 2014) **or** an entity whose latest annual report predates the
+  active-since threshold (`ACTIVE_SINCE_FY`, default 2023 → must have a 2023-24+ report).
+  Bump it without editing code via `FSD_ACTIVE_SINCE_FY=2024` (fsd-refresh passes this).
 - Absence of financial data is **not** treated as defunct: intelligence/security and
   on-base bodies (`ACTIVE_EXEMPT`) are active but don't publish statements.
 - Footnote markers like `[i]` are stripped before deciding an entity was renamed, so a
@@ -105,11 +106,28 @@ Every seeded number is a verbatim figure from a published, audited financial
 statement, carried with a click-through to its source. Thresholds and the ratio
 formulas themselves remain illustrative (see the dashboard's own caveats).
 
-## Chain from step 1
+## Maintenance surface
+
+Everything a human reviews each cycle is consolidated and labelled at the top of
+`analyse.py` (and `ALIASES` in `fetch.py`): `ACTIVE_SINCE_FY`, `CURATED_HISTORICAL`,
+`ACTIVE_EXEMPT`. The **dashboard contract** (the `seed-data` / `status-data` shapes,
+and the fact that benchmarks and the "where to look first" chart are computed live in
+the browser, not here) is documented above `inject_block()` — don't rename those
+blocks without updating the JS in `index.html`.
+
+## Chain
 
 ```bash
 python3 .claude/skills/fsd-fetch-entity/fetch.py "Department of the Treasury"   # download
 python3 .claude/skills/fsd-analyse-entity/analyse.py "Department of the Treasury" # analyse + inject
-# ...or both, for all departments:
+# ...or both, for all departments / the whole register:
 bash scripts/run_departments.sh
+bash scripts/run_all.sh
+```
+
+Then **fact-check** and, on a cycle, **refresh**:
+
+```bash
+python3 .claude/skills/fsd-verify/verify.py        # confirm seeded figures match source
+python3 .claude/skills/fsd-refresh/refresh.py      # re-pull latest data and diff what changed
 ```

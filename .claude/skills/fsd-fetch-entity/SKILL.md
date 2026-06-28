@@ -57,7 +57,15 @@ python3 .claude/skills/fsd-fetch-entity/fetch.py --departments
 
 # Every entity in the register — NCEs and CCEs (~175)
 python3 .claude/skills/fsd-fetch-entity/fetch.py --all
+
+# Audit: flag register names whose recent data sits under a renamed entity (suggests ALIASES)
+python3 .claude/skills/fsd-fetch-entity/fetch.py --audit-names
 ```
+
+**Maintenance.** `--audit-names` is the proactive guard against machinery-of-government
+renames: it lists register names with no recent data under their own name and suggests
+the near-match entity the Portal is now using, so you can add an `ALIASES` entry before
+figures go stale. Run it at the start of each refresh cycle.
 
 ## Output
 

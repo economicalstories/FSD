@@ -50,6 +50,19 @@ STMT_LABEL = {
 BASE_YEAR = 2018
 N_YEARS = 7
 
+# ============================================================================
+# MAINTENANCE — review these each reporting cycle (and see fsd-refresh):
+#   ACTIVE_SINCE_FY   bump when a new audited year becomes the norm
+#   CURATED_HISTORICAL evidence-based abolitions/mergers (add as they happen)
+#   ACTIVE_EXEMPT     active bodies that don't publish financials (don't tag defunct)
+#   ALIASES           lives in fetch.py — renamed/expanded entity names
+# ============================================================================
+
+# An entity counts as currently active if it has filed for FY starting in this year
+# or later (e.g. 2023 => has a 2023-24 or 2024-25 report). Override with the env var
+# FSD_ACTIVE_SINCE_FY so fsd-refresh can bump it without editing code.
+ACTIVE_SINCE_FY = int(os.environ.get("FSD_ACTIVE_SINCE_FY", "2023"))
+
 # Entities abolished / merged away with no continuing identity — evidence-based, not
 # inferred from missing data. These are tagged "historical" and hidden from the default
 # (currently-active) view, available via the dashboard's historical toggle.
@@ -67,9 +80,6 @@ ACTIVE_EXEMPT = {
     "Australian Crime Commission (Australian Criminal Intelligence Commission)",
     "Army and Air Force Canteen Service (Frontline Defence Services)",
 }
-# Reporting periods at or before this are treated as "no longer reporting" (superseded),
-# unless the entity is in ACTIVE_EXEMPT.
-STALE_CUTOFF = "2022-23"
 
 
 # ---- ratio definitions mirror index.html; dir: high=higher healthier, low=lower healthier, band ----
@@ -365,7 +375,7 @@ def compute_status(reg_names, manifests):
         sy = start_year(latest)
         if name in CURATED_HISTORICAL:
             out[name] = {"status": "historical", "reason": CURATED_HISTORICAL[name], "latestPeriod": latest}
-        elif sy is not None and sy < 2023 and name not in ACTIVE_EXEMPT:
+        elif sy is not None and sy < ACTIVE_SINCE_FY and name not in ACTIVE_EXEMPT:
             out[name] = {"status": "historical",
                          "reason": f"No annual report since {latest} — likely superseded by a machinery-of-government change.",
                          "latestPeriod": latest}
@@ -376,6 +386,12 @@ def compute_status(reg_names, manifests):
     return out
 
 
+# ---- Dashboard contract (index.html consumes these; don't rename without updating the JS) ----
+#   <script id="seed-data">    name -> {period, ratios{rid:{input:val}}, ratioProvenance, trends, annualReportUrl, renamed, ...}
+#   <script id="status-data">  name -> {status:"active"|"historical", reason, latestPeriod}
+# The dashboard computes peer benchmarks, relative ranks and the "where to look first"
+# chart LIVE in the browser from seed-data (so user edits and group changes recompute);
+# this script only supplies the sourced figures and status, never the rankings.
 def inject_block(marker_id, start, end, payload):
     block = (f'<script id="{marker_id}" type="application/json">'
              + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "</script>")
