@@ -77,8 +77,6 @@ CURATED_HISTORICAL = {
 ACTIVE_EXEMPT = {
     "Australian Secret Intelligence Service",
     "Office of National Intelligence",
-    "Australian Crime Commission (Australian Criminal Intelligence Commission)",
-    "Army and Air Force Canteen Service (Frontline Defence Services)",
 }
 
 

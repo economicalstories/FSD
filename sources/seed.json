@@ -531,6 +531,139 @@
       ]
     }
   },
+  "Army and Air Force Canteen Service (Frontline Defence Services)": {
+    "registerName": "Army and Air Force Canteen Service (Frontline Defence Services)",
+    "period": "2024-25",
+    "sourceEntityName": "Army and Air Force Canteen Service",
+    "renamed": true,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-frontline-defence-services-annual-report-2024-25",
+    "annualReportTitle": "Army and Air Force Canteen Service (Frontline Defence Services) Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "3995",
+        "assets": "21459"
+      },
+      "fatl": {
+        "finassets": "15883",
+        "liab": "3995"
+      },
+      "cur": {
+        "ca": "17813",
+        "cl": "3391"
+      },
+      "cto": {
+        "netpur": "11012",
+        "nfassets": "5576"
+      },
+      "liq": {
+        "cash": "5103",
+        "opcash": "38831",
+        "fincash": "0",
+        "netpur": "11012"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "Total liabilities",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "Total assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "Total financial assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "Total liabilities",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "Assets — no more than 12 months",
+          "statement": "Assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "Liabilities — no more than 12 months",
+          "statement": "Assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "Net cash used in investing (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "Total non-financial assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "Cash at end of reporting period",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "Cash used in operating activities",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "Cash used in financing activities",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "Net cash used in investing",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        2142.0,
+        1776.0,
+        1519.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        30.81,
+        31.95,
+        33.05
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        12892.0,
+        14137.0,
+        5103.0
+      ]
+    }
+  },
   "Asbestos and Silica Safety and Eradication Agency": {
     "registerName": "Asbestos and Silica Safety and Eradication Agency",
     "period": "2024-25",
@@ -1592,6 +1725,139 @@
         2207.0,
         2137.0,
         2184.0
+      ]
+    }
+  },
+  "Australian Crime Commission (Australian Criminal Intelligence Commission)": {
+    "registerName": "Australian Crime Commission (Australian Criminal Intelligence Commission)",
+    "period": "2024-25",
+    "sourceEntityName": "Australian Criminal Intelligence Commission",
+    "renamed": true,
+    "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/australian-criminal-intelligence-commission/australian-criminal-intelligence-commission-annual-report-2024-25",
+    "annualReportTitle": "Australian Criminal Intelligence Commission Annual Report 2024-25",
+    "ratios": {
+      "lta": {
+        "liab": "128560",
+        "assets": "466377"
+      },
+      "fatl": {
+        "finassets": "229028",
+        "liab": "128560"
+      },
+      "cur": {
+        "ca": "248994",
+        "cl": "67994"
+      },
+      "cto": {
+        "netpur": "42849",
+        "nfassets": "237349"
+      },
+      "liq": {
+        "cash": "133358",
+        "opcash": "344020",
+        "fincash": "15657",
+        "netpur": "42849"
+      }
+    },
+    "ratioProvenance": {
+      "lta": {
+        "liab": {
+          "item": "Total liabilities",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        },
+        "assets": {
+          "item": "Total assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "fatl": {
+        "finassets": {
+          "item": "Total financial assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        },
+        "liab": {
+          "item": "Total liabilities",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "cur": {
+        "ca": {
+          "item": "Assets — no more than 12 months",
+          "statement": "Assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        },
+        "cl": {
+          "item": "Liabilities — no more than 12 months",
+          "statement": "Assets & liabilities — current/non-current distinction",
+          "period": "2024-25"
+        }
+      },
+      "cto": {
+        "netpur": {
+          "item": "Net cash used in investing (net non-financial asset acquisition)",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "nfassets": {
+          "item": "Total non-financial assets",
+          "statement": "Statement of Financial Position",
+          "period": "2024-25"
+        }
+      },
+      "liq": {
+        "cash": {
+          "item": "Cash at end of reporting period",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "opcash": {
+          "item": "Cash used in operating activities",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "fincash": {
+          "item": "Cash used in financing activities",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        },
+        "netpur": {
+          "item": "Net cash used in investing",
+          "statement": "Cash Flow Statement",
+          "period": "2024-25"
+        }
+      }
+    },
+    "trends": {
+      "oppresult": [
+        null,
+        null,
+        null,
+        null,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "empexp": [
+        null,
+        null,
+        null,
+        null,
+        36.97,
+        40.47,
+        39.4
+      ],
+      "cashtrend": [
+        null,
+        null,
+        null,
+        null,
+        150749.0,
+        124900.0,
+        133358.0
       ]
     }
   },

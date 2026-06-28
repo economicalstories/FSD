@@ -1,13 +1,70 @@
 {
   "registerName": "Army and Air Force Canteen Service (Frontline Defence Services)",
-  "sourceEntityNames": [],
-  "renamed": false,
-  "entityCodeName": null,
-  "portfolio": null,
+  "sourceEntityNames": [
+    "Army and Air Force Canteen Service"
+  ],
+  "renamed": true,
+  "entityCodeName": "army_and_air_force_canteen_service__frontline_defe",
+  "portfolio": "Defence",
   "source": "Australian Government Transparency Portal (transparency.gov.au)",
   "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
   "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
-  "retrievedRecordCount": 0,
-  "contentTypes": [],
-  "periods": []
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "Army and Air Force Canteen Service Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "Army and Air Force Canteen Service Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "Army and Air Force Canteen Service Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "Army and Air Force Canteen Service Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "Army and Air Force Canteen Service Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-annual-report-2022-23",
+      "financialStatementsAnchor": "Governance/annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "AAFCANS - Army & Air Force Canteen Service",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/aafcans-army-air-force-canteen-service",
+      "financialStatementsAnchor": "Governance/annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Army and Air Force Canteen Service",
+      "annualReportTitle": "Army and Air Force Canteen Service (Frontline Defence Services) Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/army-and-air-force-canteen-service/army-and-air-force-canteen-service-frontline-defence-services-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
 }

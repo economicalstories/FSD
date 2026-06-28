@@ -56,8 +56,8 @@
   },
   "Australian Crime Commission (Australian Criminal Intelligence Commission)": {
     "status": "active",
-    "reason": "Active — financial statements not published on the Transparency Portal (exempt).",
-    "latestPeriod": null
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
   },
   "Australian Federal Police": {
     "status": "active",
@@ -201,8 +201,8 @@
   },
   "Army and Air Force Canteen Service (Frontline Defence Services)": {
     "status": "active",
-    "reason": "Active — financial statements not published on the Transparency Portal (exempt).",
-    "latestPeriod": null
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
   },
   "Australian Military Forces Relief Trust Fund": {
     "status": "active",

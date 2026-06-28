@@ -62,6 +62,15 @@ ALIASES = {
         "Organ and Tissue Authority (Australian Organ and Tissue Donation and Transplantation Authority)",
         "Organ and Tissue Authority",
     ],
+    # Active — publishes under its current legal name (register carries a former/trading name).
+    "Australian Crime Commission (Australian Criminal Intelligence Commission)": [
+        "Australian Criminal Intelligence Commission",
+        "Australian Crime Commission (Australian Criminal Intelligence Commission)",
+    ],
+    "Army and Air Force Canteen Service (Frontline Defence Services)": [
+        "Army and Air Force Canteen Service",
+        "Army and Air Force Canteen Service (Frontline Defence Services)",
+    ],
 }
 
 # Transparency Portal appends footnote markers like " [i]" / " [1]" to some entity

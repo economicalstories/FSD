@@ -63,9 +63,11 @@ def num(ndf, items, absolute=False):
     return None
 
 
-def fresh_inputs(name, period):
-    """Independently re-derive the five ratios' inputs for one entity/period."""
-    resp = post({"contentType": FP + CF + CD, "entity": [name], "entityCodename": [],
+def fresh_inputs(source_name, period):
+    """Independently re-derive the five ratios' inputs for one entity/period.
+    `source_name` is the exact name the figures were reported under (seed's
+    sourceEntityName), which differs from the register name for aliased entities."""
+    resp = post({"contentType": FP + CF + CD, "entity": [source_name], "entityCodename": [],
                  "reportingPeriod": [], "portfolio": [], "filter": "*"})
     by = {}
     for r in resp.get("entityData", []):
@@ -121,7 +123,8 @@ def main(argv):
             print(f"[skip] {name}: not in seed.json"); continue
         checked += 1
         period = s["period"]
-        fresh = fresh_inputs(name, period)
+        source_name = s.get("sourceEntityName") or name
+        fresh = fresh_inputs(source_name, period)
         if fresh is None:
             print(f"[WARN] {name}: could not re-fetch full {period} statement set"); mismatches += 1; continue
         diffs = []
