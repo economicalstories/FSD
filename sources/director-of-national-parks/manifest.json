@@ -1,0 +1,63 @@
+{
+  "registerName": "Director of National Parks",
+  "sourceEntityNames": [
+    "Director of National Parks"
+  ],
+  "renamed": false,
+  "entityCodeName": "director_of_national_parks",
+  "portfolio": "Agriculture, Water and the Environment",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Director of National Parks",
+      "annualReportTitle": "Director of National Parks Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/director-of-national-parks/director-of-national-parks-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Director of National Parks",
+      "annualReportTitle": "Director of National Parks Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/director-of-national-parks/director-of-national-parks-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Director of National Parks",
+      "annualReportTitle": "Director of National Parks Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/director-of-national-parks/director-of-national-parks-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Director of National Parks",
+      "annualReportTitle": "Director of National Parks Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/climate-change-energy-the-environment-and-water/director-of-national-parks/director-of-national-parks-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Director of National Parks",
+      "annualReportTitle": "Director of National Parks Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-water-and-the-environment/director-of-national-parks/director-of-national-parks-annual-report-2022-23",
+      "financialStatementsAnchor": "CHAPTER-4---ANNUAL-PERFORMANCE-STATEMENT/annual-performance-statement"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Director of National Parks",
+      "annualReportTitle": "Director of National Parks Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture-water-and-the-environment/director-of-national-parks/director-of-national-parks-annual-report-2023-24",
+      "financialStatementsAnchor": "CHAPTER-4---ANNUAL-PERFORMANCE-STATEMENT/annual-performance-statements"
+    }
+  ]
+}

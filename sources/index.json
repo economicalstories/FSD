@@ -1,0 +1,2164 @@
+{
+  "source": "transparency.gov.au data API",
+  "entities": [
+    {
+      "entity": "Department of Agriculture, Fisheries and Forestry",
+      "slug": "department-of-agriculture-fisheries-and-forestry",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Fisheries Management Authority",
+      "slug": "australian-fisheries-management-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Pesticides and Veterinary Medicines Authority (APVMA)",
+      "slug": "australian-pesticides-and-veterinary-medicines-authority-apvma",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Cotton Research and Development Corporation",
+      "slug": "cotton-research-and-development-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Fisheries Research and Development Corporation",
+      "slug": "fisheries-research-and-development-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Grains Research and Development Corporation",
+      "slug": "grains-research-and-development-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Regional Investment Corporation",
+      "slug": "regional-investment-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Rural Industries Research and Development Corporation",
+      "slug": "rural-industries-research-and-development-corporation",
+      "records": 9,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Wine Australia",
+      "slug": "wine-australia",
+      "records": 9,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Attorney-General's Department",
+      "slug": "attorney-general-s-department",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Administrative Appeals Tribunal",
+      "slug": "administrative-appeals-tribunal",
+      "records": 11,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Australian Crime Commission (Australian Criminal Intelligence Commission)",
+      "slug": "australian-crime-commission-australian-criminal-intelligence-commission",
+      "records": 0,
+      "periods": []
+    },
+    {
+      "entity": "Australian Federal Police",
+      "slug": "australian-federal-police",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Financial Security Authority",
+      "slug": "australian-financial-security-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Institute of Criminology",
+      "slug": "australian-institute-of-criminology",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Law Reform Commission",
+      "slug": "australian-law-reform-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Transaction Reports and Analysis Centre (AUSTRAC)",
+      "slug": "australian-transaction-reports-and-analysis-centre-austrac",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Federal Court of Australia",
+      "slug": "federal-court-of-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Anti-Corruption Commission",
+      "slug": "national-anti-corruption-commission",
+      "records": 11,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of the Australian Information Commissioner",
+      "slug": "office-of-the-australian-information-commissioner",
+      "records": 11,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Office of the Commonwealth Ombudsman",
+      "slug": "office-of-the-commonwealth-ombudsman",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of the Director of Public Prosecutions (CDPP)",
+      "slug": "office-of-the-director-of-public-prosecutions-cdpp",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of the Inspector-General of Intelligence and Security",
+      "slug": "office-of-the-inspector-general-of-intelligence-and-security",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of Parliamentary Counsel",
+      "slug": "office-of-parliamentary-counsel",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of the Special Investigator",
+      "slug": "office-of-the-special-investigator",
+      "records": 14,
+      "periods": [
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Human Rights Commission",
+      "slug": "australian-human-rights-commission",
+      "records": 9,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Department of Climate Change, Energy, the Environment and Water",
+      "slug": "department-of-climate-change-energy-the-environment-and-water",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Bureau of Meteorology",
+      "slug": "bureau-of-meteorology",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Clean Energy Regulator",
+      "slug": "clean-energy-regulator",
+      "records": 15,
+      "periods": [
+        "2018-19",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Climate Change Authority",
+      "slug": "climate-change-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Great Barrier Reef Marine Park Authority",
+      "slug": "great-barrier-reef-marine-park-authority",
+      "records": 15,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Institute of Marine Science",
+      "slug": "australian-institute-of-marine-science",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Renewable Energy Agency",
+      "slug": "australian-renewable-energy-agency",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Clean Energy Finance Corporation",
+      "slug": "clean-energy-finance-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Director of National Parks",
+      "slug": "director-of-national-parks",
+      "records": 9,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Murray-Darling Basin Authority",
+      "slug": "murray-darling-basin-authority",
+      "records": 12,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Sydney Harbour Federation Trust",
+      "slug": "sydney-harbour-federation-trust",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Defence",
+      "slug": "department-of-defence",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Signals Directorate",
+      "slug": "australian-signals-directorate",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Submarine Agency",
+      "slug": "australian-submarine-agency",
+      "records": 11,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Army and Air Force Canteen Service (Frontline Defence Services)",
+      "slug": "army-and-air-force-canteen-service-frontline-defence-services",
+      "records": 0,
+      "periods": []
+    },
+    {
+      "entity": "Australian Military Forces Relief Trust Fund",
+      "slug": "australian-military-forces-relief-trust-fund",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Defence Housing Australia",
+      "slug": "defence-housing-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Royal Australian Air Force Veterans' Residences Trust Fund",
+      "slug": "royal-australian-air-force-veterans-residences-trust-fund",
+      "records": 8,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Royal Australian Air Force Welfare Trust Fund",
+      "slug": "royal-australian-air-force-welfare-trust-fund",
+      "records": 8,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Royal Australian Navy Central Canteens Board",
+      "slug": "royal-australian-navy-central-canteens-board",
+      "records": 8,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Royal Australian Navy Relief Trust Fund",
+      "slug": "royal-australian-navy-relief-trust-fund",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Education",
+      "slug": "department-of-education",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Research Council",
+      "slug": "australian-research-council",
+      "records": 15,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Tertiary Education Quality and Standards Agency",
+      "slug": "tertiary-education-quality-and-standards-agency",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Curriculum, Assessment and Reporting Authority",
+      "slug": "australian-curriculum-assessment-and-reporting-authority",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian National University",
+      "slug": "australian-national-university",
+      "records": 8,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2023",
+        "2024"
+      ]
+    },
+    {
+      "entity": "Department of Employment and Workplace Relations",
+      "slug": "department-of-employment-and-workplace-relations",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Asbestos and Silica Safety and Eradication Agency",
+      "slug": "asbestos-and-silica-safety-and-eradication-agency",
+      "records": 11,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Skills Quality Authority (National Vocational Education and Training Regulator)",
+      "slug": "australian-skills-quality-authority-national-vocational-education-and-training-regulator",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Fair Work Commission",
+      "slug": "fair-work-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of the Fair Work Ombudsman",
+      "slug": "office-of-the-fair-work-ombudsman",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Safe Work Australia",
+      "slug": "safe-work-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Seafarers Safety, Rehabilitation and Compensation Authority (Seacare Authority)",
+      "slug": "seafarers-safety-rehabilitation-and-compensation-authority-seacare-authority",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Coal Mining Industry (Long Service Leave Funding) Corporation",
+      "slug": "coal-mining-industry-long-service-leave-funding-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Comcare",
+      "slug": "comcare",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Finance",
+      "slug": "department-of-finance",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Electoral Commission",
+      "slug": "australian-electoral-commission",
+      "records": 15,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Digital Transformation Agency",
+      "slug": "digital-transformation-agency",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Future Fund Management Agency",
+      "slug": "future-fund-management-agency",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Independent Parliamentary Expenses Authority",
+      "slug": "independent-parliamentary-expenses-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Parliamentary Workplace Support Service",
+      "slug": "parliamentary-workplace-support-service",
+      "records": 11,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Commonwealth Superannuation Corporation (CSC)",
+      "slug": "commonwealth-superannuation-corporation-csc",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Foreign Affairs and Trade",
+      "slug": "department-of-foreign-affairs-and-trade",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Centre for International Agricultural Research (ACIAR)",
+      "slug": "australian-centre-for-international-agricultural-research-aciar",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Secret Intelligence Service",
+      "slug": "australian-secret-intelligence-service",
+      "records": 0,
+      "periods": []
+    },
+    {
+      "entity": "Australian Trade and Investment Commission (Austrade)",
+      "slug": "australian-trade-and-investment-commission-austrade",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)",
+      "slug": "export-finance-and-insurance-corporation-efic-export-finance-australia",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Tourism Australia",
+      "slug": "tourism-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Health and Aged Care",
+      "slug": "department-of-health-and-aged-care",
+      "records": 7,
+      "periods": [
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Aged Care Quality and Safety Commission",
+      "slug": "aged-care-quality-and-safety-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian National Preventive Health Agency (ANPHA)",
+      "slug": "australian-national-preventive-health-agency-anpha",
+      "records": 0,
+      "periods": []
+    },
+    {
+      "entity": "Australian Radiation Protection and Nuclear Safety Agency (ARPANSA)",
+      "slug": "australian-radiation-protection-and-nuclear-safety-agency-arpansa",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Cancer Australia",
+      "slug": "cancer-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Blood Authority",
+      "slug": "national-blood-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Health and Medical Research Council (NHMRC)",
+      "slug": "national-health-and-medical-research-council-nhmrc",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Health Funding Body (NHFB)",
+      "slug": "national-health-funding-body-nhfb",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Mental Health Commission",
+      "slug": "national-mental-health-commission",
+      "records": 11,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Office of the Inspector-General of Aged Care",
+      "slug": "office-of-the-inspector-general-of-aged-care",
+      "records": 6,
+      "periods": [
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Organ and Tissue Authority",
+      "slug": "organ-and-tissue-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Professional Services Review",
+      "slug": "professional-services-review",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Sport Integrity Australia",
+      "slug": "sport-integrity-australia",
+      "records": 14,
+      "periods": [
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Commission on Safety and Quality in Health Care",
+      "slug": "australian-commission-on-safety-and-quality-in-health-care",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Digital Health Agency",
+      "slug": "australian-digital-health-agency",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Institute of Health and Welfare",
+      "slug": "australian-institute-of-health-and-welfare",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Sports Commission (Australian Institute of Sport)",
+      "slug": "australian-sports-commission-australian-institute-of-sport",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Food Standards Australia New Zealand",
+      "slug": "food-standards-australia-new-zealand",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Independent Health and Aged Care Pricing Authority",
+      "slug": "independent-health-and-aged-care-pricing-authority",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Home Affairs",
+      "slug": "department-of-home-affairs",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Security Intelligence Organisation",
+      "slug": "australian-security-intelligence-organisation",
+      "records": 11,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Emergency Management Agency",
+      "slug": "national-emergency-management-agency",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Industry, Science and Resources",
+      "slug": "department-of-industry-science-and-resources",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Geoscience Australia",
+      "slug": "geoscience-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "IP Australia",
+      "slug": "ip-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Nuclear Science and Technology Organisation",
+      "slug": "australian-nuclear-science-and-technology-organisation",
+      "records": 12,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Commonwealth Scientific and Industrial Research Organisation",
+      "slug": "commonwealth-scientific-and-industrial-research-organisation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Offshore Petroleum Safety and Environmental Management Authority (NOPSEMA)",
+      "slug": "national-offshore-petroleum-safety-and-environmental-management-authority-nopsema",
+      "records": 5,
+      "periods": [
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "National Reconstruction Fund Corporation",
+      "slug": "national-reconstruction-fund-corporation",
+      "records": 8,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Infrastructure, Transport, Regional Development, Communications and the Arts",
+      "slug": "department-of-infrastructure-transport-regional-development-communications-and-the-arts",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Communications and Media Authority (ACMA)",
+      "slug": "australian-communications-and-media-authority-acma",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Transport Safety Bureau (ATSB)",
+      "slug": "australian-transport-safety-bureau-atsb",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Archives of Australia",
+      "slug": "national-archives-of-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Capital Authority",
+      "slug": "national-capital-authority",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Airservices Australia",
+      "slug": "airservices-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Broadcasting Corporation",
+      "slug": "australian-broadcasting-corporation",
+      "records": 12,
+      "periods": [
+        "2018-19",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Film, Television and Radio School",
+      "slug": "australian-film-television-and-radio-school",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Maritime Safety Authority",
+      "slug": "australian-maritime-safety-authority",
+      "records": 12,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian National Maritime Museum",
+      "slug": "australian-national-maritime-museum",
+      "records": 9,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Australian Postal Corporation",
+      "slug": "australian-postal-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Civil Aviation Safety Authority",
+      "slug": "civil-aviation-safety-authority",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Creative Australia",
+      "slug": "creative-australia",
+      "records": 8,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "High Speed Rail Authority",
+      "slug": "high-speed-rail-authority",
+      "records": 8,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Infrastructure Australia",
+      "slug": "infrastructure-australia",
+      "records": 12,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Film and Sound Archive of Australia",
+      "slug": "national-film-and-sound-archive-of-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Gallery of Australia",
+      "slug": "national-gallery-of-australia",
+      "records": 9,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "National Library of Australia",
+      "slug": "national-library-of-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Museum of Australia",
+      "slug": "national-museum-of-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Portrait Gallery of Australia",
+      "slug": "national-portrait-gallery-of-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Transport Commission",
+      "slug": "national-transport-commission",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Northern Australia Infrastructure Facility",
+      "slug": "northern-australia-infrastructure-facility",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Old Parliament House",
+      "slug": "old-parliament-house",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Screen Australia",
+      "slug": "screen-australia",
+      "records": 12,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Special Broadcasting Service Corporation",
+      "slug": "special-broadcasting-service-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the Prime Minister and Cabinet",
+      "slug": "department-of-the-prime-minister-and-cabinet",
+      "records": 15,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian National Audit Office",
+      "slug": "australian-national-audit-office",
+      "records": 15,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Public Service Commission",
+      "slug": "australian-public-service-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Indigenous Australians Agency",
+      "slug": "national-indigenous-australians-agency",
+      "records": 15,
+      "periods": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of National Intelligence",
+      "slug": "office-of-national-intelligence",
+      "records": 0,
+      "periods": []
+    },
+    {
+      "entity": "Office of the Official Secretary to the Governor-General",
+      "slug": "office-of-the-official-secretary-to-the-governor-general",
+      "records": 13,
+      "periods": [
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Workplace Gender Equality Agency",
+      "slug": "workplace-gender-equality-agency",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Anindilyakwa Land Council",
+      "slug": "anindilyakwa-land-council",
+      "records": 11,
+      "periods": [
+        "2018-19",
+        "2020-21",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "slug": "australian-institute-of-aboriginal-and-torres-strait-islander-studies",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Central Land Council",
+      "slug": "central-land-council",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Indigenous Business Australia",
+      "slug": "indigenous-business-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Indigenous Land and Sea Corporation",
+      "slug": "indigenous-land-and-sea-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Northern Land Council",
+      "slug": "northern-land-council",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Northern Territory Aboriginal Investment Corporation",
+      "slug": "northern-territory-aboriginal-investment-corporation",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Tiwi Land Council",
+      "slug": "tiwi-land-council",
+      "records": 12,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Torres Strait Regional Authority",
+      "slug": "torres-strait-regional-authority",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Wreck Bay Aboriginal Community Council",
+      "slug": "wreck-bay-aboriginal-community-council",
+      "records": 12,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Social Services",
+      "slug": "department-of-social-services",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Institute of Family Studies (AIFS)",
+      "slug": "australian-institute-of-family-studies-aifs",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Domestic, Family and Sexual Violence Commission",
+      "slug": "domestic-family-and-sexual-violence-commission",
+      "records": 7,
+      "periods": [
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "NDIS Quality and Safeguards Commission",
+      "slug": "ndis-quality-and-safeguards-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Services Australia",
+      "slug": "services-australia",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Hearing Services (Hearing Australia)",
+      "slug": "australian-hearing-services-hearing-australia",
+      "records": 9,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Disability Insurance Agency",
+      "slug": "national-disability-insurance-agency",
+      "records": 10,
+      "periods": [
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the Treasury",
+      "slug": "department-of-the-treasury",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Bureau of Statistics",
+      "slug": "australian-bureau-of-statistics",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Competition and Consumer Commission (ACCC)",
+      "slug": "australian-competition-and-consumer-commission-accc",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Office of Financial Management (AOFM)",
+      "slug": "australian-office-of-financial-management-aofm",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Prudential Regulation Authority (APRA)",
+      "slug": "australian-prudential-regulation-authority-apra",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Securities and Investments Commission (ASIC)",
+      "slug": "australian-securities-and-investments-commission-asic",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian Taxation Office",
+      "slug": "australian-taxation-office",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Commonwealth Grants Commission",
+      "slug": "commonwealth-grants-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Inspector-General of Taxation",
+      "slug": "inspector-general-of-taxation",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "National Competition Council",
+      "slug": "national-competition-council",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Office of the Auditing and Assurance Standards Board (AUASB)",
+      "slug": "office-of-the-auditing-and-assurance-standards-board-auasb",
+      "records": 7,
+      "periods": [
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Office of the Australian Accounting Standards Board (AASB)",
+      "slug": "office-of-the-australian-accounting-standards-board-aasb",
+      "records": 12,
+      "periods": [
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Productivity Commission",
+      "slug": "productivity-commission",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Royal Australian Mint",
+      "slug": "royal-australian-mint",
+      "records": 11,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ]
+    },
+    {
+      "entity": "Australian Reinsurance Pool Corporation",
+      "slug": "australian-reinsurance-pool-corporation",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Housing Australia",
+      "slug": "housing-australia",
+      "records": 8,
+      "periods": [
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Reserve Bank of Australia",
+      "slug": "reserve-bank-of-australia",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Veterans' Affairs",
+      "slug": "department-of-veterans-affairs",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Australian War Memorial",
+      "slug": "australian-war-memorial",
+      "records": 13,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of Parliamentary Services",
+      "slug": "department-of-parliamentary-services",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the House of Representatives",
+      "slug": "department-of-the-house-of-representatives",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Department of the Senate",
+      "slug": "department-of-the-senate",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    },
+    {
+      "entity": "Parliamentary Budget Office",
+      "slug": "parliamentary-budget-office",
+      "records": 16,
+      "periods": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ]
+    }
+  ]
+}

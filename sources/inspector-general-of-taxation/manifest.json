@@ -1,0 +1,72 @@
+{
+  "registerName": "Inspector-General of Taxation",
+  "sourceEntityNames": [
+    "Inspector-General of Taxation"
+  ],
+  "renamed": false,
+  "entityCodeName": "inspector_general_of_taxation",
+  "portfolio": "Treasury",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 16,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation and Taxation Ombudsman Annual Report for the financial year ended 30 June 2023",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-and-taxation-ombudsman-annual-report-for-the-financial-year-ended-30-june-2023",
+      "financialStatementsAnchor": "Part-5-–-Financial-Statements/financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-annual-report-2023-24",
+      "financialStatementsAnchor": "Part-5-–-Financial-Statements/financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Inspector-General of Taxation",
+      "annualReportTitle": "Inspector-General of Taxation Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/inspector-general-of-taxation/inspector-general-of-taxation-annual-report-2024-25",
+      "financialStatementsAnchor": "Part-5-–-Financial-Statements/financial-statements"
+    }
+  ]
+}

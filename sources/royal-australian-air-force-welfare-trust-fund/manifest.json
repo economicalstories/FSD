@@ -1,0 +1,56 @@
+{
+  "registerName": "Royal Australian Air Force Welfare Trust Fund",
+  "sourceEntityNames": [
+    "Royal Australian Air Force Welfare Trust Fund"
+  ],
+  "renamed": false,
+  "entityCodeName": "royal_australian_air_force_welfare_trust_fund",
+  "portfolio": "Defence",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 8,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Royal Australian Air Force Welfare Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Welfare Trust Fund Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-welfare-trust-fund/royal-australian-air-force-welfare-trust-fund-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Royal Australian Air Force Welfare Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Welfare Trust Fund Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-welfare-trust-fund/royal-australian-air-force-welfare-trust-fund-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Royal Australian Air Force Welfare Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Welfare Trust Fund Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-welfare-trust-fund/royal-australian-air-force-welfare-trust-fund-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Royal Australian Air Force Welfare Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Welfare Fund Annual Report 1 July 2022 to 30 June 2023",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-welfare-trust-fund/royal-australian-air-force-welfare-fund-annual-report-1-july-2022-to-30-june-2023",
+      "financialStatementsAnchor": "annual-performance-statement"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Royal Australian Air Force Welfare Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Welfare Fund Annual Report 1 July 2023 to 30 June 2024",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-welfare-trust-fund/royal-australian-air-force-welfare-fund-annual-report-1-july-2023-to-30-june-2024",
+      "financialStatementsAnchor": "annual-performance-statement"
+    }
+  ]
+}

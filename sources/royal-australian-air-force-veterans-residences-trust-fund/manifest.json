@@ -1,0 +1,56 @@
+{
+  "registerName": "Royal Australian Air Force Veterans' Residences Trust Fund",
+  "sourceEntityNames": [
+    "Royal Australian Air Force Veterans' Residences Trust Fund"
+  ],
+  "renamed": false,
+  "entityCodeName": "royal_australian_air_force_veterans__residences_tr_201cd83",
+  "portfolio": "Defence",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 8,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Royal Australian Air Force Veterans' Residences Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Veterans' Residences Trust Fund Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-veterans-residences-trust-fund/royal-australian-air-force-veterans-residences-trust-fund-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Royal Australian Air Force Veterans' Residences Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Veterans' Residences Trust Fund Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-veterans-residences-trust-fund/royal-australian-air-force-veterans-residences-trust-fund-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Royal Australian Air Force Veterans' Residences Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Veterans' Residences Trust Fund Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-veterans-residences-trust-fund/royal-australian-air-force-veterans-residences-trust-fund-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Royal Australian Air Force Veterans' Residences Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Veterans' Residences Trust Fund Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-veterans-residences-trust-fund/royal-australian-air-force-veterans-residences-trust-fund-annual-report-2022-23",
+      "financialStatementsAnchor": "report-of-operations"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Royal Australian Air Force Veterans' Residences Trust Fund",
+      "annualReportTitle": "Royal Australian Air Force Veterans' Residences Trust Fund Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/defence/royal-australian-air-force-veterans-residences-trust-fund/royal-australian-air-force-veterans-residences-trust-fund-annual-report-2023-24",
+      "financialStatementsAnchor": "review-of-operations"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "registerName": "Independent Health and Aged Care Pricing Authority",
+  "sourceEntityNames": [
+    "Independent Health and Aged Care Pricing Authority"
+  ],
+  "renamed": false,
+  "entityCodeName": "independent_health_and_aged_care_pricing_authority_ed2b9c4",
+  "portfolio": "Health, Disability and Ageing",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Independent Health and Aged Care Pricing Authority",
+      "annualReportTitle": "Independent Health and Aged Care Pricing Authority Annual Report 2022–23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-and-aged-care/independent-health-and-aged-care-pricing-authority/independent-health-and-aged-care-pricing-authority-annual-report-2022-23",
+      "financialStatementsAnchor": "annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Independent Health and Aged Care Pricing Authority",
+      "annualReportTitle": "Independent Health and Aged Care Pricing Authority Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/independent-health-and-aged-care-pricing-authority/independent-health-and-aged-care-pricing-authority-annual-report-2023-24",
+      "financialStatementsAnchor": "annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Independent Health and Aged Care Pricing Authority",
+      "annualReportTitle": "Independent Health and Aged Care Pricing Authority Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/independent-health-and-aged-care-pricing-authority/independent-health-and-aged-care-pricing-authority-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

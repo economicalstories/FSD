@@ -1,0 +1,65 @@
+{
+  "registerName": "Royal Australian Mint",
+  "sourceEntityNames": [
+    "Royal Australian Mint"
+  ],
+  "renamed": false,
+  "entityCodeName": "royal_australian_mint",
+  "portfolio": "Treasury",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 11,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Royal Australian Mint",
+      "annualReportTitle": "Royal Australian Mint Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/royal-australian-mint/royal-australian-mint-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Royal Australian Mint",
+      "annualReportTitle": "Royal Australian Mint Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/royal-australian-mint/royal-australian-mint-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Royal Australian Mint",
+      "annualReportTitle": "Royal Australian Mint Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/royal-australian-mint/royal-australian-mint-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Royal Australian Mint",
+      "annualReportTitle": "Royal Australian Mint Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/royal-australian-mint/royal-australian-mint-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Royal Australian Mint",
+      "annualReportTitle": "2022 - 23 Annual Report",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/royal-australian-mint/2022-23-annual-report",
+      "financialStatementsAnchor": "06-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Royal Australian Mint",
+      "annualReportTitle": "Annual Report Royal Australian Mint 2023 -2024",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/treasury/royal-australian-mint/annual-report-royal-australian-mint-2023-2024",
+      "financialStatementsAnchor": "07-financial-statements"
+    }
+  ]
+}

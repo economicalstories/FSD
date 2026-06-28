@@ -1,0 +1,70 @@
+{
+  "registerName": "Comcare",
+  "sourceEntityNames": [
+    "Comcare"
+  ],
+  "renamed": false,
+  "entityCodeName": "comcare",
+  "portfolio": "Attorney-General's",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/employment-and-workplace-relations/comcare/comcare-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/employment-and-workplace-relations/comcare/comcare-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/employment-and-workplace-relations/comcare/comcare-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/employment-and-workplace-relations/comcare/comcare-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare and Safety Rehabilitation and Compensation Commission Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/comcare/comcare-and-safety-rehabilitation-and-compensation-commission-annual-report-2022-23",
+      "financialStatementsAnchor": "chapter-2:-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare and Safety, Rehabilitation and Compensation Commission Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/comcare/comcare-and-safety-rehabilitation-and-compensation-commission-annual-report-2023-24",
+      "financialStatementsAnchor": "chapter-2:-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Comcare",
+      "annualReportTitle": "Comcare and the Safety Rehabilitation and Compensation Commission Annual Report 2024–25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/comcare/comcare-and-the-safety-rehabilitation-and-compensation-commission-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

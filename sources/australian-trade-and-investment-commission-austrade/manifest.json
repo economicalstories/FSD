@@ -1,0 +1,44 @@
+{
+  "registerName": "Australian Trade and Investment Commission (Austrade)",
+  "sourceEntityNames": [
+    "Australian Trade and Investment Commission (Austrade)"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_trade_and_investment_commission__austra_db9d33d",
+  "portfolio": "Foreign Affairs and Trade",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Trade and Investment Commission (Austrade)",
+      "annualReportTitle": "Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/australian-trade-and-investment-commission-austrade/annual-report-2022-23",
+      "financialStatementsAnchor": "part-4:-financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Trade and Investment Commission (Austrade)",
+      "annualReportTitle": "Australian Trade and Investment Commission Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/australian-trade-and-investment-commission-austrade/australian-trade-and-investment-commission-annual-report-2023-24",
+      "financialStatementsAnchor": "Part-4:-Financial-Statements/financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Trade and Investment Commission (Austrade)",
+      "annualReportTitle": "Australian Trade and Investment Commission (Austrade) Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/foreign-affairs-and-trade/australian-trade-and-investment-commission-austrade/australian-trade-and-investment-commission-austrade-annual-report-2024-25",
+      "financialStatementsAnchor": "Part-4:-Financial-Statements/financial-statements"
+    }
+  ]
+}

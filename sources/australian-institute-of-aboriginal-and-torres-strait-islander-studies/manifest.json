@@ -1,0 +1,70 @@
+{
+  "registerName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+  "sourceEntityNames": [
+    "Australian Institute of Aboriginal and Torres Strait Islander Studies"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_institute_of_aboriginal_and_torres_stra_0535204",
+  "portfolio": "Prime Minister and Cabinet",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2022-2023 ",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2022-2023",
+      "financialStatementsAnchor": "part-3.-performance-"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2023–2024",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2023-2024",
+      "financialStatementsAnchor": "part-3.-performance-"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Institute of Aboriginal and Torres Strait Islander Studies",
+      "annualReportTitle": "Australian Institute of Aboriginal and Torres Strait Islander Studies Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/australian-institute-of-aboriginal-and-torres-strait-islander-studies/australian-institute-of-aboriginal-and-torres-strait-islander-studies-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

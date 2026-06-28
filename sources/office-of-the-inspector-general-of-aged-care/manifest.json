@@ -1,0 +1,30 @@
+{
+  "registerName": "Office of the Inspector-General of Aged Care",
+  "sourceEntityNames": [
+    "Office of the Inspector-General of Aged Care"
+  ],
+  "renamed": false,
+  "entityCodeName": "office_of_the_inspector_general_of_aged_care",
+  "portfolio": "Health, Disability and Ageing",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 6,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Office of the Inspector-General of Aged Care",
+      "annualReportTitle": "Office of the Inspector-General of Aged Care\n\nAnnual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/office-of-the-inspector-general-of-aged-care/office-of-the-inspector-general-of-aged-care-annual-report-2023-24",
+      "financialStatementsAnchor": "Appendix-1:-2023–24-Financial-Statements/2023-24-financial-statements"
+    }
+  ]
+}

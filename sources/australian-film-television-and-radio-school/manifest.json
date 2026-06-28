@@ -1,0 +1,42 @@
+{
+  "registerName": "Australian Film, Television and Radio School",
+  "sourceEntityNames": [
+    "Australian Film, Television and Radio School"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_film__television_and_radio_school",
+  "portfolio": "Communications and the Arts",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Film, Television and Radio School",
+      "annualReportTitle": "Australian Film, Television and Radio School Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-film-television-and-radio-school/australian-film-television-and-radio-school-annual-report-2022-23",
+      "financialStatementsAnchor": "annual-performance-statement-(aps)-2022-23"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Film, Television and Radio School",
+      "annualReportTitle": "Australian Film, Television and Radio School Annual Report 2023–24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-film-television-and-radio-school/australian-film-television-and-radio-school-annual-report-2023-24",
+      "financialStatementsAnchor": "annual-performance-statement-(aps)-2022-23"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Film, Television and Radio School",
+      "annualReportTitle": "Australian Film, Television and Radio School Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/communications-and-the-arts/australian-film-television-and-radio-school/australian-film-television-and-radio-school-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

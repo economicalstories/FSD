@@ -1,0 +1,42 @@
+{
+  "registerName": "Northern Territory Aboriginal Investment Corporation",
+  "sourceEntityNames": [
+    "Northern Territory Aboriginal Investment Corporation"
+  ],
+  "renamed": false,
+  "entityCodeName": "northern_territory_aboriginal_investment_corporati_e7bb662",
+  "portfolio": "Prime Minister and Cabinet",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Northern Territory Aboriginal Investment Corporation",
+      "annualReportTitle": "Northern Territory Aboriginal Investment Corporation Annual Report 2022-2023",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/northern-territory-aboriginal-investment-corporation/northern-territory-aboriginal-investment-corporation-annual-report-2022-2023",
+      "financialStatementsAnchor": "SECTION-2-OUR-PERFORMANCE-/annual-performance-statements-2022–23"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Northern Territory Aboriginal Investment Corporation",
+      "annualReportTitle": "Northern Territory Aboriginal Investment Corporation Annual Report 2023-2024",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/northern-territory-aboriginal-investment-corporation/northern-territory-aboriginal-investment-corporation-annual-report-2023-2024",
+      "financialStatementsAnchor": "section-5-guide-to-access"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Northern Territory Aboriginal Investment Corporation",
+      "annualReportTitle": "Aboriginal Investment NT Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/northern-territory-aboriginal-investment-corporation/aboriginal-investment-nt-annual-report-2024-25",
+      "financialStatementsAnchor": "SECTION-2-OUR-PERFORMANCE-/annual-performance-statements-2024-25"
+    }
+  ]
+}

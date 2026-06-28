@@ -1,0 +1,70 @@
+{
+  "registerName": "Food Standards Australia New Zealand",
+  "sourceEntityNames": [
+    "Food Standards Australia New Zealand"
+  ],
+  "renamed": false,
+  "entityCodeName": "food_standards_australia_new_zealand",
+  "portfolio": "Health, Disability and Ageing",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2022-23",
+      "financialStatementsAnchor": "part-2:-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2023-24",
+      "financialStatementsAnchor": "part-2:-annual-performance-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Food Standards Australia New Zealand",
+      "annualReportTitle": "Food Standards Australia New Zealand Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/health-disability-and-ageing/food-standards-australia-new-zealand/food-standards-australia-new-zealand-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

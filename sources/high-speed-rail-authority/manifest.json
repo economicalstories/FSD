@@ -1,0 +1,35 @@
+{
+  "registerName": "High Speed Rail Authority",
+  "sourceEntityNames": [
+    "High Speed Rail Authority"
+  ],
+  "renamed": false,
+  "entityCodeName": "high_speed_rail_authority",
+  "portfolio": "Infrastructure, Transport, Regional Development, Communications and the Arts",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 8,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "High Speed Rail Authority",
+      "annualReportTitle": "High Speed Rail Authority Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-communications-and-the-arts/high-speed-rail-authority/high-speed-rail-authority-annual-report-2023-24",
+      "financialStatementsAnchor": "section-2---performance-statement"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "High Speed Rail Authority",
+      "annualReportTitle": "High Speed Rail Authority Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/infrastructure-transport-regional-development-communications-and-the-arts/high-speed-rail-authority/high-speed-rail-authority-annual-report-2024-25",
+      "financialStatementsAnchor": "annual-performance-statement"
+    }
+  ]
+}

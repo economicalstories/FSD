@@ -1,0 +1,70 @@
+{
+  "registerName": "Indigenous Land and Sea Corporation",
+  "sourceEntityNames": [
+    "Indigenous Land and Sea Corporation"
+  ],
+  "renamed": false,
+  "entityCodeName": "indigenous_land_and_sea_corporation",
+  "portfolio": "Prime Minister and Cabinet",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 13,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2018-19",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2018–19",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2018-19",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2019-20",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2019-20",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2019-20",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2020-21",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2020-21",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2020-21",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2021-22",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2021-22",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2021-22",
+      "financialStatementsAnchor": ""
+    },
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2022-23",
+      "financialStatementsAnchor": "Part-Two:-ILSC-Group-Performance/introductory-statement"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2023-24",
+      "financialStatementsAnchor": "part-two:-performance"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Indigenous Land and Sea Corporation",
+      "annualReportTitle": "Indigenous Land and Sea Corporation Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/prime-minister-and-cabinet/indigenous-land-and-sea-corporation/indigenous-land-and-sea-corporation-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

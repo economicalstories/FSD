@@ -1,0 +1,13 @@
+{
+  "registerName": "Australian Secret Intelligence Service",
+  "sourceEntityNames": [],
+  "renamed": false,
+  "entityCodeName": null,
+  "portfolio": null,
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 0,
+  "contentTypes": [],
+  "periods": []
+}

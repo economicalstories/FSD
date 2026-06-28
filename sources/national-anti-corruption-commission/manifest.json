@@ -1,0 +1,37 @@
+{
+  "registerName": "National Anti-Corruption Commission",
+  "sourceEntityNames": [
+    "National Anti-Corruption Commission"
+  ],
+  "renamed": false,
+  "entityCodeName": "national_anti_corruption_commission",
+  "portfolio": "Attorney-General's",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 11,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "National Anti-Corruption Commission",
+      "annualReportTitle": "National Anti-Corruption Commission Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/national-anti-corruption-commission/national-anti-corruption-commission-annual-report-2023-24",
+      "financialStatementsAnchor": "part-4---report-on-financial-performance"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "National Anti-Corruption Commission",
+      "annualReportTitle": "National Anti-Corruption Commission Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/national-anti-corruption-commission/national-anti-corruption-commission-annual-report-2024-25",
+      "financialStatementsAnchor": "Part-4---Report-on-financial-performance/financial-statements"
+    }
+  ]
+}

@@ -1,0 +1,877 @@
+{
+  "Department of Agriculture, Fisheries and Forestry": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Fisheries Management Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Pesticides and Veterinary Medicines Authority (APVMA)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Cotton Research and Development Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Fisheries Research and Development Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Grains Research and Development Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Regional Investment Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Rural Industries Research and Development Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Wine Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Attorney-General's Department": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Administrative Appeals Tribunal": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Australian Crime Commission (Australian Criminal Intelligence Commission)": {
+    "status": "active",
+    "reason": "Active — financial statements not published on the Transparency Portal (exempt).",
+    "latestPeriod": null
+  },
+  "Australian Federal Police": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Financial Security Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Institute of Criminology": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Law Reform Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Transaction Reports and Analysis Centre (AUSTRAC)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Federal Court of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Anti-Corruption Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of the Australian Information Commissioner": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Office of the Commonwealth Ombudsman": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of the Director of Public Prosecutions (CDPP)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of the Inspector-General of Intelligence and Security": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of Parliamentary Counsel": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of the Special Investigator": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Human Rights Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Department of Climate Change, Energy, the Environment and Water": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Bureau of Meteorology": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Clean Energy Regulator": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Climate Change Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Great Barrier Reef Marine Park Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Institute of Marine Science": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Renewable Energy Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Clean Energy Finance Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Director of National Parks": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Murray-Darling Basin Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Sydney Harbour Federation Trust": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Defence": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Signals Directorate": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Submarine Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Army and Air Force Canteen Service (Frontline Defence Services)": {
+    "status": "active",
+    "reason": "Active — financial statements not published on the Transparency Portal (exempt).",
+    "latestPeriod": null
+  },
+  "Australian Military Forces Relief Trust Fund": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Defence Housing Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Royal Australian Air Force Veterans' Residences Trust Fund": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Royal Australian Air Force Welfare Trust Fund": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Royal Australian Navy Central Canteens Board": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Royal Australian Navy Relief Trust Fund": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Education": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Research Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Tertiary Education Quality and Standards Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Curriculum, Assessment and Reporting Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian National University": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024"
+  },
+  "Department of Employment and Workplace Relations": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Asbestos and Silica Safety and Eradication Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Skills Quality Authority (National Vocational Education and Training Regulator)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Fair Work Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of the Fair Work Ombudsman": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Safe Work Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Seafarers Safety, Rehabilitation and Compensation Authority (Seacare Authority)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Coal Mining Industry (Long Service Leave Funding) Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Comcare": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Finance": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Electoral Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Digital Transformation Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Future Fund Management Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Independent Parliamentary Expenses Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Parliamentary Workplace Support Service": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Commonwealth Superannuation Corporation (CSC)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Foreign Affairs and Trade": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Centre for International Agricultural Research (ACIAR)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Secret Intelligence Service": {
+    "status": "active",
+    "reason": "Active — financial statements not published on the Transparency Portal (exempt).",
+    "latestPeriod": null
+  },
+  "Australian Trade and Investment Commission (Austrade)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Export Finance and Insurance Corporation (EFIC, Export Finance Australia)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Tourism Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Health and Aged Care": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Aged Care Quality and Safety Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian National Preventive Health Agency (ANPHA)": {
+    "status": "historical",
+    "reason": "Abolished 30 June 2014; functions returned to the Department of Health (Australian National Preventive Health Agency (Abolition) Act 2014).",
+    "latestPeriod": null
+  },
+  "Australian Radiation Protection and Nuclear Safety Agency (ARPANSA)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Cancer Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Blood Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Health and Medical Research Council (NHMRC)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Health Funding Body (NHFB)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Mental Health Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Office of the Inspector-General of Aged Care": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Organ and Tissue Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Professional Services Review": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Sport Integrity Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Commission on Safety and Quality in Health Care": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Digital Health Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Institute of Health and Welfare": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Sports Commission (Australian Institute of Sport)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Food Standards Australia New Zealand": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Independent Health and Aged Care Pricing Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Home Affairs": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Security Intelligence Organisation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Emergency Management Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Industry, Science and Resources": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Geoscience Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "IP Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Nuclear Science and Technology Organisation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Commonwealth Scientific and Industrial Research Organisation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Offshore Petroleum Safety and Environmental Management Authority (NOPSEMA)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "National Reconstruction Fund Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Infrastructure, Transport, Regional Development, Communications and the Arts": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Communications and Media Authority (ACMA)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Transport Safety Bureau (ATSB)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Archives of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Capital Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Airservices Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Broadcasting Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Film, Television and Radio School": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Maritime Safety Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian National Maritime Museum": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Australian Postal Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Civil Aviation Safety Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Creative Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "High Speed Rail Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Infrastructure Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Film and Sound Archive of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Gallery of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "National Library of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Museum of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Portrait Gallery of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Transport Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Northern Australia Infrastructure Facility": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Old Parliament House": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Screen Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Special Broadcasting Service Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of the Prime Minister and Cabinet": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian National Audit Office": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Public Service Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Indigenous Australians Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of National Intelligence": {
+    "status": "active",
+    "reason": "Active — financial statements not published on the Transparency Portal (exempt).",
+    "latestPeriod": null
+  },
+  "Office of the Official Secretary to the Governor-General": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Workplace Gender Equality Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Anindilyakwa Land Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Institute of Aboriginal and Torres Strait Islander Studies": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Central Land Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Indigenous Business Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Indigenous Land and Sea Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Northern Land Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Northern Territory Aboriginal Investment Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Tiwi Land Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Torres Strait Regional Authority": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Wreck Bay Aboriginal Community Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Social Services": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Institute of Family Studies (AIFS)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Domestic, Family and Sexual Violence Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "NDIS Quality and Safeguards Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Services Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Hearing Services (Hearing Australia)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Disability Insurance Agency": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of the Treasury": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Bureau of Statistics": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Competition and Consumer Commission (ACCC)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Office of Financial Management (AOFM)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Prudential Regulation Authority (APRA)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Securities and Investments Commission (ASIC)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian Taxation Office": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Commonwealth Grants Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Inspector-General of Taxation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "National Competition Council": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Office of the Auditing and Assurance Standards Board (AUASB)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Office of the Australian Accounting Standards Board (AASB)": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Productivity Commission": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Royal Australian Mint": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2023-24"
+  },
+  "Australian Reinsurance Pool Corporation": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Housing Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Reserve Bank of Australia": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Veterans' Affairs": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Australian War Memorial": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of Parliamentary Services": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of the House of Representatives": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Department of the Senate": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  },
+  "Parliamentary Budget Office": {
+    "status": "active",
+    "reason": "Active — currently reporting.",
+    "latestPeriod": "2024-25"
+  }
+}

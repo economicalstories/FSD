@@ -1,0 +1,37 @@
+{
+  "registerName": "Parliamentary Workplace Support Service",
+  "sourceEntityNames": [
+    "Parliamentary Workplace Support Service"
+  ],
+  "renamed": false,
+  "entityCodeName": "parliamentary_workplace_support_service",
+  "portfolio": "Finance",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 11,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Parliamentary Workplace Support Service",
+      "annualReportTitle": "Parliamentary Workplace Support Service Annual Report 2023-24 ",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/finance/parliamentary-workplace-support-service/parliamentary-workplace-support-service-annual-report-2023-24",
+      "financialStatementsAnchor": "Financial-Statements/financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Parliamentary Workplace Support Service",
+      "annualReportTitle": "Parliamentary Workplace Support Service Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/finance/parliamentary-workplace-support-service/parliamentary-workplace-support-service-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

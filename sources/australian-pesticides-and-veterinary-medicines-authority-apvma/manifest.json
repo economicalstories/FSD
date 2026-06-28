@@ -1,0 +1,42 @@
+{
+  "registerName": "Australian Pesticides and Veterinary Medicines Authority (APVMA)",
+  "sourceEntityNames": [
+    "Australian Pesticides and Veterinary Medicines Authority (APVMA)"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_pesticides_and_veterinary_medicines_aut_b954a67",
+  "portfolio": "Agriculture",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 9,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__cce_23_24",
+    "extract_dept__statement_of_comp_income___cce_23_24",
+    "extract_of_dept_cash_flow_statement_cce_23_24",
+    "extract_of_statement_of_financial_position___cce"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Pesticides and Veterinary Medicines Authority (APVMA)",
+      "annualReportTitle": "Australian Pesticides and Veterinary Medicines Authority - Annual Report 2022-23",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture/australian-pesticides-and-veterinary-medicines-authority-apvma/australian-pesticides-and-veterinary-medicines-authority-annual-report-2022-23",
+      "financialStatementsAnchor": "chapter-3---annual-performance-statement"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Pesticides and Veterinary Medicines Authority (APVMA)",
+      "annualReportTitle": "Australian Pesticides and Veterinary Medicines Authority Annual Report 2023–24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture/australian-pesticides-and-veterinary-medicines-authority-apvma/australian-pesticides-and-veterinary-medicines-authority-annual-report-2023-24",
+      "financialStatementsAnchor": "chapter-3---annual-performance-statement"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Pesticides and Veterinary Medicines Authority (APVMA)",
+      "annualReportTitle": "Australian Pesticides and Veterinary Medicines Authority Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/agriculture/australian-pesticides-and-veterinary-medicines-authority-apvma/australian-pesticides-and-veterinary-medicines-authority-annual-report-2024-25",
+      "financialStatementsAnchor": ""
+    }
+  ]
+}

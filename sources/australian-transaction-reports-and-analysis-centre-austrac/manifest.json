@@ -1,0 +1,44 @@
+{
+  "registerName": "Australian Transaction Reports and Analysis Centre (AUSTRAC)",
+  "sourceEntityNames": [
+    "Australian Transaction Reports and Analysis Centre (AUSTRAC)"
+  ],
+  "renamed": false,
+  "entityCodeName": "australian_transaction_reports_and_analysis_centre_d166741",
+  "portfolio": "Attorney-General's",
+  "source": "Australian Government Transparency Portal (transparency.gov.au)",
+  "sourceApi": "https://data.transparency.gov.au/api/datasets/simplified",
+  "license": "CC BY 4.0 (Commonwealth of Australia, Transparency Portal terms)",
+  "retrievedRecordCount": 12,
+  "contentTypes": [
+    "dept__current_distinction___assets_and_liab__nce_23_24",
+    "extract_admin__of_assets_and_liabilities_nce_23_24",
+    "extract_dept__statement_of_comp_income___nce_23_24",
+    "extract_of_admin__statement_of_comp__income_nce_23_24",
+    "extract_of_cash_flow_statement___nce_23_24_",
+    "extract_of_statement_of_financial_position_____cop"
+  ],
+  "periods": [
+    {
+      "reportingPeriod": "2022-23",
+      "sourceEntityName": "Australian Transaction Reports and Analysis Centre (AUSTRAC)",
+      "annualReportTitle": "AUSTRAC 2022-23 ANNUAL REPORT",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/australian-transaction-reports-and-analysis-centre-austrac/austrac-2022-23-annual-report",
+      "financialStatementsAnchor": "financial-statements"
+    },
+    {
+      "reportingPeriod": "2023-24",
+      "sourceEntityName": "Australian Transaction Reports and Analysis Centre (AUSTRAC)",
+      "annualReportTitle": "Australian Transaction Reports and Analysis Centre Annual Report 2023-24",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/australian-transaction-reports-and-analysis-centre-austrac/australian-transaction-reports-and-analysis-centre-annual-report-2023-24",
+      "financialStatementsAnchor": "financial-statements"
+    },
+    {
+      "reportingPeriod": "2024-25",
+      "sourceEntityName": "Australian Transaction Reports and Analysis Centre (AUSTRAC)",
+      "annualReportTitle": "Australian Transaction Reports and Analysis Centre (AUSTRAC) Annual Report 2024-25",
+      "annualReportUrl": "https://www.transparency.gov.au/publications/attorney-general-s/australian-transaction-reports-and-analysis-centre-austrac/australian-transaction-reports-and-analysis-centre-austrac-annual-report-2024-25",
+      "financialStatementsAnchor": "financial-statements"
+    }
+  ]
+}
