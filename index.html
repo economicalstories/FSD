@@ -207,6 +207,17 @@ main{display:flex;flex-direction:column;gap:18px;min-width:0}
 #peerTable .rk{font-weight:700;font-family:var(--mono);color:var(--ink-soft);text-align:center}
 #peerTable td.c-a{background:var(--warn-wash)}
 #peerTable td.c-c{background:var(--good-wash)}
+/* "where to look first" concern chart */
+.concern-chart{display:flex;flex-direction:column;gap:3px;margin:14px 0 4px}
+.cc-row{display:grid;grid-template-columns:minmax(110px,2.2fr) 5fr 46px;gap:10px;align-items:center;
+  background:transparent;border:0;text-align:left;padding:4px 5px;border-radius:5px;width:100%}
+.cc-row:hover{background:var(--panel-2)}
+.cc-name{font-size:12px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc-track{height:14px;background:var(--panel-2);border:1px solid var(--hair);border-radius:7px;overflow:hidden}
+.cc-fill{display:block;height:100%;border-radius:7px}
+.cc-val{font-size:11px;font-family:var(--mono);color:var(--muted);white-space:nowrap;text-align:right}
+.cc-more{font-size:11px;color:var(--faint);margin:8px 0 0}
+.ov-sub{font-size:12.5px;color:var(--muted);margin:18px 0 0;font-weight:600;letter-spacing:.02em}
 /* all-entities overview (landing) */
 #overviewTable tr[data-id]{cursor:pointer}
 #overviewTable tr[data-id]:hover{background:var(--accent-wash)}
@@ -399,12 +410,14 @@ hr.soft{border:0;border-top:1px solid var(--hair);margin:6px 0}
   <main>
     <!-- All-entities overview (landing) -->
     <section class="card" id="overviewCard" hidden>
-      <div class="hd"><h2>All entities</h2><span class="note" id="overviewNote"></span></div>
+      <div class="hd"><h2>Where to look first</h2><span class="note" id="overviewNote"></span></div>
       <div class="bd">
-        <p class="section-intro">Every entity matching the current filters, with its key ratios and its composite
-          standing within its like-for-like category (1 = furthest toward the less-favourable side). <b>Click any row
-          to drill in</b>; narrow the list with the filters on the left.</p>
-        <div class="tbl-scroll" style="margin-top:12px"><table id="overviewTable"></table></div>
+        <p class="section-intro">Entities ranked by a composite of how far each sits toward the <b>less-favourable end</b>
+          of the five indicators, relative to its like-for-like peers — the <b>longest bars are where to look first</b>.
+          A prompt for attention, not a verdict. Tap a bar (or a row in the full list) to drill in; filter on the left.</p>
+        <div id="concernChart" class="concern-chart"></div>
+        <h3 class="ov-sub">Full list</h3>
+        <div class="tbl-scroll" style="margin-top:8px"><table id="overviewTable"></table></div>
       </div>
     </section>
 
@@ -868,10 +881,34 @@ function categoryStandings(){
   });
   return out;
 }
+/* "Where to look first" — horizontal bars of the entities furthest toward the
+   less-favourable end of their peer group (composite across the five ratios). */
+function renderConcernChart(list, stand){
+  const el=document.getElementById('concernChart');
+  const ranked=list.map(e=>({e,s:stand[e.id]})).filter(x=>x.s).sort((a,b)=>b.s.index-a.s.index);
+  if(ranked.length<2){ el.innerHTML='<p class="empty">Not enough entities with data in this filter to compare — widen the filters on the left.</p>'; return; }
+  const CAP=20, top=ranked.slice(0,CAP);
+  el.innerHTML = top.map(({e,s})=>{
+    const pct=Math.max(Math.round(s.index*100),2);
+    const tier=s.index>=0.66?'bar-a':s.index>=0.4?'bar-b':'bar-c';
+    const hist=isHistorical(e);
+    return `<button class="cc-row" data-id="${e.id}" data-tip="${e.fn} — ${ordinal(s.rank)} of ${s.n} toward the less-favourable end (composite of 5 ratios vs peers).">
+      <span class="cc-name">${e.name}${hist?' <span class="ec-defunct-tag">Defunct</span>':''}</span>
+      <span class="cc-track"><span class="cc-fill ${tier}" style="width:${pct}%"></span></span>
+      <span class="cc-val">${ordinal(s.rank)}/${s.n}</span></button>`;
+  }).join("");
+  el.querySelectorAll('.cc-row').forEach(b=>b.onclick=()=>selectEntity(b.dataset.id));
+  if(ranked.length>CAP){
+    const more=document.createElement('p'); more.className="cc-more";
+    more.textContent=`Showing the ${CAP} furthest from peer norms · ${ranked.length} entities ranked in total (see full list below).`;
+    el.appendChild(more);
+  }
+}
 function renderOverview(){
   const list=filteredEntities();
   const sorted=[...list].sort((a,b)=> a.fn.localeCompare(b.fn)||a.name.localeCompare(b.name));
   const stand=categoryStandings();
+  renderConcernChart(list, stand);
   const f=n=>n==null?'<span class="minit">—</span>':(Math.round(n*100)/100).toLocaleString();
   const rid=id=>RATIOS.find(r=>r.id===id);
   const rows=sorted.map(e=>{
